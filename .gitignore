@@ -1,0 +1,24 @@
+# LaTeX build artefacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.spl
+*.dvi
+*.ps
+
+# Built PDF: the manuscript is reproducible from source
+manuscript/letter.pdf
+
+# Editors / OS
+.DS_Store
+*~
+.idea/
+.vscode/

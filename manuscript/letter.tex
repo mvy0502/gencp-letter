@@ -1,0 +1,63 @@
+% IEEE GRSL letter -- GenCP validation study
+% Build: pdflatex letter && bibtex letter && pdflatex letter && pdflatex letter
+% Numbers come from ../EVIDENCE.md only. No value enters this file without a row there.
+
+\documentclass[journal]{IEEEtran}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+\graphicspath{{../figures/}}
+
+\begin{document}
+
+\title{Adversarial training degrades the geometric accuracy of synthetic
+reference imagery}
+
+\author{Mustafa Vedat Y\i ld\i r\i m and co-author%
+\thanks{Manuscript submitted 2026. Study repository and full experiment records:
+\url{https://github.com/mvy0502/gencp-validation}.}}
+
+\markboth{IEEE Geoscience and Remote Sensing Letters}%
+{Y\i ld\i r\i m: Adversarial training and synthetic reference geometry}
+
+\maketitle
+
+\begin{abstract}
+% One paragraph: the design rule, the three measurements behind it, and the scope
+% boundary (10 m premise fails; sub-metre is where it binds).
+TODO.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Geometric calibration, ground control points, image-to-image translation,
+generative adversarial networks, Sentinel-2, OpenStreetMap.
+\end{IEEEkeywords}
+
+\section{Introduction}
+\input{sections/01-introduction}
+
+\section{Scope: the premise at 10 m}
+\input{sections/02-scope}
+
+\section{Method}
+\input{sections/03-method}
+
+\section{Results}
+\input{sections/04-results}
+
+\section{Train-on-target contamination}
+\input{sections/05-contamination}
+
+\section{Discussion}
+\input{sections/06-discussion}
+
+\section{Conclusion}
+\input{sections/07-conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}
