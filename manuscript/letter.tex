@@ -13,22 +13,25 @@
 
 \begin{document}
 
-\title{Adversarial training degrades the geometric accuracy of synthetic
-reference imagery}
+% Title changed 2026-08-26. The previous title, "Adversarial training degrades the
+% geometric accuracy of synthetic reference imagery", was narrower than the result:
+% C5 carries no discriminator anywhere in its objective and hallucinates hardest of
+% the five arms, so the mechanism is plausibility pressure, not the adversarial term.
+% This is the working title from letter-skeleton.md; letter.tex had never caught up.
+\title{Plausibility Pressure Degrades Generated Reference Imagery
+for Geometric Matching}
 
 \author{Mustafa Vedat Y\i ld\i r\i m and co-author%
 \thanks{Manuscript submitted 2026. Study repository and full experiment records:
 \url{https://github.com/mvy0502/gencp-validation}.}}
 
 \markboth{IEEE Geoscience and Remote Sensing Letters}%
-{Y\i ld\i r\i m: Adversarial training and synthetic reference geometry}
+{Y\i ld\i r\i m: Plausibility pressure and generated reference geometry}
 
 \maketitle
 
 \begin{abstract}
-% One paragraph: the design rule, the three measurements behind it, and the scope
-% boundary (10 m premise fails; sub-metre is where it binds).
-TODO.
+\input{sections/00-abstract}
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -39,23 +42,17 @@ generative adversarial networks, Sentinel-2, OpenStreetMap.
 \section{Introduction}
 \input{sections/01-introduction}
 
-\section{Scope: the premise at 10 m}
-\input{sections/02-scope}
-
-\section{Method}
-\input{sections/03-method}
+\section{Materials and Methods}
+\input{sections/02-methods}
 
 \section{Results}
-\input{sections/04-results}
+\input{sections/03-results}
 
-\section{Train-on-target contamination}
-\input{sections/05-contamination}
+\section{Alternative Explanations}
+\input{sections/04-alternatives}
 
-\section{Discussion}
-\input{sections/06-discussion}
-
-\section{Conclusion}
-\input{sections/07-conclusion}
+\section{Discussion, Limitations, and the Design Rule}
+\input{sections/05-discussion}
 
 \bibliographystyle{IEEEtran}
 \bibliography{refs}

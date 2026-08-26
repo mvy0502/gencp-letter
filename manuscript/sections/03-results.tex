@@ -1,0 +1,58 @@
+% III. RESULTS -- 800 words, Table I, Fig. 1. (Was 04-results.tex.)
+%
+% THE GUIDANCE THAT WAS HERE IS SUPERSEDED. The old comments named T1's C1 row as
+% the lead measurement and cited "mediation 0%". Both are dead:
+%   - paper-roadmap.md:180 -- "the factorial replaces T1's C1 row as the primary
+%     measurement". T1 moved to the second paper along with the ODTU/Cappadocia
+%     contamination pair and E3.
+%   - B3 part 2 (mediation) "does not appear at all -- it is void as stated"
+%     (B2-B3-audit.md, corrections-log entry 20). The reported conditional was the
+%     OLS fitted value at the covariate means, algebraically the raw mean, so
+%     "loses 0% of its magnitude" could not have been a mediation result.
+%
+% Structure, per letter-skeleton.md III (subsection: words):
+%   1. The panel, 80. Table I. Ordering C2 < C5 < C4 < C1 < pretrained.
+%   2. Primary, 120. SEED-LEVEL: C5-C4 negative in all six confirmatory seeds
+%      (45-50), P = 1/64, direction fixed in advance by seed 42. Per-seed:
+%      -0.6153, -0.6462, -0.6162, -0.5942, -0.6054, -0.5775 px. Seed-level mean
+%      -0.609 px, 95% interval [-0.634, -0.585] (df = 5, t* = 2.571) -- REPORTED,
+%      NOT REQUIRED; the registered reading is the sign replication and only that.
+%      Seed 42's -0.487 is the generating observation and falls OUTSIDE the six-seed
+%      range: do not present it as one of the replicates.
+%   3. Interaction -- DEAD, REPLACED IN FULL, NOT AMENDED. The registered seed-level
+%      interaction failed at 5/6 on all three pre-specified scales (raw, log,
+%      within-chip rank), the same seed (46) breaking each. Pre-committed
+%      consequence: no interaction claim; "substitutes" and "the same lever" are
+%      removed from the paper. The 120 words do NOT return to the budget -- they buy
+%      the mandatory disclosure (paper-context-addendum.md §24). Five elements may
+%      not be lost when shortening: registered in advance, all three scales, 5/6
+%      with the same seed breaking each, no claim made, the other block reported
+%      with its weight stated. NEVER write "the interval excludes zero, so the
+%      interaction is real" or anything functioning as it.
+%   4. Secondary, 60. C5-C2 positive in all six seeds, P = 1/64: perceptual
+%      reconstruction carries its own positional penalty with NO discriminator
+%      present. Mean +0.063 px, interval [+0.027, +0.098], reported not required.
+%      STATE the thinnest margin, +0.0068 px at seed 46. This subsection is what
+%      kept the title: had it failed in any seed, the claim would have narrowed from
+%      "plausibility pressure" back to "the adversarial term".
+%   5. Dose-response, 80 + Fig. 2. Penalty by epoch under LPIPS: 0.334 -> 0.254 ->
+%      0.441 -> 0.496 -> 0.487, all >= 6 SE. Same dip-then-grow-then-plateau shape
+%      as the L1 family. B1 is SUPPORT ONLY and must not be presented as the spine:
+%      it is post-hoc, the registered bands did not cover the observed shape.
+%   6. Mechanism, 140 + Fig. 1. The edge-ratio column: C2 0.28 vs C1 1.10 / C4 1.12
+%      / C5 1.16, pretrained ~1.02. With no discriminator anywhere, LPIPS alone
+%      invents most -- the registered primary prediction for C5 and the single
+%      result that widens the claim from "adversarial" to "plausibility pressure".
+%      CARRY the section-22 non-monotonicity caveat (paper-context-addendum.md §22):
+%      the ratio separates the restrained arm from the unrestrained ones but does
+%      NOT order the errors within the unrestrained group. Invention is a necessary
+%      condition, not a complete explanation.
+%   7. Point-count argument, 160 (100 + 60). The objection: L1-only just produces
+%      fewer features, and fewer-but-better is a trivial trade-off. C5 refutes it ON
+%      THIS PANEL, and the panel is named in the sentence: C5 produces more
+%      surviving matches than C2 (median 88 vs 72) and still scores worse. DO NOT
+%      cite the production-path point counts here -- they reverse.
+%
+% B2 stays as the production-path ablation row.
+
+TODO.

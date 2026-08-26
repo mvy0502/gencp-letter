@@ -13,24 +13,37 @@ trail.
 
 ## Scope of this letter
 
-One three-leg narrative (from the study's `paper-roadmap.md`, amended 2026-08-24):
+*Amended 2026-08-26 from the study's `paper-roadmap.md` (amendment at :150-:187). The
+earlier three-leg description in this file is superseded: leg 1 was demoted to
+introduction scope, the old leg 2 moved to the second paper, and the old leg 3's first
+independent measurement changed hands.*
 
-1. **Scope** — at 10 m the premise for synthetic references fails: no availability gap
-   (E1) and no currency advantage (E2). Scope-setting, not results: two or three
-   sentences plus a footnote.
-2. **Where it does bind** — sub-metre resolution, where licensing actually constrains
-   reference choice. E3 is exploratory only and does not appear in the letter.
-3. **Design rule** — if you generate a reference, do not train it with an adversarial
-   loss. Three independent 10 m measurements carry this: T1's C1 row, B2's
-   production-path ablation, and B3's direct mechanism measurement (B3 leads, B1
-   follows as dose-response support and must not be the spine).
+1. **Scope, two sentences in the introduction** — at 10 m the premise for synthetic
+   references fails: no availability gap (E1) and no currency advantage (E2). Not a
+   section and not a result.
+2. **The design rule** — if you generate a reference for a geometric consumer, do not
+   train it under plausibility pressure. The 2x2 factorial is the primary measurement,
+   stated at seed level as a six-seed sign replication; B2 is the production-path row;
+   B3 parts 1 and 3 are mechanism support carrying the section-22 non-monotonicity
+   caveat; B1 follows as dose-response support and must not be the spine.
 
-Plus one independent methods contribution: the ODTÜ contamination pair (same tool,
-same matcher, same distortions; contaminated site 0.008–0.11 px vs clean site
-0.54–3.97 px).
+**The claim is plausibility pressure, not adversarial training.** C5 carries no
+discriminator anywhere in its objective and hallucinates hardest of the five arms. The
+title changed on 2026-08-26 to match.
 
-Out of scope for the letter: E3 and its follow-ups (second paper), the full
-four-alternative-explanations protocol (arXiv long version only).
+**Out of scope for this letter**, and it is a longer list than it was:
+
+- **The ODTU/Cappadocia contamination pair** — moved to the second paper. It is no
+  longer "one independent methods contribution" of this letter; there is no
+  contamination section, table or row.
+- **T1**, including its C1 row, and **E3 and its follow-ups** — second paper.
+- **The registered interaction** — tested, failed 5/6 on all three pre-specified
+  scales, and by a consequence committed in advance no interaction claim is made. The
+  disclosure is mandatory; the words are already budgeted.
+- **B3 part 2 (mediation)** — void as stated (corrections-log entry 20); does not
+  appear at all.
+- **The full four-alternative-explanations protocol** — arXiv long version only. The
+  letter's Table II is three rows.
 
 ## Layout
 
@@ -40,7 +53,8 @@ gencp-letter/
 ├── EVIDENCE.md          # every claim -> study repo commit + document + number
 ├── manuscript/          # LaTeX sources (letter; arXiv variant shares sections/)
 │   ├── letter.tex
-│   ├── sections/
+│   ├── sections/        # 00-abstract, 01-introduction, 02-methods,
+│   │                    # 03-results, 04-alternatives, 05-discussion
 │   └── refs.bib
 ├── figures/             # figures used in the manuscript, plus how each is produced
 │   └── README.md
