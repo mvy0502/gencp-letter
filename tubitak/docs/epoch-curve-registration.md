@@ -70,3 +70,8 @@ NOT POOLED).
 - Fails in one family: that family's curve is shown with the failing cells marked; the
   text says which epochs and seeds; no "at every epoch" sentence for that family.
 - The exploratory shape gets no band-hit language either way.
+
+*Path note, 2026-09-13 (presence-claims audit): `scripts/seed_eval/...` and `docs/evidence/checkpoints_modal_MANIFEST.md` above are written relative to `tubitak/`; from the repository root they are `tubitak/scripts/seed_eval/seed_eval_run.py`, `tubitak/scripts/seed_eval/epoch_sweep_run.py`, `tubitak/scripts/seed_eval/epoch_curve_analysis.py` and `tubitak/docs/evidence/checkpoints_modal_MANIFEST.md`. A stranger typing the paths as written would not find the files.*
+
+*Gate note, 2026-09-13: this registration predates the mechanical self-test gate (practice 15, adopted 13 September) and the pre-commit hook refused to accept the path note above without a gate token. The self-test it describes was re-run under the project interpreter through the gate, with no change to the script:*
+`self-test gate: PASS 8b26310ff4101714 scripts/seed_eval/epoch_curve_analysis.py /opt/homebrew/Caskroom/miniforge/base/envs/gencp/bin/python 2026-09-13T22:23Z`

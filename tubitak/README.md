@@ -2,6 +2,8 @@
 
 > **Repository split, 26 August 2026 — read this before following a link below.**
 >
+> *Note for a reader of this file inside `mvy0502/gencp-validation` (added 13 September 2026): you are already in the repository the paragraph below says the study moved to. The study's registrations, results, corrections log and evidence are in this repository under `tubitak/docs/`, with every evidence file hashed in `tubitak/docs/evidence/MANIFEST.md`; the branch of record is `main`.*
+>
 > The measurement and validation study moved to
 > **https://github.com/mvy0502/gencp-validation**, and the manuscript to
 > **mvy0502/gencp-letter**, which is private - the URL is omitted because it 404s for

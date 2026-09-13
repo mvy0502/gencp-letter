@@ -203,3 +203,84 @@ Every MANIFEST.md row is verified by path, hash and size in the clone.
 
 `https://github.com/mvy0502/gencp-validation` — reachable without credentials?
 
+---
+
+## Checks and outcomes — appended 13 September 2026
+
+**Method.** `git clone https://github.com/mvy0502/gencp-validation.git` into a scratch directory
+with `GIT_TERMINAL_PROMPT=0` and an empty credential helper; the clone landed on `main` at
+`2adc706` (GitHub's default branch is `main`; the remote also carries `master`, the upstream
+fork base of March 2026, and two workspace branches, `tubitak-tool` and `tubitak-tr`). Every
+check below ran inside that clone, by the path the record gives, never by search. Hashes are
+sha256 of the file in the clone; counts are rows or files in the clone.
+
+### 1. Data-availability items (14 items, 173 paths)
+
+| item | outcome | method and result |
+|---|---|---|
+| six-seed block, 12 CSVs | **(a)** | all present, 130 rows each |
+| two-seed block, 4 CSVs | **(a)** | present, 130 rows each |
+| hardware gate, 4 CSVs + results | **(a)** | present, 130 rows each |
+| informative-mask test, 6 CSVs + JSON + registration + results | **(a)** | present, 127 rows each as the results document states |
+| equal-count truncation and minimum-match-count sweep | **(a)** | `common_support.json`, registration and results present |
+| warm-up and LR probes, seed 43, with loss logs | **(a)** | present |
+| six-seed training-loss trend, 24 loss logs | **(a)** | all 24 present |
+| epoch sweep, 24 cells (48 CSVs) + curve outputs + registration + results + checkpoint manifest | **(a)** | all 53 present, 130 rows per cell CSV; `epoch_curve_per_seed.csv` has 12 rows (two families × six seeds), which is its design, not a shortfall |
+| single-seed checkpoint sweep (B1, C45) | **(a)** | present |
+| B3 and packageA registrations and evidence | **(a)** | present |
+| 260 rasters | **(b) → corrected** | 130 + 130 files present under `rasters/`, every hash and size matching — but the manifest rows named them without the `rasters/` prefix (entry 48) |
+| OSM-render premise check | **(a) files; (b) one number** | CSV present with 130 rows; JSON present and its values match the results document except the surviving-point median, 29.5 in the JSON and printed as 30 (entry 49) |
+| corrections log and every registration | **(a)** | 27 registration files and the log present under `tubitak/docs/` (the enumeration listed them without the prefix; the check with the prefix passes) |
+| frozen analysis scripts and the KARIOS config | **(a)** | present |
+
+### 2. MANIFEST.md, 399 rows — the item entry 35 was about
+
+138 rows verified by path, hash and size. **261 failed on the first pass:** the 260 raster rows
+by path (files present under `rasters/`, hashes and sizes all matching), and one stale row for
+`render_baseline_summary.json` (entry 50). After the corrections in this commit the manifest
+was re-verified in the fresh clone: see the closing line of this file.
+`checkpoints_modal_MANIFEST.md` is present; its 96 rows describe off-repository files by
+design and were verified from the Kaggle copy on 13 September.
+
+### 3. Commit SHAs (19)
+
+All 19 resolve in the fresh clone, including `e218f29`, the audited upstream commit, which
+resolves because this repository is a fork of `telespazio-tim/GenCP` and shares its history;
+the GitHub API independently returns it (2025-03-20). **19 of 19.**
+
+### 4. Cited paths (147 distinct citations in the corrections log and the registrations)
+
+116 resolve as written. 31 do not, in three groups: (i) `tubitak/data/...` paths, which name
+the working machine's gitignored data and are off-repository by design (`BACKUP.md`) — 20
+citations, outcome (a) by design; (ii) placeholder patterns (`<stem>`, `{45..50}`, `*`) — a
+notation, not a path; (iii) **paths written relative to `tubitak/` in three registrations**
+(`scripts/seed_eval/...`, `docs/evidence/...`, `docs/gates/`) that a stranger typing them from
+the repository root or from `docs/` would not find — **(b)**, corrected by dated path notes in
+`epoch-curve-registration.md`, `osm-render-baseline-registration.md` and
+`sustained-trend-registration.md`. One cited path, `tubitak/data/tool_runs/B3/B3_run.py`, is
+entry 22's deleted harness and is expected absent.
+
+### 5. The URL
+
+`https://github.com/mvy0502/gencp-validation` returns HTTP 200 without credentials; the
+repository is public; `ls-remote` succeeds with no credential helper.
+
+### A.6 — "available on request"
+
+The statement names no addressee; the author line reads "and co-author" and the letter has no
+corresponding author or contact address. Recorded in the letter's submission checklist as an
+open item tied to the author line, to close when it is filled. Not invented here.
+
+### A.7 — the plain reader path
+
+From the front page a stranger is not led to the paper's evidence. `README.md` is the
+institution-facing Turkish front page for the two QGIS plugins; its one link to the study
+(`docs/dogrulama-calismasi.md`) reaches `tubitak/docs/` and the corrections log but never names
+`evidence/` or `MANIFEST.md`; and `tubitak/README.md` told a reader already inside this
+repository that the study had "moved to gencp-validation". The evidence is present and, once
+the manifest paths are right, obtainable — but only by exploring. Two things done: a dated
+note at the head of `tubitak/README.md` saying where the study's record is, and the letter's
+data-availability statement now names `tubitak/docs/` and `tubitak/docs/evidence/MANIFEST.md`
+explicitly. Not done, proposed: an English paragraph on the front page pointing readers of the
+letter to `tubitak/docs/`, since that page is the institution's and not this session's to
+rewrite.

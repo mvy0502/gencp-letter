@@ -150,3 +150,5 @@ narrows materially, that is the result and it goes in as such.
 
 Script amended (sha16 in the token below) and gated:
 `self-test gate: PASS 4e46b931ad357192 scripts/osm_render_baseline/render_baseline_analysis.py /opt/homebrew/Caskroom/miniforge/base/envs/gencp/bin/python 2026-09-13T21:47Z`
+
+*Path note, 2026-09-13 (presence-claims audit): `scripts/osm_render_baseline/...` above is written relative to `tubitak/`; from the repository root the two scripts are `tubitak/scripts/osm_render_baseline/render_baseline_run.py` and `render_baseline_analysis.py`. `tubitak/data/...` paths name the working machine's gitignored data and are not in the repository by design (see `evidence/BACKUP.md`). A stranger typing the paths as written would not find the files.*

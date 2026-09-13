@@ -243,3 +243,5 @@ So that no step is chosen after seeing a curve:
    disclosure table, never inside the count.
 
 Nothing in this package is downloaded until this registration is committed and pushed.
+
+*Path note, 2026-09-13 (presence-claims audit): `docs/gates/` above is `tubitak/docs/gates/` from the repository root; the loss logs are `tubitak/docs/gates/loss_logs/s{seed}-{arm}-loss_log.txt`. A stranger typing the paths as written would not find the files.*

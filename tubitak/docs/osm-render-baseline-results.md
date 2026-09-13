@@ -17,7 +17,7 @@ positive = render worse, SE across chips. No seed-level statement is made.**
 |---|---|
 | mean of per-chip medians | 0.797 px |
 | median of per-chip medians | 0.583 px |
-| median surviving matches per chip | 30 |
+| median surviving matches per chip | 29.5 |
 | chips with no match at all | 7 of 130 (5.4 %) |
 
 For comparison, Table I's arms (six-seed means): L1-only 1.393 px mean / 0.975 median /
@@ -68,7 +68,7 @@ Against the four fine-tuned arms:
 
 - The residual half of WELL is met: D(render − L1-only) ≤ 0 at ≥ 2 SE in all six seeds,
   raw **and** equal-count (minimum |t| 6.0 raw).
-- The point half of WELL is not met: the render's median surviving points, 30,
+- The point half of WELL is not met: the render's median surviving points, 29.5,
   is far below the L1-only arm's 75.2; and 7 chips
   yield no match at all (5.4 %, below the 20 % POORLY threshold).
 - POORLY is not met on either criterion.
