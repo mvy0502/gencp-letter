@@ -69,7 +69,7 @@
 
 \subsection{The panel}
 
-\begin{table}[t]
+\begin{table*}[t]
 \caption{The five arms over 130 Ankara chips, averaged over the six confirmatory seeds
 (45--50). Residual: per chip, the median KLT positional error (px) over the matches that
 arm itself produced against real Sentinel-2; per seed, the mean and the median of the 130
@@ -79,18 +79,18 @@ per-chip median of surviving matches. Edge ratio: per-arm mean of the per-chip
 input-silent edge ratios (Section II-E). Lower residual is better.}
 \label{tab:panel}
 \centering
-\begin{tabular}{@{}llcccc@{}}
+\begin{tabular}{@{}lcccc@{}}
 \toprule
-Arm & Objective & Mean (px) & Median (px) & Points & Edge ratio \\
+Arm (objective) & Mean (px) & Median (px) & Points & Edge ratio \\
 \midrule
-pretrained & adv.\ + LPIPS (European) & 2.563 & 2.588 & 51 & 1.02 \\
-adv.\ + L1 & adversarial + L1 & 2.070 (0.025) & 1.987 & 62 & 1.09 \\
-L1 & L1 only & \textbf{1.393} (0.037) & \textbf{0.975} & 75 & \textbf{0.28} \\
-adv.\ + LPIPS & adversarial + LPIPS & 2.065 (0.025) & 1.939 & 60 & 1.13 \\
-LPIPS & LPIPS only & 1.456 (0.013) & 1.110 & \textbf{87} & \textbf{1.15} \\
+pretrained (adv.\ + LPIPS, European) & 2.563 & 2.588 & 51 & 1.02 \\
+adversarial + L1 & 2.070 (0.025) & 1.987 & 62 & 1.09 \\
+L1 only & \textbf{1.393} (0.037) & \textbf{0.975} & 75 & \textbf{0.28} \\
+adversarial + LPIPS & 2.065 (0.025) & 1.939 & 60 & 1.13 \\
+LPIPS only & 1.456 (0.013) & 1.110 & \textbf{87} & \textbf{1.15} \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 Table~\ref{tab:panel} gives all five arms over 130 Ankara chips, averaged across six
 independent training seeds. The ordering is \textbf{L1-only $<$ LPIPS-only $<$ the two
