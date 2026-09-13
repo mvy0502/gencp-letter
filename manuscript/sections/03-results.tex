@@ -315,8 +315,11 @@ The warm-up itself attenuates the sustained fall, and the size of the attenuatio
 on where it is measured. Within platform and within seed (the A10G platform, seed 43), the
 L1-only arm's reconstruction loss $G_{\mathrm{L1}}$ falls 5.16\% over its main stage
 un-warmed against 2.98\% warmed, and the LPIPS-only arm's perceptual loss
-$G_{\mathrm{LPIPS}}$ falls 7.98\% against 5.32\%; the controlled gap between adversarial
-and non-adversarial arm shrinks by 35.3\% in the L1 family and 29.7\% in the LPIPS family.
+$G_{\mathrm{LPIPS}}$ falls 7.98\% against 5.32\%; the controlled gap between adversarial and non-adversarial arm shrinks by 35.3\% in the
+L1 family and 29.7\% in the LPIPS family. The gap is a different quantity from the fall:
+it is the adversarial arm's rise minus the non-adversarial arm's fall, 6.19 to 4.00 points
+under L1 and 9.00 to 6.33 under LPIPS, so the percentages are shrinkages of that gap, not
+of the warm-up fall itself, and cannot be derived from the four fall figures alone.
 Measured across platforms instead, against the T4 seed-42 comparators, the same
 attenuation reads 54.3\% and 22.1\%: it overstates one family and understates the other,
 which is what the not-pooled verdict of Section~II-A protected against. The
