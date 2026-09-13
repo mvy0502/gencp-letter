@@ -22,6 +22,10 @@
 % Related work: compressed to ~150 words and 4 citations, each with an explicit
 % non-negotiable justification. Do not let this grow back to 7.
 
+% NOVELTY SEARCH 2026-09-13 (gencp-validation docs/novelty-search-2026-09-13.md): outcome
+% "something close found" — Ma et al. 2024 is a second loss study scored positionally,
+% joint training, adversarial term kept. The Arar sentence and contribution (i) narrowed;
+% Ma 2024, Yu and Jung 2026, Cohen/Luck/Honari 2018 and Sayez 2025 cited, each verified.
 % DRAFTED 2026-09-13. Related work at arXiv length (~220 words, six citations: Liu/Zhang/
 % Xiong and Fuentes Reyes restored per the structural decision of 2026-08-26; Freirich
 % et al. excluded on merit). The claim paragraph is copied from paper-context-addendum.md
@@ -65,19 +69,26 @@ do not contradict: we identify a consumer that sits at the distortion end. Liu, 
 Xiong \cite{liu2019classification} extend the trade-off to a downstream task, but a
 semantic one with an error rate, where a hallucinated texture that stays in class costs
 nothing; in a geometric task an invented edge is a confident, well-localised observation
-of something that does not exist. Arar \emph{et al.}\ \cite{arar2020unsupervised} report
-the only prior loss ablation scored against a registration metric, and its sign is
-opposite to ours: there, translation and registration train jointly, so the adversarial
-term does representation-alignment work inside the loop; here the generated image is a
-frozen deliverable and the matcher is exogenous. Cohen \emph{et al.}\
-\cite{cohen2024looks} prove that pursuing perceptual quality converts uncertainty into
-confidently rendered false detail, which is our mechanism, predicted. Fuentes Reyes
-\emph{et al.}\ \cite{fuentesreyes2019sar} named the phenomenon ``fiction'' in
-SAR-to-optical translation in 2019 and wrote that no suitable metric existed to evaluate
-it; Merkle \emph{et al.}\ \cite{merkle2018exploring} established feeding translation
-output into a matching pipeline, with matching yield as the objective and never as a
-diagnostic. To our knowledge, no prior work has asked whether a matched point on a
-generated image was real.
+of something that does not exist. Two prior loss studies are scored against a positional metric, and both train
+translation and matching jointly. Arar \emph{et al.}\ \cite{arar2020unsupervised}
+ablate loss terms against registration error and find the opposite sign to ours, because
+there the adversarial term does representation-alignment work inside the loop; Ma
+\emph{et al.}\ \cite{ma2024visible} add matching losses to an adversarial baseline and
+score template-matching accuracy and point end-point error. Neither removes the
+adversarial term, and in both the generated image is an intermediate inside the training
+loop; here it is a frozen deliverable and the matcher is exogenous. Cohen, Luck and
+Honari \cite{cohen2018distribution} showed in medical translation that distribution-matching
+losses hallucinate features, and Cohen, Kligvasser \emph{et al.}\ \cite{cohen2024looks}
+prove that pursuing perceptual quality converts uncertainty into confidently rendered
+false detail, which is our mechanism, predicted. Fuentes Reyes \emph{et al.}\
+\cite{fuentesreyes2019sar} named the phenomenon ``fiction'' in SAR-to-optical translation
+in 2019 and wrote that no suitable metric existed to evaluate it; Merkle \emph{et al.}\
+\cite{merkle2018exploring} established feeding translation output into a matching
+pipeline, with matching yield as the objective and never as a diagnostic, and a recent
+optical--SAR registration method avoids the translation stage altogether because of the
+hallucinated textures it risks \cite{yu2026offsetnet}, without measuring them. Prior work
+measures how accurately matches on generated images localise; to our knowledge, none has
+asked whether the structure being matched was present in the input.
 
 The contributions, each to our knowledge new: (i) a $2\times2$ factorial that isolates
 plausibility pressure with a positional outcome, replicated at seed level; (ii) a cheap,

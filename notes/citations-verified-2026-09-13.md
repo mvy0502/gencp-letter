@@ -22,3 +22,12 @@ Trigger: the supervising session found "Chen, Ohayon et al." cited for arXiv:240
 Summary: 4 verified as written, 8 corrected: 2 wrong author lists (entries 39 and 40), 1 title punctuation, 3 with pages and DOI missing, 1 expanded from initials.
 
 Rule adopted (README working rule 6): no bibliography entry is cited until it has a row here naming the record it was checked against.
+
+## Added after the novelty search, 13 September 2026
+
+| Key | Status | Record |
+|---|---|---|
+| `ma2024visible` | **VERIFIED** | Crossref 10.1109/JSTARS.2024.3468456: Decao Ma, Shaopeng Li, Juan Su, Yong Xian, Tao Zhang; IEEE JSTARS 17:18199–18213, 2024. Full text read on IEEE Xplore (CC BY-NC-ND) |
+| `yu2026offsetnet` | **VERIFIED** | Crossref 10.1109/JSTARS.2026.3731425: Jin-Woo Yu, Hyung-Sup Jung; IEEE JSTARS, 2026, pp. 1–18 (early access; volume not yet assigned) |
+| `cohen2018distribution` | **VERIFIED** | Crossref 10.1007/978-3-030-00928-1_60: Joseph Paul Cohen, Margaux Luck, Sina Honari; LNCS (MICCAI 2018), pp. 529–536; arXiv 1805.08841 abstract read |
+| `sayez2025mitigating` | **VERIFIED** | Crossref 10.1051/0004-6361/202555324: Niels Sayez, Christophe De Vleeschouwer, Véronique Delouille, Sabrina Bechet, Laure Lefèvre; Astronomy & Astrophysics 702:A83, 2025 |
