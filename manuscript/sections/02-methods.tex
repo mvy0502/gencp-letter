@@ -38,7 +38,7 @@ pixels at 10~m ground sampling; lower is better.
 
 \subsection{Model and fine-tuning}
 
-We fine-tune a published conditional GAN that renders a Sentinel-2-like image from
+We fine-tune a published conditional GAN \cite{guasch2026gencp} that renders a Sentinel-2-like image from
 OpenStreetMap vectors and land-cover raster: a U-Net-256 generator (54.414~M parameters)
 with a PatchGAN discriminator, trained image-to-image in the direction from map to image.
 Training used 5,577 Turkish image pairs and 20 epochs per arm, under the generator's own
@@ -98,7 +98,7 @@ state it as one.
 
 \subsection{Evaluation}
 
-Residuals are KLT feature matches against real Sentinel-2, at a confidence threshold of
+Residuals are KLT feature matches \cite{saunier2024karios} against real Sentinel-2, at a confidence threshold of
 0.8, over 130 Ankara chips stratified into five quintiles by land-cover information
 density. Every number states its inference path and input provenance. Test-time dropout is
 active---it is the generator's own design, not a defect---and a deterministic mode was

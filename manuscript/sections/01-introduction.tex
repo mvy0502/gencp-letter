@@ -22,4 +22,65 @@
 % Related work: compressed to ~150 words and 4 citations, each with an explicit
 % non-negotiable justification. Do not let this grow back to 7.
 
-TODO.
+% DRAFTED 2026-09-13. Related work at arXiv length (~220 words, six citations: Liu/Zhang/
+% Xiong and Fuentes Reyes restored per the structural decision of 2026-08-26; Freirich
+% et al. excluded on merit). The claim paragraph is copied from paper-context-addendum.md
+% §1 and must not drift from it. E1/E2 are two sentences of scope, per paper-roadmap.md:152.
+
+Satellite georeferencing needs reference imagery to match against, and the standard
+instrument is a database of ground-control-point chips cut from imagery whose geometry is
+trusted. Such imagery is often licensed, and the chips cannot be shared. Generated
+references were proposed to sidestep that: render a Sentinel-2-like image from freely
+available vector and land-cover data, and match the real scene against the rendering.
+
+GenCP \cite{guasch2026gencp} is the instance studied here. A conditional GAN
+\cite{isola2017image} renders a Sentinel-2-like image from OpenStreetMap vectors and a
+land-cover raster. Its published objective for the 10~m model is adversarial +
+$\lambda\cdot$LPIPS \cite{zhang2018lpips} with $\lambda = 100$ and a binary
+cross-entropy discriminator; the upstream text states that the perceptual loss replaced
+L1 to improve performance, and gives no comparison between the two and no ablation of the
+adversarial term.
+
+Two sentences of scope. At 10~m the premise for a generated reference does not bind: over
+24 stratified Turkish extents, none lacked a usable Sentinel-2 scene within a year, and the
+median extent had a cloud-free scene from two days before, the worst from seventeen.\footnote{Scene-per-year
+counts are lower bounds, since the archive query capped at 100 and every extent hit the
+cap; the gap rate and the freshness figures depend only on the most recent usable scene
+and are unaffected.} Nor does currency help: on a rapidly built-up site, a five-year-old
+real scene registered a 2026 target as well on the tiles that changed most as on those
+that changed least, and the registered advantage for a synthetic reference built from
+current OpenStreetMap was absent, $+0.008 \pm 0.031$~px.\footnote{This null is equally
+consistent with ``currency does not help'' and ``OpenStreetMap had not yet recorded the
+change''; separating them needs edit-history analysis that was not done.}
+
+The claim of this letter: plausibility pressure degrades generated reference imagery for
+geometric matching. The adversarial term and a perceptual (LPIPS) reconstruction loss are
+each such a pressure, established separately. Where the conditioning input carries no
+information, a loss that rewards plausibility causes the generator to invent structure. An
+invented edge is a false control point, and for georeferencing a false control point is
+worse than no control point, because it displaces the solution silently.
+
+The theory is the perception--distortion trade-off \cite{blau2018perception}, which we
+do not contradict: we identify a consumer that sits at the distortion end. Liu, Zhang and
+Xiong \cite{liu2019classification} extend the trade-off to a downstream task, but a
+semantic one with an error rate, where a hallucinated texture that stays in class costs
+nothing; in a geometric task an invented edge is a confident, well-localised observation
+of something that does not exist. Arar \emph{et al.}\ \cite{arar2020unsupervised} report
+the only prior loss ablation scored against a registration metric, and its sign is
+opposite to ours: there, translation and registration train jointly, so the adversarial
+term does representation-alignment work inside the loop; here the generated image is a
+frozen deliverable and the matcher is exogenous. Chen, Ohayon \emph{et al.}\
+\cite{chen2024looks} prove that pursuing perceptual quality converts uncertainty into
+confidently rendered false detail, which is our mechanism, predicted. Fuentes Reyes
+\emph{et al.}\ \cite{fuentesreyes2019sar} named the phenomenon ``fiction'' in
+SAR-to-optical translation in 2019 and wrote that no suitable metric existed to evaluate
+it; Merkle \emph{et al.}\ \cite{merkle2018exploring} established feeding translation
+output into a matching pipeline, with matching yield as the objective and never as a
+diagnostic. To our knowledge, no prior work has asked whether a matched point on a
+generated image was real.
+
+The contributions, each to our knowledge new: (i) a $2\times2$ factorial that isolates
+plausibility pressure with a positional outcome, replicated at seed level; (ii) a cheap,
+input-conditioned, reproducible measurement of invention, tied to matchability rather than
+to perception; (iii) a design rule for anyone generating reference imagery for a geometric
+consumer.

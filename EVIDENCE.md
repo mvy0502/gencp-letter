@@ -95,6 +95,18 @@ seed 42 and is false of the block; corrected in III-A on 2026-09-13.
 | 260 seed-independent rasters committed | 130 + 130, 26.4 MB | `evidence/rasters/README.md`, `MANIFEST.md`; entry 35 | `a415e25` |
 | Private backup holds checkpoints, generated images, the 130 unregenerable Ankara inputs | Kaggle `gencp-evidence-backup`, `-2` | `evidence/BACKUP.md`, `paper-context-addendum.md` §13 | `a415e25` |
 
+## Sections I and V — rows added 2026-09-13 when the sections were drafted
+
+| Claim | Value | Source | Commit |
+|---|---|---|---|
+| Upstream objective | adversarial + λ·LPIPS, λ = 100, BCE discriminator; LPIPS backbone not named in the text, VGG in the code; L1→LPIPS substitution stated without comparison or ablation | `paper-context-addendum.md` §16 (69–82), `related-work.md` §6 | `59612e7` |
+| Forest under-representation | train/serve skew ≈ 0.6 px on forest-heavy chips | `open-items.md` item 10 (phase-c-results limitations) | `59612e7` |
+| LPIPS implementation versions | torchmetrics 1.9.0 (ours) vs 0.11.0 (upstream) | `phase-c-lpips-results.md`:217, `phase-c-audit.md`:286 | `59612e7` |
+| E2 headline for the scope sentence | five-year-old real scene (2021) 0.057 px vs GenCP C2 0.120 px mean recovery error; interaction +0.008 ± 0.031 px, ABSENT | `positioning-results.md` E2 | `59612e7` |
+| Common-support count | 69 of 130 chips with zero common points at 2 px, seed 45 | `common-support-registration.md` §2 | `59612e7` |
+| LR-schedule bound (Section II-A) | +0.007 ± 0.034 px, one seed (43, Modal), chip-level; non-adversarial arms only; reverse manipulation not run | `lr-confound-results.md` §3 | `59612e7` |
+| Deterministic-mode bound (Section II-D) | registered ≤ 0.05 px band met on 30 chips, four earlier arms; resolution ≈ 0.15 px | `tool-results.md` Registration A | `59612e7` |
+
 ## Methods — the 1/256 scale bug (one paragraph plus repo pointer)
 
 | Claim | Value | Source | Commit |
@@ -131,6 +143,7 @@ Check `corrections-log.md` before adding any row. Known traps:
 
 | Date | What changed | Rows touched |
 |---|---|---|
+| 2026-09-13 | Sections I and V drafted; rows for their numbers and for three Section II bounds added at gencp-validation `59612e7` | I, V, II |
 | 2026-09-13 | V.1 figure decided (0.593, B2 production path) and given its row; Table I rebuilt from the six-seed block with its inference path; data-availability rows added; rows read at gencp-validation `a415e25` | V.1, Table I, data availability |
 | 2026-08-26 | Evidence trail created at study-repo baseline `612b7f6` | all |
 | 2026-08-26 | Re-pinned to gencp-validation `main` at `284571b`; repository/branch labels corrected (`612b7f6` was labelled `tubitak-tr`, a GenCP branch). Removed the ODTÜ contamination table, the former Leg 2 (T1/sub-metre) and Leg 3's T1 C1 row — all moved to the second paper. Struck the mediation clause from the B3 row. Former Leg 3 renumbered to Leg 2; primary and secondary rows added as placeholders for the six-seed replication | all |

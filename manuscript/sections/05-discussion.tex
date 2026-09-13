@@ -27,4 +27,90 @@
 % E3 does not enter a results table. If it appears at all it is labelled exploratory
 % and only in the arXiv long version -- not here.
 
-TODO.
+% DRAFTED 2026-09-13 at the re-costed length (~710 words; notes/section-V-recost-2026-09-13.md).
+% V.1 figure: 0.593 px, B2 production path (EVIDENCE.md, decided 2026-09-13). V.2 carries
+% no substitutability sentence. Every number below has an EVIDENCE.md row.
+
+\subsection{The design rule}
+
+If you generate a reference image for a geometric consumer, do not train it under
+plausibility pressure. The operational figure, on the production path of the delivered
+tool: on 20 urban Ankara chips the L1-only generator reaches a positional error of
+$0.593 \pm 0.041$~px (BT.601 gray, mean of eight stochastic draws per chip), better than
+the published generator on 20 of 20 chips.
+
+\subsection{Relation to the theory}
+
+The result is an empirical instance of the perception--distortion trade-off
+\cite{blau2018perception} in a geometric setting. The theorem is not contradicted; the
+consumer is identified. A feature matcher lives on the distortion axis, so for a matcher
+the perceptual end of the bound is the wrong end, and a loss that buys perceptual quality
+pays in exactly the currency a matcher spends. What the factorial adds is not a
+refinement of the theory but a statement about who pays for movement along its axis: each
+of two plausibility pressures, the adversarial term and a perceptual reconstruction term,
+is established separately as a positional penalty, at six seeds with the sign fixed in
+advance. Nothing is claimed about how the two combine. The mechanism was predicted: Chen,
+Ohayon \emph{et al.}\ show that pursuing perceptual quality converts uncertainty about the
+ground truth into confidently rendered false detail \cite{chen2024looks}; an invented edge
+is that false detail, instantiated as a control point.
+
+The classical Cram\'er--Rao result for shift estimation, that variance scales inversely
+with gradient energy so that sharper is better, holds for a correct model; ours is a bias
+argument, not a variance argument, and deliberate blurring is already known to reduce
+bias error in sub-pixel displacement estimation \cite{pan2013bias}.
+
+\subsection{Limitations}
+
+The institution's own matching software was never run against these arms, so every
+number here is a proxy; the two matcher-independence registrations bound how much the
+proxy choice matters, and they do not remove it. The discriminator of the published model
+is not available, so every adversarial arm began from a seeded random discriminator, a
+deviation from the published set-up that Section~IV-B shows is not what makes those arms
+lose. OpenStreetMap's own positional accuracy was never separated from the model's error;
+part of the residual attributed to the model is the map's, and the ceiling this implies is
+unmeasured. The perceptual loss was computed with torchmetrics 1.9.0 against the
+upstream's 0.11.0, and LPIPS implementations drift. Known-displacement recovery was not
+run for the LPIPS arms. The training inputs under-represent forest relative to the
+production render path, at a cost of roughly 0.6~px on forest-heavy chips. The harness of
+the descriptor-family matcher test was not preserved, so four of its registered parameters
+are reported as configured rather than as verified.
+
+Five limitations arose after the design was fixed. The learning-rate asymmetry between the
+arm families is disclosed and its consequence bounded in Section~II-A, but the bound is
+chip-level, at one seed, and it tests the schedule on the non-adversarial arms only: it
+does not establish that the adversarial arms would be unaffected by the reverse
+manipulation, which was not run. The evidence behind the original blur-control and
+corrected-georeferencing rows of Table~II did not survive, as the data-availability
+statement details; both rows now rest on other evidence, and two registered outputs of
+that package are permanently unrecoverable. Point-level common support cannot be
+constructed for arms whose keypoints are detected independently, so equal-count truncation
+is the only substitute, it is ranked by a post-treatment score, and no positional contrast
+in this letter is free of post-treatment conditioning. The factorial's 130 chips are one
+city; nothing here establishes transfer to the rest of Turkey, and the European set enters
+only the matcher rows, never the registered positional contrasts. Three registrations were
+found, after the fact, to state a set, a rule or a condition differently from the code
+that implemented it: a branch text with no determinate referent, a poolability rule under
+which one quantity vetoed ten, and a tie rule over four arms implemented over five. In each
+the reading held either way; none was repaired, because a rule rewritten after seeing
+which way it cuts is indistinguishable from one adjusted to pass, and all three are
+disclosed in the corrections log.
+
+Two caveats travel with results stated elsewhere. The null currency result in
+Section~I is equally consistent with ``currency does not help'' and ``the map had not yet
+recorded the change'', and separating them needs edit-history analysis that was not done.
+And the edge ratio separates the restrained arm from the unrestrained ones without
+ordering the errors within the unrestrained group (Section~III-K): invention is a
+necessary condition, not a complete explanation.
+
+\subsection{What generalises}
+
+Not ``GANs are bad''. The claim is about the consumer: any loss that rewards
+plausibility will fill the regions the conditioning input does not constrain, and any
+downstream task that treats structure as evidence of location will pay for it. The same
+test applies wherever a generated image is fed to a matcher: SAR-to-optical translation
+used as a matching bridge, super-resolution applied before registration, and simulated
+references generally. One scope boundary: at 10~m the premise for a generated reference
+does not bind, because real cloud-free imagery is available and current (Section~I);
+sub-metre is where it would, and this letter does not measure there. Every registration,
+result and correction behind this letter is in the open study repository named in the
+data-availability statement.
