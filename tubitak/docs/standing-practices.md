@@ -130,3 +130,20 @@ Rules of general force, collected where future work will see them. Each carries 
     corrections-log entries 30–34 are applied, these three are grouped under one heading in
     the tiering**, so a reader sees one class with three instances rather than three
     unrelated slips. *Done 2026-09-13: entries 36–38 under one heading in Tier 1.*
+
+12. **A drafted corrections-log entry lives in `corrections-log.md` itself, under a
+    "Drafted, not yet applied" heading, from the moment it is drafted — never as a separate
+    file** (2026-09-13). The log is the one document every session re-reads and the one no
+    housekeeping pass rebuilds from a copy; a separate draft file is read by nothing yet and
+    so passes the deletion check ("does anything read it?") by construction. Applying an
+    entry moves it to its tier; an entry still under that heading at the end of a work
+    package is an open item under practice 8. **Entries under that heading are not part of
+    the record.** The manuscript cites "a public corrections log", and a reader arriving from
+    that citation must not read a drafted entry as a correction that was made: a drafted
+    entry is a claim awaiting review, and only an entry in a tier is a correction. This
+    practice is structural rather than exhortative — it makes the failure impossible instead
+    of warning against it. Origin: entry 35's draft, deleted by `6750978` the day after it
+    was committed and reported seventeen days later as never having existed. Distinct from
+    practice 10, which covers "the commit did not take"; this covers "a correct commit was
+    undone by housekeeping with no way to know the file mattered".
+

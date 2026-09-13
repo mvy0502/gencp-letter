@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Epoch sweep at six seeds for the letter's training-time curve (Fig. 2).
+"""Epoch sweep at six seeds for the letter's training-time curve (Fig. 1 as compiled; the skeleton called it Fig. 2).
 
 Registration: docs/epoch-curve-registration.md. ROUTING ONLY: this script stages the
 pulled per-epoch generator checkpoints where the frozen runner expects them and invokes

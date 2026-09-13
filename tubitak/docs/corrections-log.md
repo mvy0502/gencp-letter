@@ -38,6 +38,14 @@ uncheckable**.
 stated something the artifacts do not support. Cheap to fix, and listed anyway, because a
 reader who finds one uncorrected is entitled to wonder what else was never checked.
 
+## Drafted, not yet applied
+
+Entries under this heading are **not part of the record** (standing practice 12). A drafted
+entry is a claim awaiting review; only an entry in a tier below is a correction that was
+made. Drafts are written here and nowhere else, and move to their tier when applied.
+
+*None at present (13 September 2026).*
+
 ## Tier 1 — deviations with substantive defences
 
 | # | date | what was claimed/registered | what was actually true | resolution | where |

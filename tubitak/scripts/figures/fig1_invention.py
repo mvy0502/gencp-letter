@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fig. 1 of the letter: what each arm renders where the input asserts nothing.
+"""The letter's panel figure (Fig. 2 as compiled; the skeleton called it Fig. 1): what each arm renders where the input asserts nothing.
 
 Two Ankara chips from the six-seed panel, chosen by rule and not by eye:
   (a) the chip with the LARGEST input-silent fraction  -- the ceiling case: almost

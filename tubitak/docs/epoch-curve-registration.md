@@ -1,4 +1,4 @@
-# Registration — the training-time curve at six seeds (letter Fig. 2)
+# Registration — the training-time curve at six seeds (letter Fig. 2 as planned; Fig. 1 as compiled, since III-E precedes III-F)
 
 **Registered 13 September 2026, before any cell was scored.** Nothing below has been
 computed at the time of this commit; the checkpoints were being pulled from the Modal

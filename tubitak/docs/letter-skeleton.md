@@ -85,6 +85,10 @@ this is a transfer and not an expansion.**
 
 **Two figures, two tables. Not three of either.**
 
+- *NUMBERING NOTE, 2026-09-13: in the compiled letter the training-time curve is **Fig. 1**
+  (it sits in III-E) and the panel comparison is **Fig. 2** (III-F), because LaTeX numbers by
+  order of appearance and a figure belongs with its discussion. The names below are the
+  skeleton's original and are kept as written; do not "correct" the letter's numbering back.*
 - **Fig. 1** — the three-panel input / generated / real comparison, chip `36SXJ_6_20`. Empty
   input, high-contrast reality, pretrained invents a parcel mosaic, L1-only declines to invent,
   both score the same. It shows the ceiling: information absent from the input cannot be

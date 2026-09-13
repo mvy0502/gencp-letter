@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Registered readings and figure for the training-time curve at six seeds (Fig. 2).
+"""Registered readings and figure for the training-time curve at six seeds (Fig. 1 as compiled; the skeleton called it Fig. 2).
 
 Registration: docs/epoch-curve-registration.md. Reads, per seed S in 45..50:
   epochs 1, 2, 5, 10 from tool_runs/C45_s{S}_modal_e{E}/C45_per_chip.csv

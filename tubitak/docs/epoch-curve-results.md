@@ -15,7 +15,7 @@ adversarial arm worse. Inference at seed level.
 Penalty positive at every scored epoch in every seed: **6/6 at each of the five epochs, in
 both families.** No cell is negative. The consequence rule for "holds in both families"
 applies: the letter's III-E states it at seed level and the six-seed figure replaces the
-seed-42 curve as Fig. 2.
+seed-42 curve as the letter's training-time figure (numbered Fig. 1 in the compiled letter; the skeleton called it Fig. 2).
 
 ### LPIPS family, D = mean(C4 − C5), px
 

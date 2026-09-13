@@ -6,7 +6,19 @@ working machine (gitignored; **not in any repository**). Full sha256 computed lo
 pull; the 16-character prefixes in `pull.log` match. These are the generator checkpoints the
 letter's training-time curve (Fig. 2; `epoch-curve-registration.md`) reads.
 
-96 files, 20,901,728,544 bytes (20.9 GB); file sizes 217,726,189 to 217,726,789 bytes.
+96 files, 20,901,728,544 bytes (20.9 GB); file sizes 217,726,189 bytes (epochs 1, 2, 5) and 217,726,789 bytes (epoch 10).
+
+**The 600-byte difference is established, not presumed** (13 Sep, `seed45/C1/5_net_G.pth`
+against `seed45/C1/10_net_G.pth`, and the size pattern holds across all 96 files: every
+epoch-10 file is exactly 600 bytes larger). A PyTorch checkpoint is a zip archive whose 88
+entries are named with the file's own stem as a prefix (`5_net_G/data.pkl` versus
+`10_net_G/data.pkl`), and `10_net_G` is one byte longer than `5_net_G`. Field by field:
+88 extra name bytes in the local headers plus 88 in the central directory (176), and 424
+extra bytes of local-header alignment padding, which shifts when names lengthen; 176 +
+424 = 600. Compressed payload bytes are identical (217,710,165 in both), the entry sets
+are identical after stripping the prefix, and the loaded state dicts have the same 82 keys
+with the same shapes and dtypes. Nothing about the weights is implied either way; the
+container accounts for the whole difference.
 
 | seed | arm | epoch | sha256 |
 |---|---|---|---|
