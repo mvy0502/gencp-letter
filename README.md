@@ -55,11 +55,35 @@ gencp-letter/
 │   ├── letter.tex
 │   ├── sections/        # 00-abstract, 01-introduction, 02-methods,
 │   │                    # 03-results, 04-alternatives, 05-discussion
+│   ├── drafts/          # the Markdown drafts of II, III, IV (moved here 2026-09-13)
 │   └── refs.bib
 ├── figures/             # figures used in the manuscript, plus how each is produced
 │   └── README.md
 └── notes/               # drafting notes, reviewer replies, submission checklists
 ```
+
+## Where the manuscript lives — decision of 13 September 2026
+
+From 13 September 2026 the manuscript, including its Markdown drafts, lives in this
+repository and nowhere else. The three drafted sections (`draft-section-II.md`,
+`draft-section-III.md`, `draft-section-IV.md`) were **moved** here from
+`gencp-validation/tubitak/docs/` into `manuscript/drafts/`. Their git history stays in
+gencp-validation, where they were written on 26 August 2026 (commits `cadad66`,
+`9b4804d`, `b69f19f`); moving them forward does not erase that.
+
+Why the manuscript does not stay in gencp-validation:
+
+1. **gencp-validation is a delivered artifact.** Someone at the institution has received it.
+   Manuscript churn in a delivered repository blurs what was delivered.
+2. **The paper cites gencp-validation at pinned commits.** A citation target should be
+   stable, not actively changing.
+3. **This repository exists for the manuscript and is private**, which is right for
+   unpublished work. It stays private until the preprint has an arXiv identifier.
+
+gencp-validation keeps what the paper cites and what was delivered: registrations,
+results, audits, the corrections log, evidence, and the standing practices. Nothing in it
+reads the moved drafts (checked by grep across all three repositories before the move; the
+only reference was a path comment in `manuscript/sections/04-alternatives.tex`, updated).
 
 ## Working rules
 
