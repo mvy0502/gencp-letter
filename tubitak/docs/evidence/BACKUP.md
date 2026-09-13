@@ -87,7 +87,7 @@ one is not.
 - Checkpoints **can** be regenerated — expensively, and not byte-identically (see below).
 - The stochastic fakes **cannot be regenerated at all.** pix2pix runs dropout at test time,
   and neither the seed nor the torch version was recorded in any run's option dump
-  (Item D3; now forbidden by standing practice 9). Registration A's stochastic arm is the
+  (Item D3; now forbidden by standing practice 9 *[numbering note 2026-09-13: this is the GenCP `CLAUDE.md` list's practice 9, "every run records its seed and numerics-affecting library versions"; the canonical standing-practices.md has no such practice — its 9 is the audits' fourth leg]*). Registration A's stochastic arm is the
   proven case: re-scoring the **archived** fake reproduces its recorded number exactly
   (2.276977 px, n = 29), while re-generating it cannot.
 - They are the audit trail for every number in the record. 4 GB to keep every scored image
@@ -188,7 +188,7 @@ entries Kaggle actually stores. `--full` counts with Python's `tarfile`, which m
 nothing. Kaggle lists **files only, not directories**.
 
 **Next review: at the next milestone, or whenever a new unregenerable artifact is produced.**
-Standing practice 9 now requires every run to record its seed and its numerics-affecting
+Standing practice 9 *[numbering note 2026-09-13: the GenCP `CLAUDE.md` list's practice 9; not in the canonical standing-practices.md]* now requires every run to record its seed and its numerics-affecting
 library versions, which should over time move artifacts out of the "unregenerable" column
 entirely.
 

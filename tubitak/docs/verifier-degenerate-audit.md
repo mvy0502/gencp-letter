@@ -1,6 +1,6 @@
 # Degenerate-invocation audit of every verifier
 
-Standing practice 10 in `CLAUDE.md` was adopted because the link checker reported
+Standing practice 10 in `CLAUDE.md` *[numbering note 2026-09-13: the GenCP `CLAUDE.md` list's 10; the canonical standing-practices.md has no such practice, and its 10 is the artifacts rule]* was adopted because the link checker reported
 `0 links checked across 0 files; 0 dead` and exited 0 when run with no arguments. This is
 the audit that followed, and the count in the practice comes from here.
 

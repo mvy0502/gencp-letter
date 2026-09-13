@@ -106,7 +106,7 @@ replacement wording is reported, not applied, and the decision is the reader's.
   thing that changes between the European and Ankara columns is which chips are scored.
 - **Arm C2 on both sides**, error column `med_mean32` on both sides.
 - Nothing is re-rendered or re-inferred; both score files are already committed.
-- Numerics per standing practice 9: numpy 2.4.6, onnxruntime 1.29.0.
+- Numerics per standing practice 9 *[numbering note 2026-09-13: the GenCP `CLAUDE.md` list's 9, seed and library versions; the canonical standing-practices.md has no such practice]*: numpy 2.4.6, onnxruntime 1.29.0.
 
 ## What this cannot settle
 

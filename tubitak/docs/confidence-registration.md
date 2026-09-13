@@ -225,7 +225,7 @@ eye.
   corpus is not replayable.
 - **Window size 33, N = 16, seeds 0..15, equal weights** are as written here. Changing any
   of them after seeing a result requires a new registration, and this one is not deleted.
-- **Numerics recorded** with the run, per standing practice 9: torch 2.13.0, numpy 2.4.6,
+- **Numerics recorded** with the run, per standing practice 9 *[numbering note 2026-09-13: the GenCP `CLAUDE.md` list's 9, seed and library versions; the canonical standing-practices.md has no such practice]*: torch 2.13.0, numpy 2.4.6,
   onnxruntime 1.29.0, and the torch seeds above.
 
 ## What ships under which outcome

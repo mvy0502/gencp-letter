@@ -125,7 +125,7 @@ name, the new boundaries, the new per-band medians, and the corpus each came fro
 - **The renders are the committed Overpass ones.** Nothing is re-rendered; that source is
   not replayable.
 - **Window 33, N = 16, seeds 0..15, equal weights** as before.
-- **Numerics recorded** per standing practice 9: torch 2.13.0, numpy 2.4.6,
+- **Numerics recorded** per standing practice 9 *[numbering note 2026-09-13: the GenCP `CLAUDE.md` list's 9, seed and library versions; the canonical standing-practices.md has no such practice]*: torch 2.13.0, numpy 2.4.6,
   onnxruntime 1.29.0.
 
 ## One thing this test cannot settle

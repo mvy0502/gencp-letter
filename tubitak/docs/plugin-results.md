@@ -142,7 +142,7 @@ over all 20 tiles (1,310,720 pixels):
 | fp16 | **94,992 / 1,310,720 (7.2473%)** | 1 DN |
 
 **Decision confirmed: fp32 ships, fp16 is rejected** — but for a correctly stated reason.
-fp16 fails the literal registered bound, and standing practice 6 forbids relaxing a bound
+fp16 fails the literal registered bound, and standing practice 6 *[numbering note 2026-09-13: the GenCP `CLAUDE.md` list's 6; canonical standing-practices.md 4]* forbids relaxing a bound
 after seeing the outcome. Independently of the wording, fp16 changes **7.25% of the output
 bytes against fp32's 0.0085%** — 850x more affected pixels — to save 109 MB out of a
 300 MB footprint. That trade is not worth departing from the gated path for.
@@ -303,7 +303,7 @@ Two things follow, and both are recorded rather than tidied away. First, **the s
 gate's headline flipped between the wrong and right reference**, so the control was not
 ceremony. Second, Registration A's harness was never committed (only its per-chip CSV),
 which is why its reference had to be reconstructed by inference at all — an instance of the
-class standing practice 22 exists to prevent. The reconstructed harness is committed here
+class standing practice 22 *[note 2026-09-13: there is no practice 22; this is corrections-log **entry 22**, B3's harness deleted, and the practice that exists to prevent the class is canonical 10]* exists to prevent. The reconstructed harness is committed here
 as `tubitak/tests/gate_d_*.py`.
 ---
 

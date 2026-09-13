@@ -23,7 +23,9 @@ Phase D's.
 The escape route was found by accident: the warm-up loss logs were committed to
 `docs/gates/loss_logs/` because the originals sat in a temporary directory. That precedent is
 now the policy — see **standing practice 9** in
-[standing-practices.md](../standing-practices.md).
+[standing-practices.md](../standing-practices.md). *[Numbering note 2026-09-13: this is
+canonical practice **10** (numerical artifacts live under `docs/`); 9 is the audits' fourth
+leg. The wrong number is kept as written.]*
 
 ## Verification performed at commit time
 

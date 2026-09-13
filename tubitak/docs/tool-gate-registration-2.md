@@ -128,5 +128,7 @@ path string was wrong.
 
 **Status.** Text corrected; **no result is retracted and no number changes.** Standing
 practice 5 — *registration text must name the exact corpus and the exact reference
-directory* — was added to `CLAUDE.md` because of this defect and the reference-directory
+directory* — was added to `CLAUDE.md` *[numbering note 2026-09-13: the GenCP `CLAUDE.md`
+list's 5; the canonical standing-practices.md has no such practice, and its 5 is the
+inference-path rule]* because of this defect and the reference-directory
 error it later contributed to in Gate D.

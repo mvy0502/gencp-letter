@@ -125,7 +125,7 @@ ambiguous: `1/255` is a normalised-unit value, so "1/255 in 8-bit units" can be 
 (0.003922 DN). The two readings disagree about fp16 and agree about fp32.
 
 This amendment does **not** choose the reading that would change a verdict. Under
-standing practice 6 the stricter reading — the literal one, `<= 0.003922 DN` — remains the
+standing practice 6 *[numbering note 2026-09-13: the GenCP `CLAUDE.md` list's 6, "failed gates are reported, not adjusted"; canonical standing-practices.md numbers that rule 4, and its 6 is the sign convention]* the stricter reading — the literal one, `<= 0.003922 DN` — remains the
 bound, and fp16 remains **failed**. Both readings are now reported side by side, together
 with a unit-free measurement (how many pixels of the final uint8 image actually differ)
 so the decision does not rest on a textual reading at all. The generator ends in `Tanh`,

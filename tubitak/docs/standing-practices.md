@@ -147,3 +147,34 @@ Rules of general force, collected where future work will see them. Each carries 
     practice 10, which covers "the commit did not take"; this covers "a correct commit was
     undone by housekeeping with no way to know the file mattered".
 
+---
+
+## Numbering note — 2026-09-13
+
+**This file is the canonical list.** Every "standing practice N" in the study repository
+resolves here. Two other lists exist and their numbers differ:
+
+- **paper-context-addendum.md §11** — an eight-item summary written 24 August with its own
+  numbering; superseded, with a mapping table at its head.
+- **The GenCP working repository's `CLAUDE.md`, "Standing practices"** — twelve items, not
+  public with the preprint. Mapping, CLAUDE.md → this file: 1 → 1 (invariance); 2 → 5
+  (inference path); 3 → 6 (sign convention); 4 → 4 (registrations before outcomes);
+  5 → *none* (registration text names the exact corpus and reference directory);
+  6 → 4 (failed gates reported, never adjusted); 7 → 7 (checkpointing and counted
+  liveness); 8 → 8 (open items); 9 → *none* (every run records its seed and
+  numerics-affecting library versions); 10 → *none* (every verifier run against
+  known-true, known-false and degenerate invocations); 11 → *none* (a check is born with a
+  failing case); 12 → *none* (unit assumptions checked where made). Four CLAUDE.md
+  practices therefore have no number here; whether they are adopted into this list is a
+  decision not taken in this note.
+
+Citations found on 2026-09-13 that resolved to the wrong practice under this file's numbering
+carry a dated note at the citation; none was silently renumbered. They are: `BACKUP.md`
+(two, "practice 9" meaning CLAUDE.md 9), `confidence-registration.md`,
+`confidence-registration-2.md`, `confidence-registration-3.md` (one each, the same),
+`MANIFEST.md` ("practice 9" meaning this file's 10), `plugin-gate-registrations.md` and
+`plugin-results.md` ("practice 6" meaning CLAUDE.md 6, this file's 4), `plugin-results.md`
+("practice 22", which is corrections-log entry 22), `tool-gate-registration-2.md` and
+`verifier-degenerate-audit.md` (both already say "in CLAUDE.md"; the note makes the
+absence of a canonical number explicit). Origin: the two public documents would otherwise
+resolve one citation to two different rules.

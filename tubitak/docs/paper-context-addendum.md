@@ -487,7 +487,22 @@ are not publicly released.
 
 ## 11. Working practice — these apply to paper work too
 
-Eight standing practices, each adopted after a specific failure:
+> **NUMBERING NOTE, 2026-09-13. The canonical list is [standing-practices.md](standing-practices.md),
+> twelve practices as of this date, and every "standing practice N" in this project resolves
+> against that file.** The eight items below were written on 24 August as a summary with their
+> own numbering, when the canonical list had eight entries; they are kept as written and are
+> **superseded**. They are not a renumbering of the canonical list but a different selection:
+> items 2 and 3 of the canonical list (K-draw averaging; no retraining on production
+> provenance) are absent here, canonical 4 is split into items 4 and 5 here, and canonical 7
+> is split into 6 and 7. Mapping, this list → canonical: 1 → 1; 2 → 5; 3 → 6; 4 → 4;
+> 5 → 4; 6 → 7; 7 → 7; 8 → 8. Canonical 9–12 (registration audits' fourth leg; artifacts
+> under `docs/`; registrations quote the implementing code; drafted entries live in the log)
+> have no counterpart below. A third list, the twelve-item "Standing practices" in the GenCP
+> working repository's `CLAUDE.md`, numbers differently again and is not public with the
+> preprint; citations that mean it say so, per the numbering note in standing-practices.md.
+
+Eight standing practices, each adopted after a specific failure *(superseded summary; see the
+note above)*:
 
 1. Every validation gate states explicitly what it assumes is identical on both sides — data
    source, render path, code path, determinism. Three separate gates were found resting on
@@ -504,7 +519,7 @@ Eight standing practices, each adopted after a specific failure:
 8. At the end of every work package, the open-items register is read from the top and each item
    is closed or explicitly deferred with a written reason.
 
-There is also a corrections log — 18 entries at the time of writing — each recording a claim,
+There is also a corrections log — 18 entries at the time of writing *(40 as of 2026-09-13, plus a "Drafted, not yet applied" heading whose entries are not part of the record)* — each recording a claim,
 what was actually true, how the discrepancy was caught, and what would have caught it sooner.
 Several of the paper's strongest results exist because that log forced a re-examination.
 
