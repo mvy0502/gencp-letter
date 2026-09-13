@@ -208,9 +208,25 @@ was an implicit loss. This section makes the decision explicit.
 |---|---|---|---|
 | Generator checkpoints at epochs 1, 2, 5 and 10, all four fine-tuned arms, seeds 45–50 | 96 | 20.9 GB | the cells the six-seed training-time curve (letter Fig. 2) needs; epoch 20 is the block itself, whose per-chip evaluations are committed |
 
-Copies: the working machine's disk (`tubitak/data/checkpoints_modal/`, gitignored) and the
-Modal volume until it is cleaned. **Open item: a second copy off this machine** (the Kaggle
-evidence-backup datasets are the precedent).
+Copies: the working machine's disk (`tubitak/data/checkpoints_modal/`, gitignored), the
+Modal volume until it is cleaned, and — **since 13 September 2026, verified** — the private
+Kaggle dataset below.
+
+### Backup 3 — Kaggle `vedatyildirim/gencp-evidence-backup-3` (2026-09-13, 20.9 GB)
+
+| item | why |
+|---|---|
+| the 96 generator checkpoints above, flat-named `seed{S}_{ARM}_e{E}_net_G.pth`, plus `checkpoints_modal_MANIFEST.md` | the only inputs to the letter's training-time curve that are not committed; entries 32 and 35 are both about single copies, and a third instance after two recorded ones would not be bad luck |
+
+**Verified the way practice 10 requires: obtainable, with hashes checked from the copy.**
+Every one of the 96 files was downloaded back from Kaggle by name (the whole-dataset
+download endpoint returned 404 while Kaggle was still packaging the archive; per-file
+downloads did not wait on that), hashed from the downloaded copy, and compared with
+`checkpoints_modal_MANIFEST.md`: **96 of 96 matching sha256, 0 mismatched, 0 missing**,
+18:22–18:34 UTC. Logs: `epoch_curve/kaggle_backup3_upload.log` and
+`epoch_curve/kaggle_backup3_verify.log`. Kaggle's documented limits (read from its
+documentation on 13 Sep): 200 GB per dataset and 200 GB of private datasets in total;
+this account now holds about 50 GB. The open item of a second copy is closed.
 
 ### Accepted as unrecoverable by choice
 
