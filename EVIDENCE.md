@@ -126,6 +126,20 @@ median), one value per seed per epoch; epoch 20 is the six-seed block.
 | Exploratory dip-then-grow | 3 of 6 seeds (LPIPS), 5 of 6 (L1): not stable, not claimed | `epoch_curve_summary.json` | `5e32c23` |
 | Seed-42 LPIPS curve (superseded as the curve figure, quoted as the generating run) | 0.334, 0.254, 0.441, 0.496, 0.487 px | `phase-c-lpips-results.md`:176–180 | `a3e1918` |
 
+## P4 rows, 2026-09-13 — restored, added or qualified text
+
+| Claim | Value | Source (line) | Commit |
+|---|---|---|---|
+| 1/256 finding (II-F, restored) | true GSD 10.0390625 m vs 10.0; +0.390625 % = 1/256; 0 at NW, 14.1 m at SE corner; predicted sd 2.89 m vs observed 14.5–17.3 m, ≈3.9 % of reported variance; text-versus-data inconsistency; audited upstream commit `e218f29` | `geometry-finding.md`:233–252; `paper-context-addendum.md` §19; draft text cadad66 block F | `813d2dd` |
+| Warm-up attenuation, within platform and seed (III-J) | G_L1: C2 −5.16 % un-warmed vs C2_warmup −2.98 %; G_LPIPS: C5 −7.98 % vs C5_warmup −5.32 %; controlled gap 6.19 → 4.00 (35.3 %) and 9.00 → 6.33 (29.7 %); Modal seed 43 | `warmup-deconfound-results.md` §4a (lines 286–288, 316–317) | `813d2dd` |
+| Warm-up attenuation, cross-platform (III-J) | 54.3 % (L1) and 22.1 % (LPIPS) against Kaggle seed-42 comparators; kept beside, labelled | `warmup-deconfound-results.md` §4a (lines 340–346) | `813d2dd` |
+| L1-family sign replication (III-B) | C1 − C2 positive 6/6: +0.6749, +0.5868, +0.7010, +0.7544, +0.7024, +0.6444 px; mean +0.6773, CI [+0.6172, +0.7374] | `seed-block-results.md` §1, §5(a) | `813d2dd` |
+| Single-run interaction, first record | −0.212 ± 0.069 px entered the record at commit `6560c8b` (24 Aug 2026) | `git log -S` on `phase-c-lpips-results.md` | `813d2dd` |
+| Production path (V-A) | the delivered tool renders post-fix Geofabrik extracts; the research chips were rendered from a live API; B2 re-measured the headline on that path: 0.593 ± 0.041 px, BT.601-gray KLT, K = 8, n = 20 urban chips | `headline-registrations.md` B2 (:36–51); `headline-results.md` B2; `paper-context-addendum.md` §13 | `813d2dd` |
+| Training-stability rule (III-J) | registered coarse rule: G_LPIPS rising over the first two main-stage epochs; fired at seed 42 (54.37 → 54.65 → 55.02) and was not acted on | `phase-c-lpips-results.md`:37 | `813d2dd` |
+| Chip (II-D) | 228 × 228 pixels at 10 m on the warped grid | `scripts/c45_eval/c45_warp.py` (GRID_N, PX) | `813d2dd` |
+| Match score (II-D) | KLT's per-match `score` column, ranked descending, never by residual | `common-support-registration.md`:73–78 | `813d2dd` |
+
 ## Sections I and V — rows added 2026-09-13 when the sections were drafted
 
 | Claim | Value | Source | Commit |

@@ -247,9 +247,9 @@ Section~III-H, which needs an informative region to compare against.
 \subsection{The point-count argument, and the selection objection}
 
 The obvious objection to the L1-only result is that it simply produces fewer features, and
-fewer-but-better is a trivial trade. The LPIPS-only arm refutes it on this panel,
-which is named in the sentence: it produces more surviving matches than L1-only,
-87 against 75 at the median (Table~\ref{tab:panel}), and still scores worse. The harm is not
+fewer-but-better is a trivial trade. The LPIPS-only arm refutes it on the 130-chip Ankara panel of Table~\ref{tab:panel}: it
+produces more surviving matches than L1-only, 87 against 75 at the median, and still
+scores worse. The harm is not
 about feature count; it is about features with no grounding in the input.
 
 A second, sharper form of the objection is that each arm's residual is a median
@@ -298,6 +298,17 @@ the argument is the one that replicates. The comparison that isolates the discri
 holds the learning-rate schedule fixed on both sides and gives a gap of 6.33 points under
 the perceptual loss; the L1-family figure of 4.00 rests on an arm whose sign is not stable
 and on an attenuation inside the seed spread, and is not quoted as equivalent.
+
+The warm-up itself attenuates the sustained fall, and the size of the attenuation depends
+on where it is measured. Within platform and within seed (the A10G platform, seed 43), the
+L1-only arm's reconstruction loss $G_{\mathrm{L1}}$ falls 5.16\% over its main stage
+un-warmed against 2.98\% warmed, and the LPIPS-only arm's perceptual loss
+$G_{\mathrm{LPIPS}}$ falls 7.98\% against 5.32\%; the controlled gap between adversarial
+and non-adversarial arm shrinks by 35.3\% in the L1 family and 29.7\% in the LPIPS family.
+Measured across platforms instead, against the T4 seed-42 comparators, the same
+attenuation reads 54.3\% and 22.1\%: it overstates one family and understates the other,
+which is what the not-pooled verdict of Section~II-A protected against. The
+within-platform figures are the ones quoted.
 
 \subsection{The honest limit}
 

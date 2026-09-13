@@ -24,6 +24,11 @@
 % carried as \textbf so nothing the draft emphasised is lost; whether IEEE prose keeps it is
 % a later decision. Values that are columns of Table I, which has not been rebuilt from
 % the six-seed block, are wrapped in \tabone{...} and print as visible placeholders.
+% 2026-09-13 (P4 block 1): the 1/256 finding restored to II-F from the 26 Aug draft
+% (cadad66, block F, 109 words), numbers checked against geometry-finding.md and
+% paper-context-addendum.md §19; the deferral to "the extended version" deleted. The
+% 26 Aug cut was the supervising session's decision and its reversal is theirs
+% (corrections-log entry 41).
 %
 % SWEPT 2026-09-13 against the post-replication design. II-A's training description was
 % the 24 August single-seed, single-platform experiment; rewritten to describe the six-seed
@@ -137,10 +142,17 @@ distinction existing hallucination metrics do not draw.
 
 \subsection{Geometry}
 
-Our path corrects a ground-sampling-distance inconsistency in the published resampling
-step; the correction is applied to every chip scored here, so our geometry is not
-identical to the published pipeline's. The finding itself, its magnitude and its bounded
-contribution to the published variance are reported separately in the extended version.
+Resampling $257\times257$ rasters at 10~m to $256\times256$ while copying the transform
+unchanged gives a true ground sampling distance of 10.0390625~m against a declared 10.0~m,
+an error of exactly $1/256$, zero at the north-west corner and reaching 14.1~m at the
+south-east corner of a chip. Our path corrects it, and the correction is applied to every
+chip scored here, so our geometry is not identical to the published pipeline's. The
+qualifier travels with the claim: the systematic component is consistent with the signs
+and magnitudes of the published means, but the predicted standard deviation is 2.89~m
+against an observed 14.5 to 17.3~m, so it accounts for roughly 3.9\% of the reported
+variance and does not invalidate the published conclusions. We describe it as a
+text-versus-data inconsistency, not as a code bug, and pin the audited upstream commit
+(\texttt{e218f29}).
 
 \subsection{Registration statement}
 
