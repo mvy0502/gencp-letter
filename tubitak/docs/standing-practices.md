@@ -147,6 +147,34 @@ Rules of general force, collected where future work will see them. Each carries 
     practice 10, which covers "the commit did not take"; this covers "a correct commit was
     undone by housekeeping with no way to know the file mattered".
 
+13. **Every run records its random seed and the versions of the libraries that affect
+    numerics** — at minimum torch, numpy, and the ONNX runtime if used — **in its option
+    dump** (adopted 2026-09-13 from the GenCP `CLAUDE.md` list, item 9, where it had stood
+    since 2026-08-26). Class: the inputs that determine a run's numerics are recorded with
+    the run. Origin: Registration A's stochastic arm cannot be reproduced byte-for-byte
+    because neither was recorded.
+
+14. **Every verifier is run against a known-true and a known-false case before its verdict
+    is trusted, and also against its degenerate invocations**: no arguments, empty input, a
+    missing file, a path that does not exist. A tool that reports success when given
+    nothing to check is not a check (adopted 2026-09-13 from `CLAUDE.md` item 10). Class:
+    a verifier's verdict is trusted only after the cases that would expose a vacuous
+    verdict have been run. Origin: an audit of all 23 verifiers under three degenerate
+    invocations found 18 that exited 0; verifiers now refuse arguments they do not
+    understand.
+
+15. **A check is born with a failing case.** Write the known-false input first, watch the
+    check report it, and only then trust the check (adopted 2026-09-13 from `CLAUDE.md`
+    item 11). Class: the order of construction — failing case before the check — not the
+    existence of a test afterwards. Origin: three of four checks added late in one package
+    could not have caught anything, each written by someone who believed it worked.
+
+16. **When code assumes a unit, it checks that unit where the assumption is made**
+    (adopted 2026-09-13 from `CLAUDE.md` item 12). Class: an assumed unit is enforced at
+    the point of assumption, not relied on through every caller. Origin: four bugs that are
+    one sentence, *code that assumes metres met a geographic CRS*; see
+    `vectors.require_metric`.
+
 ---
 
 ## Numbering note — 2026-09-13
@@ -161,12 +189,10 @@ resolves here. Two other lists exist and their numbers differ:
   (inference path); 3 → 6 (sign convention); 4 → 4 (registrations before outcomes);
   5 → *none* (registration text names the exact corpus and reference directory);
   6 → 4 (failed gates reported, never adjusted); 7 → 7 (checkpointing and counted
-  liveness); 8 → 8 (open items); 9 → *none* (every run records its seed and
-  numerics-affecting library versions); 10 → *none* (every verifier run against
-  known-true, known-false and degenerate invocations); 11 → *none* (a check is born with a
-  failing case); 12 → *none* (unit assumptions checked where made). Four CLAUDE.md
-  practices therefore have no number here; whether they are adopted into this list is a
-  decision not taken in this note.
+  liveness); 8 → 8 (open items); 9 → 13; 10 → 14; 11 → 15; 12 → 16 (all four adopted 2026-09-13, see above;
+  the earlier version of this note said they had no number here). CLAUDE.md 5 remains
+  without a canonical number: it failed the class test recorded in corrections-log entry
+  43, and may be rewritten and reproposed.
 
 Citations found on 2026-09-13 that resolved to the wrong practice under this file's numbering
 carry a dated note at the citation; none was silently renumbered. They are: `BACKUP.md`

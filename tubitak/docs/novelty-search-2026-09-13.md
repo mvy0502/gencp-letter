@@ -123,3 +123,12 @@ structural difference; contribution (i) is reworded to state the distinction bet
 positional accuracy of matches and whether the matched structure existed; Ma 2024, Yu and
 Jung 2026, Cohen 2018 and Sayez 2025 are cited, each verified against its Crossref record.
 Contributions (ii)–(iv) keep "to our knowledge", now supported by this record.
+
+## Addendum — arXiv API, second run
+
+Every attempt failed: fifteen requests over roughly two hours (five per query, 90 s to
+450 s backoff) returned HTTP 429 on thirteen, HTTP 503 on two, and one read timeout. No
+arXiv count was obtained for any of the three queries. Coverage is not wholly lost:
+OpenAlex indexes arXiv preprints, and the OpenAlex hit lists above include entries whose
+venue is "arXiv (Cornell University)", so arXiv-only papers were reachable through that
+index; a direct arXiv count remains an open item and should be run before submission.
