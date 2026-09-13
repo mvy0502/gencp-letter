@@ -49,8 +49,8 @@ pays in exactly the currency a matcher spends. What the factorial adds is not a
 refinement of the theory but a statement about who pays for movement along its axis: each
 of two plausibility pressures, the adversarial term and a perceptual reconstruction term,
 is established separately as a positional penalty, at six seeds with the sign fixed in
-advance. Nothing is claimed about how the two combine. The mechanism was predicted: Cohen
-\emph{et al.}\ show that pursuing perceptual quality converts uncertainty about the
+advance. Nothing is claimed about how the two combine. The mechanism was predicted: Cohen, Kligvasser \emph{et al.}\ show that pursuing
+perceptual quality converts uncertainty about the
 ground truth into confidently rendered false detail \cite{cohen2024looks}; an invented edge
 is that false detail, instantiated as a control point.
 
@@ -64,9 +64,8 @@ bias error in sub-pixel displacement estimation \cite{pan2013bias}.
 The institution's own matching software was never run against these arms, so every
 number here is a proxy; the two matcher-independence registrations bound how much the
 proxy choice matters, and they do not remove it. The discriminator of the published model
-is not available, so every adversarial arm began from a seeded random discriminator, a
-deviation from the published set-up that Section~IV-B shows is not what makes those arms
-lose. OpenStreetMap's own positional accuracy was never separated from the model's error;
+is not available, so every adversarial arm began from a seeded random discriminator, a deviation from the published set-up that Section~IV-B shows, on a single-seed
+chip-level sweep, is not what makes those arms lose. OpenStreetMap's own positional accuracy was never separated from the model's error;
 part of the residual attributed to the model is the map's, and the ceiling this implies is
 unmeasured. The perceptual loss was computed with torchmetrics 1.9.0 against the
 upstream's 0.11.0, and LPIPS implementations drift. Known-displacement recovery was not
@@ -79,10 +78,12 @@ Five limitations arose after the design was fixed. The learning-rate asymmetry b
 arm families is disclosed and its consequence bounded in Section~II-A, but the bound is
 chip-level, at one seed, and it tests the schedule on the non-adversarial arms only: it
 does not establish that the adversarial arms would be unaffected by the reverse
-manipulation, which was not run. The evidence behind the original blur-control and
-corrected-georeferencing rows of Table~II did not survive, as the data-availability
-statement details; both rows now rest on other evidence, and two registered outputs of
-that package are permanently unrecoverable. Point-level common support cannot be
+manipulation, which was not run. The evidence behind the original blur-control row of Table~II, and behind the
+corrected-georeferencing candidate that no longer has a row, did not survive, as the
+data-availability statement details; the blur row now rests on the six-seed
+informative-mask test, the georeferencing candidate on the design argument of
+Section~IV-D, and two registered outputs of that package are permanently
+unrecoverable. Point-level common support cannot be
 constructed for arms whose keypoints are detected independently, so equal-count truncation
 is the only substitute, it is ranked by a post-treatment score, and no positional contrast
 in this letter is free of post-treatment conditioning. The factorial's 130 chips are one

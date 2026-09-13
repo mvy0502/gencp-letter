@@ -51,9 +51,9 @@ Four explanations compete with the account above. Three are tested and refuted; 
 fourth is answered by the design itself and needs no test.
 
 \begin{table*}[t]
-\caption{Alternative explanations. Rows 1 and 3 are six-seed results; row 2 is a
-single-seed (seed 42), chip-level checkpoint sweep, and its standard errors are across
-chips. The corrected-georeferencing candidate is answered by design in the text
+\caption{Alternative explanations. Row 1 is a six-seed result. Rows 2 and 3 rest on single-seed (seed 42) artifacts:
+row 2 is a chip-level checkpoint sweep whose standard errors are across chips, and row 3's
+two registrations were scored on seed 42's generated images. The corrected-georeferencing candidate is answered by design in the text
 (Section~IV-D) and has no row. $\Delta$ = candidate $-$ baseline, px; negative is better.}
 \label{tab:alt}
 \centering
@@ -186,10 +186,12 @@ The objection. The fine-tuning pairs may be better georeferenced than the data
 the published generator saw, so the advantage would come from the training data rather
 than from the loss.
 
-The answer is in the design and needs no measurement. No registered positional
-contrast compares a fine-tuned arm with the pretrained generator: all four arms are
-fine-tuned on identical pairs, so any georeferencing improvement is common to them and
-cancels.
+The answer is in the design and needs no measurement. None of the registered six-seed positional contrasts compares a fine-tuned arm with
+the pretrained generator: all four arms are fine-tuned on identical pairs, so any
+georeferencing improvement is common to them and cancels. The one registered contrast
+against the pretrained generator in this letter, the operational figure of
+Section~V-A, is a single-seed production-path measurement that supports the design
+rule's number and carries no part of the causal claim.
 
 Why this replaces a measurement we previously reported. An earlier decomposition
 attributed roughly 86\% of the European gain to scatter reduction rather than to a
