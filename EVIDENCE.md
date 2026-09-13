@@ -107,6 +107,9 @@ seed 42 and is false of the block; corrected in III-A on 2026-09-13.
 | Chip (a), largest input-silent fraction | `ank_3_34`, silent 1.000; r: pretrained 1.12, C1 1.18, C2 0.94, C4 1.18, C5 1.15 | `docs/evidence/C45_s45_modal/C45_edge_ratio.csv` (seed 45) | `a3e1918` |
 | Chip (b), median input-silent fraction | `ank_18_29`, silent 0.847 (panel median 0.850); r: pretrained 0.93, C1 0.94, C2 0.36, C4 0.93, C5 0.99 | same | `a3e1918` |
 
+| Fully input-silent chips | 2 of 130 per seed (silent_frac = 1.000), identical across the six seeds | `docs/evidence/C45_s{45..50}_modal/C45_edge_ratio.csv`, counted 2026-09-13 | `a3e1918` |
+| Chips excluded from the informative-mask statistic | 3 per seed, identical across seeds (empty mask or zero real-chip edge fraction), by the registered rule | `informative-mask-results.md`:12–13, :52–53 | `a3e1918` |
+
 ## Sections I and V — rows added 2026-09-13 when the sections were drafted
 
 | Claim | Value | Source | Commit |
