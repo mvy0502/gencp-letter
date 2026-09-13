@@ -497,3 +497,4 @@ sha256, size in bytes, path relative to this directory.
 |---|---|---|
 | `osm_render_baseline/render_per_chip.csv` | `42dd3e6ef30c6d67fe32e84009d45ea88d163fca13072f46f4987e789cd74b7b` | 3,991 |
 | `osm_render_baseline/render_baseline_summary.json` | `d4160055858cd02dca6607c675f85c1f945559e7c31a15ab5903ce43d03c9ae0` | 7,383 |
+| `osm_render_baseline/render_baseline_summary.json` (amended 13 Sep, pretrained equal-count row added) | `b024d5240243a541d637de0899d0cd9045b06ef26264fff581495e5b49337f4d` | 7,531 |

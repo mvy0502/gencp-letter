@@ -40,8 +40,22 @@ Against each fine-tuned arm, one chip-level D per confirmatory seed:
 
 ## Equal-count paired differences (per chip K = min of the two counts, best K by KLT score)
 
-Not constructible against the pretrained arm on this path (its KLT rows are not retained);
-against the four fine-tuned arms:
+*Amendment, 13 September 2026, after the registration's amendment of the same date:* the
+pretrained arm's KLT rows on this path **are** retained (`ankara/run/results/`, 130/130
+chips reproducing `turkey_karios.csv`), so the row that the first version of this document
+called not constructible is constructed from them:
+
+Against the pretrained arm, equal-count: **-1.778 ± 0.109** (t -16.3), over
+123 chips (raw row above: -1.715 ± 0.091 over 123); render better on 121 of 123.
+No reversal, no material narrowing: the equal-count difference is slightly larger than the
+raw one. The band is unchanged.
+
+**Denominators.** Every paired comparison in this document, raw and equal-count, is over
+the **123 chips where the render produced at least one match**; the 7 unmatched chips enter
+only the point-yield criterion, which counts them. Stated here because the first version
+of this document said "over 130 chips" in the inference-path paragraph.
+
+Against the four fine-tuned arms:
 
 | arm | s45 | s46 | s47 | s48 | s49 | s50 | mean | range | min \|t\| |
 |---|---|---|---|---|---|---|---|---|---|
