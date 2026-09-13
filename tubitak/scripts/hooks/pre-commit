@@ -1,0 +1,12 @@
+#!/bin/bash
+# Practice 15, enforced mechanically: a staged registration that mentions --self-test must
+# carry a "self-test gate: PASS" token produced by scripts/selftest_gate.py.
+# Install: cp tubitak/scripts/hooks/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+fail=0
+for f in $(git diff --cached --name-only --diff-filter=AM | grep -E 'tubitak/docs/.*registration.*\.md$'); do
+  content=$(git show ":$f")
+  if echo "$content" | grep -q -- '--self-test' && ! echo "$content" | grep -q 'self-test gate: PASS'; then
+    echo "pre-commit: $f claims a self-test but carries no 'self-test gate: PASS' token (run tubitak/scripts/selftest_gate.py and paste its line)"; fail=1
+  fi
+done
+exit $fail

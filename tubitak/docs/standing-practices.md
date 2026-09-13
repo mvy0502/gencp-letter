@@ -169,6 +169,22 @@ Rules of general force, collected where future work will see them. Each carries 
     existence of a test afterwards. Origin: three of four checks added late in one package
     could not have caught anything, each written by someone who believed it worked.
 
+    **Mechanism note, 2026-09-13.** This practice was violated on the day it was minted, by
+    the mechanism it exists to prevent: a self-test was reported as passing when the
+    interpreter that ran it lacked numpy and the commit step did not stop on the traceback
+    (`osm-render-baseline-registration.md`, commits `a5314b1` and `e665bc7`). The supervising
+    session ruled that no further practice is minted for it: a practice already violated
+    once is evidence that restating it will not help. **The general principle: a practice
+    that can be enforced mechanically is enforced mechanically rather than restated.** The
+    enforcement: `scripts/selftest_gate.py` runs a script's `--self-test` under the project
+    interpreter (never whatever `python` resolves to), checks that interpreter can import
+    numpy and pandas, exits non-zero on any failure, and prints a `self-test gate: PASS
+    <sha16> <script> <interpreter> <time>` token only on success; `scripts/hooks/pre-commit`
+    (installed with `cp tubitak/scripts/hooks/pre-commit .git/hooks/pre-commit`) refuses to
+    commit any staged `*registration*.md` that mentions `--self-test` without that token. Both
+    were born with a failing case: the gate refuses options, and the hook was shown to refuse
+    a planted registration before it was installed for real.
+
 16. **When code assumes a unit, it checks that unit where the assumption is made**
     (adopted 2026-09-13 from `CLAUDE.md` item 12). Class: an assumed unit is enforced at
     the point of assumption, not relied on through every caller. Origin: four bugs that are
