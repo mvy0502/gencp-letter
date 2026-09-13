@@ -117,6 +117,24 @@ Rules of general force, collected where future work will see them. Each carries 
     rule. Origin: entry 35 — 260 rasters listed in the manifest with sha256s were never
     tracked, because `*.tif` swallowed them and nobody read the repository state back.
 
+    **Mechanism, 2026-09-13 (P9 A.1) — the manifest as a check, not a document.** Entry 48
+    showed the final clause was not enough: `284571b` re-prefixed the 260 raster rows,
+    `6750978` copied a stale manifest over them the next day, and for seventeen days every
+    raster row named a path that did not exist while the files sat under `rasters/`. The
+    fourth instance of the class practice 12 was minted for — an index-like file rewritten
+    wholesale from a stale source — and by the P6 precedent no new practice is minted.
+    Instead the pre-commit hook now runs `scripts/manifest_paths_check.py` on every commit:
+    every path a hashed row of `evidence/MANIFEST.md` names must resolve in the index being
+    committed, or the commit is refused. It enforces exactly this practice and its dual — a
+    row is a presence claim, and the check is the look at the time it is written. Born with
+    its failing cases (practice 14): the `6750978` manifest replayed against the current index
+    is refused naming 260 rows; a planted row for a file that does not exist is refused; an
+    evidence file removed from the index with the manifest untouched is refused; removing the
+    manifest itself is refused; an argument is refused; the current tree passes at 399 of
+    399. The check reads the staged manifest and the staged file list, never the working
+    tree, so it judges the commit and not the disk. It does not verify hashes; that remains
+    the fresh-clone re-check of the final clause.
+
 11. **A registration that names a set, a threshold or a condition QUOTES the implementing
     code's expression of it** (2026-08-26). **FORWARD-ONLY.** When a registration fixes a
     reading in prose, the line of code that implements it is quoted in the registration

@@ -128,3 +128,15 @@ betiğinin çıktısıdır; ona hangi eklenti ve hangi sürüm etiketi olduğu, 
 Hakkında**), işletim sistemi, yapılan adımlar ve hata iletisinin tam metni eklenir.
 
 Depo bakım kuralları (üç deponun rolü ve birleştirme yasağı): [MAINTAINERS.md](MAINTAINERS.md).
+
+## For readers of the letter (English)
+
+This repository is the research record behind the GenCP validation letter. The record is
+under [`tubitak/docs/`](tubitak/docs/): every registration, the results documents, the
+corrections log ([`tubitak/docs/corrections-log.md`](tubitak/docs/corrections-log.md)) and
+the standing practices. Every evidence file a reported number rests on is under
+[`tubitak/docs/evidence/`](tubitak/docs/evidence/), hashed row by row in
+[`tubitak/docs/evidence/MANIFEST.md`](tubitak/docs/evidence/MANIFEST.md); the frozen
+analysis scripts are under [`tubitak/scripts/`](tubitak/scripts/). The branch of record is
+`main`. The Turkish sections above describe the two QGIS plugins delivered to the
+institution and are not part of the letter.
