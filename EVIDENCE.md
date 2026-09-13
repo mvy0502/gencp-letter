@@ -136,7 +136,7 @@ chip-level means. Reading: INTERMEDIATE.
 
 | Claim | Value | Source | Commit |
 |---|---|---|---|
-| Render alone | median of per-chip medians 0.583 px; mean of medians 0.797 px; median points 30; 7 of 130 chips with no match | `evidence/osm_render_baseline/render_baseline_summary.json` | `c263e4c` |
+| Render alone | median of per-chip medians 0.583 px; mean of medians 0.797 px; median points 29.5; 7 of 130 chips with no match | `evidence/osm_render_baseline/render_baseline_summary.json` | `c263e4c` |
 | D vs pretrained (raw; equal-count not constructible) | −1.715 ± 0.091 px, t −18.8, render better on 121/123 | same | `c263e4c` |
 | D vs adversarial + L1 | raw −1.148 … −1.224 (mean −1.186); equal-count −1.074 … −1.225 (mean −1.170) | same | `c263e4c` |
 | D vs L1-only | raw −0.444 … −0.559 (mean −0.481), min \|t\| 6.0; equal-count −0.389 … −0.516 (mean −0.461) | same | `c263e4c` |

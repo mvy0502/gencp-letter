@@ -7,6 +7,9 @@
       (see the "Do not quote" table in `EVIDENCE.md`)
 - [ ] Every figure has a row in `figures/README.md` with its regeneration command
 - [ ] Co-authorship and institutional approval confirmed in writing
+- [ ] Corresponding author and a contact address named: the data-availability statement's
+      "available on request" has no addressee while the author line reads "and co-author"
+      (presence-claims audit A.6, 13 Sep 2026); closes with the author line
 - [ ] Study repository state referenced in the manuscript is pushed and public
 - [ ] Seed-level replication result incorporated or its absence stated honestly
 
