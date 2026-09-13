@@ -191,3 +191,34 @@ nothing. Kaggle lists **files only, not directories**.
 Standing practice 9 now requires every run to record its seed and its numerics-affecting
 library versions, which should over time move artifacts out of the "unregenerable" column
 entirely.
+
+---
+
+## Retained on 13 September 2026, and what is accepted as unrecoverable by choice
+
+**Why this section exists.** The table above lists the seed-replication checkpoints as
+deliberately not backed up. That was written while the Modal volume still held them, and it
+made the loss implicit: if the volume were cleaned, every intermediate epoch of every
+confirmatory seed would be gone and no document would have said which ones mattered. Phase D
+was an implicit loss. This section makes the decision explicit.
+
+### Retained (pulled to the working machine, sha256 in `checkpoints_modal_MANIFEST.md`)
+
+| what | files | size | why |
+|---|---|---|---|
+| Generator checkpoints at epochs 1, 2, 5 and 10, all four fine-tuned arms, seeds 45–50 | 96 | 20.9 GB | the cells the six-seed training-time curve (letter Fig. 2) needs; epoch 20 is the block itself, whose per-chip evaluations are committed |
+
+Copies: the working machine's disk (`tubitak/data/checkpoints_modal/`, gitignored) and the
+Modal volume until it is cleaned. **Open item: a second copy off this machine** (the Kaggle
+evidence-backup datasets are the precedent).
+
+### Accepted as unrecoverable by choice
+
+| what | files | size (approx.) | reason |
+|---|---|---|---|
+| Generator checkpoints at the other sixteen epochs (3, 4, 6–9, 11–19) and `latest`, four arms, seeds 45–50 | 408 | 89 GB | no registered measurement reads them; the curve is registered at epochs 1, 2, 5, 10, 20 and a finer curve would be a new registration |
+| Discriminator checkpoints at every epoch, seeds 45–50 | 480 | small per file, not measured | no registered measurement reads a discriminator; the published model ships none |
+| Seed 43 Modal and `_modalwarmup` checkpoints beyond the one representative already kept | — | — | as recorded above |
+
+If the Modal volume is cleaned, these are gone; the record now says so in advance, with the
+reason, rather than discovering it afterwards. Recorded 2026-09-13.
