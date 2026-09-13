@@ -99,3 +99,8 @@ only reference was a path comment in `manuscript/sections/04-alternatives.tex`, 
    `corrections-log.md` before quoting a value; some figures are explicitly marked as
    not quotable.
 5. No emoji in any file in this repository.
+6. **No citation without its record.** Every `refs.bib` entry is verified against its DOI,
+   DataCite, arXiv or proceedings record before it is cited, and the verification is a row
+   in `notes/citations-verified-<date>.md` naming that record. Author lists in the study
+   repository's related-work notes are leads, not records: one of six was wrong
+   (corrections-log entry 39).
