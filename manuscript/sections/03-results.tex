@@ -61,16 +61,44 @@
 % ordering, arm separations, edge-ratio column, surviving-point medians), which has not
 % been rebuilt from the six-seed block, are wrapped in \tabone{...}. Table I itself is not
 % typeset here; the reference is left as a placeholder.
+%
+% TABLE I REBUILT 2026-09-13 from the six-seed block (EVIDENCE.md, "Table I"; script
+% tubitak/scripts/seed_eval/table1_six_seed.py in the study repository). All \tabone{}
+% placeholders removed. III-A corrected: the draft said the ordering is the same in every
+% seed; the two adversarial arms in fact swap in three of six seeds.
 
 \subsection{The panel}
 
-Table~\todo{I: not yet rebuilt from the six-seed block; no table environment typeset}
-gives all five arms over 130 Ankara chips, averaged across six independent training
-seeds. The ordering is \textbf{L1-only $<$ LPIPS-only $<$ adversarial+LPIPS $<$
-adversarial+L1 $<$ pretrained}, from \tabone{1.39}~px to \tabone{2.56}~px, and it is the
-same ordering in every seed. Both adversarial arms sit above both non-adversarial ones;
-the two adversarial arms are separated by \tabone{0.005}~px, and the two non-adversarial
-arms by \tabone{0.063}~px.
+\begin{table}[t]
+\caption{The five arms over 130 Ankara chips, averaged over the six confirmatory seeds
+(45--50). Residual: per chip, the median KLT positional error (px) over the matches that
+arm itself produced against real Sentinel-2; per seed, the mean and the median of the 130
+per-chip medians; entries are means over seeds, with the seed-to-seed s.d.\ of the arm mean
+in parentheses. The pretrained arm was generated once and scored in every seed. Points:
+per-chip median of surviving matches. Edge ratio: per-arm mean of the per-chip
+input-silent edge ratios (Section II-E). Lower residual is better.}
+\label{tab:panel}
+\centering
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+Arm & Objective & Mean (px) & Median (px) & Points & Edge ratio \\
+\midrule
+pretrained & adv.\ + LPIPS (European) & 2.563 & 2.588 & 51 & 1.02 \\
+adv.\ + L1 & adversarial + L1 & 2.070 (0.025) & 1.987 & 62 & 1.09 \\
+L1 & L1 only & \textbf{1.393} (0.037) & \textbf{0.975} & 75 & \textbf{0.28} \\
+adv.\ + LPIPS & adversarial + LPIPS & 2.065 (0.025) & 1.939 & 60 & 1.13 \\
+LPIPS & LPIPS only & 1.456 (0.013) & 1.110 & \textbf{87} & \textbf{1.15} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:panel} gives all five arms over 130 Ankara chips, averaged across six
+independent training seeds. The ordering is \textbf{L1-only $<$ LPIPS-only $<$ the two
+adversarial arms $<$ pretrained}, from 1.39~px to 2.56~px. Three of those positions hold
+in every seed; the two adversarial arms do not order: adversarial+LPIPS scores below
+adversarial+L1 in three seeds and above it in three, and their six-seed means differ by
+0.005~px. Both adversarial arms sit above both non-adversarial ones in every seed, and the
+two non-adversarial arms are separated by 0.063~px.
 
 \subsection{Primary result}
 
@@ -133,12 +161,12 @@ a dose.}
 
 \subsection{Mechanism}
 
-The edge-ratio column of Table~\todo{I} measures, per chip, how much structure an arm
+The edge-ratio column of Table~\ref{tab:panel} measures, per chip, how much structure an arm
 renders where the conditioning input asserts none, relative to the real image.
 \textbf{With no discriminator anywhere, the perceptual loss alone invents the most:
-\tabone{1.15} against \tabone{1.13} for adversarial+LPIPS, \tabone{1.09} for
-adversarial+L1 and \tabone{1.02} for the pretrained generator.} L1-only is the outlier in
-the other direction at \tabone{0.28}. Every value is a six-seed mean and the ordering holds
+1.15 against 1.13 for adversarial+LPIPS, 1.09 for
+adversarial+L1 and 1.02 for the pretrained generator.} L1-only is the outlier in
+the other direction at 0.28. Every value is a six-seed mean and the ordering holds
 in all six.
 
 This was the registered prediction for the LPIPS-only arm, and it is the single result
@@ -151,7 +179,7 @@ arm that has one.}
 The obvious objection to the L1-only result is that it simply produces fewer features, and
 fewer-but-better is a trivial trade. \textbf{The LPIPS-only arm refutes it on this panel},
 which is named in the sentence: it produces more surviving matches than L1-only,
-\tabone{88} against \tabone{72} at the median, and still scores worse. The harm is not
+87 against 75 at the median (Table~\ref{tab:panel}), and still scores worse. The harm is not
 about feature count; it is about features with no grounding in the input.
 
 \textbf{A second, sharper form of the objection is that each arm's residual is a median
@@ -169,7 +197,7 @@ A remaining explanation is that L1-only is simply blurrier, and that the matcher
 smoother imagery. \textbf{Computing the same edge ratio on the complementary mask---the
 pixels where the input does assert structure---separates the two, because blur suppresses
 edges uniformly while restraint suppresses them conditionally.} L1-only reproduces the
-real image's edge density to within 1.5\% there (0.986) while sitting at \tabone{0.277}
+real image's edge density to within 1.5\% there (0.986) while sitting at 0.277
 where the input says nothing: a factor of 3.6 between the two masks, in all six seeds,
 against thresholds fixed in advance. A smoothing explanation predicts suppression on both
 masks. \textbf{The suppression is conditional on what the input knows.}
