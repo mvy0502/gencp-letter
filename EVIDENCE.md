@@ -126,6 +126,23 @@ median), one value per seed per epoch; epoch 20 is the six-seed block.
 | Exploratory dip-then-grow | 3 of 6 seeds (LPIPS), 5 of 6 (L1): not stable, not claimed | `epoch_curve_summary.json` | `5e32c23` |
 | Seed-42 LPIPS curve (superseded as the curve figure, quoted as the generating run) | 0.334, 0.254, 0.441, 0.496, 0.487 px | `phase-c-lpips-results.md`:176–180 | `a3e1918` |
 
+## Section III-L — the OSM render as a reference (registered and scored 2026-09-13)
+
+Registration `osm-render-baseline-registration.md` (`a5314b1`, amended `e665bc7`); results
+`osm-render-baseline-results.md` (`c263e4c`). Inference path: one number per chip, render
+seed-invariant; every comparison a paired chip-level difference over 130 chips, D = render −
+arm, SE across chips; fine-tuned arms compared per seed and quoted as the range of the six
+chip-level means. Reading: INTERMEDIATE.
+
+| Claim | Value | Source | Commit |
+|---|---|---|---|
+| Render alone | median of per-chip medians 0.583 px; mean of medians 0.797 px; median points 30; 7 of 130 chips with no match | `evidence/osm_render_baseline/render_baseline_summary.json` | `c263e4c` |
+| D vs pretrained (raw; equal-count not constructible) | −1.715 ± 0.091 px, t −18.8, render better on 121/123 | same | `c263e4c` |
+| D vs adversarial + L1 | raw −1.148 … −1.224 (mean −1.186); equal-count −1.074 … −1.225 (mean −1.170) | same | `c263e4c` |
+| D vs L1-only | raw −0.444 … −0.559 (mean −0.481), min \|t\| 6.0; equal-count −0.389 … −0.516 (mean −0.461) | same | `c263e4c` |
+| D vs adversarial + LPIPS | raw −1.129 … −1.217 (mean −1.173); equal-count −1.100 … −1.266 (mean −1.177) | same | `c263e4c` |
+| D vs LPIPS-only | raw −0.526 … −0.572 (mean −0.554); equal-count −0.511 … −0.593 (mean −0.557) | same | `c263e4c` |
+
 ## P4 rows, 2026-09-13 — restored, added or qualified text
 
 | Claim | Value | Source (line) | Commit |
