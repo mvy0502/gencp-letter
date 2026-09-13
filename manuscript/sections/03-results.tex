@@ -356,9 +356,10 @@ Moving to equal counts did not shrink the render's advantage against the pretrai
 generator but grew it, from 1.715 to 1.778~px over the same chips; that is the direction
 the minimum-match-count sweep of Section~III-G also moves, and two independent
 truncations moving the same way is evidence against a selection-artefact account of the
-render's advantage, to the extent those two numbers support it. It matches on far fewer points: a median of 29.5 surviving matches per chip against 75 for
-L1-only and 87 for LPIPS-only, and 7 of the 130
-chips yield no match at all. The registered ``matches well'' reading required both the
+render's advantage, to the extent those two numbers support it. It matches on far fewer points: a median of 29.5 surviving matches per chip, taken over
+all 130 chips with the 7 chips that yield no match at all counted as zero, against 75 for
+L1-only and 87 for LPIPS-only, each a median over the same 130 chips, on every one of which
+that arm matched, averaged over the six seeds. The registered ``matches well'' reading required both the
 residual and the point count, and the point count fails it; the registered ``matches
 poorly'' reading is not met either. The comparison set bounds the residual half of this finding and is named as such: the
 123 chips are the ones on which the render matched, and they are not a random subset of
