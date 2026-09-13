@@ -318,8 +318,8 @@ un-warmed against 2.98\% warmed, and the LPIPS-only arm's perceptual loss
 $G_{\mathrm{LPIPS}}$ falls 7.98\% against 5.32\%; the controlled gap between adversarial and non-adversarial arm shrinks by 35.3\% in the
 L1 family and 29.7\% in the LPIPS family. The gap is a different quantity from the fall:
 it is the adversarial arm's rise minus the non-adversarial arm's fall, 6.19 to 4.00 points
-under L1 and 9.00 to 6.33 under LPIPS, so the percentages are shrinkages of that gap, not
-of the warm-up fall itself, and cannot be derived from the four fall figures alone.
+under L1 and 9.00 to 6.33 under LPIPS, so the percentages are shrinkages of that gap, computed on unrounded values, not of the
+warm-up fall itself, and cannot be derived from the four fall figures alone.
 Measured across platforms instead, against the T4 seed-42 comparators, the same
 attenuation reads 54.3\% and 22.1\%: it overstates one family and understates the other,
 which is what the not-pooled verdict of Section~II-A protected against. The
@@ -343,22 +343,27 @@ The obvious question this letter invites is why a generated reference is needed 
 why not match the real scene against the rasterised OpenStreetMap render itself? This was
 registered and run as a premise check after the factorial, with both outcomes and their
 bands fixed in advance, and with the Table~\ref{tab:panel} arms' matcher and settings
-unchanged. The render is seed-invariant, so the measurement yields one number per chip and
-every comparison here is a paired chip-level difference over the 130 chips; no seed-level
-statement is available or made. The answer is intermediate, and it is reported with every
+unchanged. The render is seed-invariant, so the measurement yields one number per chip; every
+comparison here is a paired chip-level difference over the 123 chips on which the render
+produced at least one match, and no seed-level statement is available or made. The answer is intermediate, and it is reported with every
 number. Where the render matches, it localises better than every generated arm: its
-per-chip median residual is 0.583~px (mean of medians 0.797~px), and the paired chip-level
-difference render minus arm is $-1.715 \pm 0.091$~px against the pretrained generator,
-between $-1.15$ and $-1.22$~px against adversarial + L1, between $-1.13$ and $-1.22$~px
+per-chip median residual is 0.583~px (mean of medians 0.797~px), and the paired chip-level difference render minus arm over those 123 chips is
+$-1.715 \pm 0.091$~px against the pretrained generator, between $-1.15$ and $-1.22$~px against adversarial + L1, between $-1.13$ and $-1.22$~px
 against adversarial + LPIPS, between $-0.53$ and $-0.57$~px against LPIPS-only and between
-$-0.44$ and $-0.56$~px against L1-only across the six seeds' arms, every one at six
-standard errors or more, and the equal-count truncation of Section~II-D leaves each of
-them within 0.02~px of its raw value. It matches on far fewer points: a median of 30
+$-0.44$ and $-0.56$~px against L1-only across the six seeds' arms, every one at six standard errors or more; the equal-count truncation of Section~II-D
+leaves each fine-tuned comparison within 0.02~px of its raw value and gives
+$-1.778 \pm 0.109$~px against the pretrained generator, over the same 123 chips. It matches on far fewer points: a median of 30
 surviving matches per chip against 75 for L1-only and 87 for LPIPS-only, and 7 of the 130
 chips yield no match at all. The registered ``matches well'' reading required both the
 residual and the point count, and the point count fails it; the registered ``matches
-poorly'' reading is not met either. What remains of the case for a generated reference is
-therefore point yield and coverage, not positional accuracy; Section~III-G's argument that
+poorly'' reading is not met either. The comparison set bounds the residual half of this finding and is named as such: the
+123 chips are the ones on which the render matched, and they are not a random subset of
+the panel but the chips whose vector content is rich enough to match, so the render's
+residual advantage is established conditional on its own success, on those chips and not
+on all 130. This is the selection objection Section~III-G raises for the arms, and it
+applies here in the same form. It does not weaken the point-yield half, which counts the
+failures rather than conditioning on them. What remains of the case for a generated
+reference is therefore point yield and coverage, not positional accuracy; Section~III-G's argument that
 fewer-but-better is not a trivial trade applies to the render as it applies to the arms,
 and the equal-count comparison, which is the test that argument demands, still favours the
 render. No sweep, no other matcher and no other site were run, and nothing is claimed

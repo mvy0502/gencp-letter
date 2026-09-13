@@ -105,7 +105,10 @@ training setup and we state it as one.
 
 Residuals are KLT feature matches \cite{saunier2024karios} against real Sentinel-2, at a confidence threshold of
 0.8, over 130 Ankara chips, each a $228\times228$-pixel window at 10~m, stratified into five
-quintiles by land-cover information density. Every number states its inference path and input provenance. Test-time dropout is
+quintiles by land-cover information density. Every number states its inference path and input provenance, and band handling is part
+of it: the residuals of Table~I and of Section~III-L are KLT run on the three-band warped
+rasters; the invention measurement of II-E and Fig.~2 use a BT.601 gray conversion; the
+production-path figure of Section~V-A is KLT on the BT.601 gray band. Test-time dropout is
 active---it is the generator's own design, not a defect---and a deterministic mode was
 measured to be score-neutral within $\pm0.15$~px on 30 chips and the earlier arms; the
 bound was not re-measured for the LPIPS arms.

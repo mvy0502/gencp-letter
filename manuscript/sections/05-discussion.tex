@@ -34,7 +34,9 @@
 \subsection{The design rule}
 
 If you generate a reference image for a geometric consumer, do not train it under
-plausibility pressure. The operational figure comes from the delivered reference generator's own render path,
+plausibility pressure; and justify the generator by point yield and coverage, measured
+against the rasterised input itself as the baseline rather than assumed, because on
+positional accuracy alone the baseline wins (Section~III-L). The operational figure comes from the delivered reference generator's own render path,
 which we call the production path: the tool renders its inputs from downloaded
 OpenStreetMap extracts, whereas the research chips of Sections~II to IV were rendered
 from a live map API, and the headline was re-measured on the production path so that

@@ -143,6 +143,10 @@ chip-level means. Reading: INTERMEDIATE.
 | D vs adversarial + LPIPS | raw −1.129 … −1.217 (mean −1.173); equal-count −1.100 … −1.266 (mean −1.177) | same | `c263e4c` |
 | D vs LPIPS-only | raw −0.526 … −0.572 (mean −0.554); equal-count −0.511 … −0.593 (mean −0.557) | same | `c263e4c` |
 
+| D vs pretrained, equal-count (amendment) | −1.778 ± 0.109 px, t −16.3, render better on 121/123; from the retained rows at `ankara/run/results/` (130/130 reproduce `turkey_karios.csv`) | `osm-render-baseline-results.md` amendment | `f27f710` |
+| Denominators, III-L | 123 chips (render matched) for every raw and equal-count comparison; the 7 unmatched chips enter only the point-yield criterion | `render_baseline_summary.json` (`n` fields) | `f27f710` |
+| Band handling (II-D) | Table I and III-L: KARIOS on three-band warped rasters; II-E and Fig. 2: BT.601 gray; V-A: KLT on BT.601 gray | `c45_karios.py`; `c45_edge_ratio.py`; `headline-registrations.md` B2 | `f27f710` |
+
 ## P4 rows, 2026-09-13 — restored, added or qualified text
 
 | Claim | Value | Source (line) | Commit |
