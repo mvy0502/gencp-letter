@@ -89,6 +89,23 @@ Rules of general force, collected where future work will see them. Each carries 
     permanently unverifiable) is the earlier instance of the same class that this practice
     exists to stop recurring for a third time.
 
+    **Extension, 2026-09-13 — the dual: claims that evidence is absent.** This practice
+    governs claims that evidence is present. Its dual is governed here too, because three
+    instances in eighteen days (corrections-log entries 35, 42 and 44) made a pattern in the
+    most dangerous place a paper has: **a claim about whether evidence exists — present or
+    absent, retained or lost, regenerable or not — is itself a claim requiring evidence. It is
+    verified by a look at the time it is written, and the method of looking is recorded
+    beside it.** The look is not the working tree: it includes the full history of both
+    repositories with deleted files, every backup, every run-output directory the claim does
+    not mention, and any external record the claim rests on. A claim that names its own search
+    is evidence; a claim that does not is an assertion, and the record now distinguishes the
+    two by outcome — confirmed absent, found, or genuinely ambiguous — as
+    [absence-claims-audit-2026-09-13.md](absence-claims-audit-2026-09-13.md) does for every
+    such claim that existed on that date. Placed here rather than minted as a sixteenth
+    practice because it states the same class as this practice from the other side, and the
+    practice-11 test is met: the class is the claim about existence, not the three instances
+    that prompted it.
+
     **Final clause, added 2026-09-13 by corrections-log entry 35.** After an evidence commit,
     **verify from a fresh clone that the files are actually there.** Not `git status`, which
     is silent about ignored paths, and not `git log`, which reports what was committed rather
