@@ -49,7 +49,47 @@
 
 Four explanations compete with the account above. Three are tested and refuted; the
 fourth is answered by the design itself and needs no test.
-Table~\todo{II: three rows, not yet typeset} summarises; the prose gives each row the
+
+\begin{table*}[t]
+\caption{Alternative explanations. Rows 1 and 3 are six-seed results; row 2 is a
+single-seed (seed 42), chip-level checkpoint sweep, and its standard errors are across
+chips. The corrected-georeferencing candidate is answered by design in the text
+(Section~IV-D) and has no row. $\Delta$ = candidate $-$ baseline, px; negative is better.}
+\label{tab:alt}
+\centering
+\small
+\begin{tabular}{@{}p{2.6cm}p{4.6cm}p{6.2cm}p{2.9cm}@{}}
+\toprule
+Candidate & Test & Result & Verdict \\
+\midrule
+It is blur, not restraint &
+The edge ratio recomputed on the complementary mask, where the input asserts structure;
+six seeds; bands 0.80 and 0.50 fixed in advance &
+L1-only 0.986 on the informative mask against 0.277 where the input is silent, a factor
+of 3.6, in every seed; the other arms 1.03--1.05 on the informative mask &
+Refuted: suppression is conditional on the input, which blur cannot produce \\
+\addlinespace
+Cold-started discriminator damage &
+Checkpoint sweep at epochs 1, 2, 5, 10, 20 against the pretrained generator and the
+counterpart arm &
+Adversarial + L1 already better than pretrained at epoch 1, $-0.399 \pm 0.064$ (6.3
+s.e.); its deficit against L1-only $+0.546$ at epoch 1 and $+0.700$ at epoch 20, dipping
+to $+0.384$ at epoch 5 &
+Refuted: the wrong sign for startup damage; shape read off the curve, not a band \\
+\addlinespace
+Optimising the evaluation metric &
+(a) Descriptor family: ORB, AKAZE, mutual information, paired on chip intersections;
+(b) matcher family: KLT, NCC template grid, phase correlation, two band conversions, an
+urban subset, 6,510 comparisons &
+(a) L1-only ahead in every family; ORB $-0.613 \pm 0.135$ ($n = 29$), MI a lower bound;
+(b) ordering preserved in every cell but two, both far below threshold; the template
+matcher widened the margin in all eight combinations &
+Refuted by two registrations sharing no matcher, chip set or code \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Table~\ref{tab:alt} summarises; the prose gives each row the
 evidence that supports it and the caveat that qualifies it.
 
 \subsection{It is blur, not restraint}
