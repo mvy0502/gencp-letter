@@ -284,3 +284,5 @@ data-availability statement now names `tubitak/docs/` and `tubitak/docs/evidence
 explicitly. Not done, proposed: an English paragraph on the front page pointing readers of the
 letter to `tubitak/docs/`, since that page is the institution's and not this session's to
 rewrite.
+
+**Closing line.** The corrections were committed at `359355d` and pushed; the fresh clone was pulled to that commit and the manifest re-verified by path, hash and size: 398 of 398 live rows pass, 0 fail, and the one row marked superseded is skipped by design. The first attempt at this commit was refused by the practice-15 pre-commit hook, because `epoch-curve-registration.md` predates the gate and mentions its self-test without a token; the gate was run on the unchanged script and its line pasted as a dated note before the commit was retried. Recorded 13 September 2026.
