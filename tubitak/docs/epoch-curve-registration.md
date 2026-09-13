@@ -75,3 +75,6 @@ NOT POOLED).
 
 *Gate note, 2026-09-13: this registration predates the mechanical self-test gate (practice 15, adopted 13 September) and the pre-commit hook refused to accept the path note above without a gate token. The self-test it describes was re-run under the project interpreter through the gate, with no change to the script:*
 `self-test gate: PASS 8b26310ff4101714 scripts/seed_eval/epoch_curve_analysis.py /opt/homebrew/Caskroom/miniforge/base/envs/gencp/bin/python 2026-09-13T22:23Z`
+
+*Numbering and gate note, 2026-09-13 (P9 C.3, C.4): from this date the compiled letter numbers this figure Fig. 3, because a design figure (II-B) and a sign-replication figure (III-B) enter ahead of it; the title's "Fig. 1 as compiled" and line 69's "Fig. 2" are left as written. The plotting block of `epoch_curve_analysis.py` was changed to a grayscale-safe encoding (black solid vs gray dashed) and nothing else; the analysis outputs regenerated from the committed evidence are byte-identical to `evidence/epoch_curve/`. Gate on the changed script:*
+`self-test gate: PASS e76f9892e8db9b5f scripts/seed_eval/epoch_curve_analysis.py /opt/homebrew/Caskroom/miniforge/base/envs/gencp/bin/python 2026-09-13T23:00Z`

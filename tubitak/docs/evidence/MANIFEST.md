@@ -498,3 +498,14 @@ sha256, size in bytes, path relative to this directory.
 | `osm_render_baseline/render_per_chip.csv` | `42dd3e6ef30c6d67fe32e84009d45ea88d163fca13072f46f4987e789cd74b7b` | 3,991 |
 | `osm_render_baseline/render_baseline_summary.json` **(superseded 13 Sep by the amended file in the row below; this hash is the c263e4c version and no longer matches the committed file)** | `d4160055858cd02dca6607c675f85c1f945559e7c31a15ab5903ce43d03c9ae0` | 7,383 |
 | `osm_render_baseline/render_baseline_summary.json` (amended 13 Sep, pretrained equal-count row added) | `b024d5240243a541d637de0899d0cd9045b06ef26264fff581495e5b49337f4d` | 7,531 |
+
+### Added 2026-09-13 — the letter's figure scripts (P9 C.4)
+
+Paths are relative to this directory, so the scripts appear as `../../scripts/...`; `scripts/manifest_paths_check.py` normalises them and refuses the commit if any is missing. The hash pins the script that produced the figure named in `gencp-letter/figures/README.md`; the figures themselves live in the letter repository and are regenerated, never edited.
+
+| file | sha256 | bytes |
+|---|---|---|
+| `../../scripts/figures/fig_design.py` | `f16121905c2ea2f4a92b2b96a694032ab3aef541e69e4dc950244fd1acd3d2ca` | 4,415 |
+| `../../scripts/figures/fig_sign_replication.py` | `b01cc1660b3577c19887ddbbe4ca605c23a9731d72b633543999bd3750e6aacc` | 4,400 |
+| `../../scripts/figures/fig1_invention.py` | `1360f37452d5be378e82eabb7be3646e03194ad43f44a79dcf45a4f264a2d903` | 4,527 |
+| `../../scripts/seed_eval/epoch_curve_analysis.py` | `e76f9892e8db9b5f93e967f02535facea4384dca9ae6a942c270918e1db8c94d` | 6,114 |

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Registered readings and figure for the training-time curve at six seeds (Fig. 1 as compiled; the skeleton called it Fig. 2).
+"""Registered readings and figure for the training-time curve at six seeds (Fig. 3 as compiled from 13 Sep 2026, P9 C.3, when two figures entered ahead of it; Fig. 1 as compiled before that; the skeleton called it Fig. 2).
 
 Registration: docs/epoch-curve-registration.md. Reads, per seed S in 45..50:
   epochs 1, 2, 5, 10 from tool_runs/C45_s{S}_modal_e{E}/C45_per_chip.csv
@@ -83,12 +83,14 @@ def main():
         print("  mean by epoch:", {e: round(v, 4) for e, v in R[fam]["mean_by_epoch"].items()})
     import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
     fig, ax = plt.subplots(figsize=(3.5, 2.4))
-    for fam, color, lab in (("LPIPS", "#1f77b4", "LPIPS family: (adv.+LPIPS) $-$ (LPIPS)"),
-                            ("L1", "#d62728", "L1 family: (adv.+L1) $-$ (L1)")):
+    # Grayscale-safe since 13 Sep 2026 (P9 C.4): the two families were blue and red, which print
+    # to nearly the same gray (BT.601 luma 100 vs 92); now black solid circles vs mid-gray dashed squares.
+    for fam, color, ls, mk, lab in (("LPIPS", "black", "-", "o", "LPIPS family: (adv.+LPIPS) $-$ (LPIPS)"),
+                                    ("L1", "0.45", "--", "s", "L1 family: (adv.+L1) $-$ (L1)")):
         for s in SEEDS:
-            ax.plot(EPOCHS, [D[fam][s][e] for e in EPOCHS], color=color, alpha=0.25, lw=0.6)
+            ax.plot(EPOCHS, [D[fam][s][e] for e in EPOCHS], color=color, ls=ls, alpha=0.3, lw=0.6)
         m = [R[fam]["mean_by_epoch"][e] for e in EPOCHS]; sd = [R[fam]["sd_by_epoch"][e] for e in EPOCHS]
-        ax.errorbar(EPOCHS, m, yerr=sd, color=color, lw=1.4, marker="o", ms=3, capsize=2, label=lab)
+        ax.errorbar(EPOCHS, m, yerr=sd, color=color, ls=ls, lw=1.4, marker=mk, ms=3, capsize=2, label=lab)
     ax.axhline(0, color="k", lw=0.5); ax.set_xscale("log"); ax.set_xticks(EPOCHS); ax.set_xticklabels([str(e) for e in EPOCHS])
     ax.set_xlabel("training epoch (log scale)", fontsize=7); ax.set_ylabel("adversarial penalty, px", fontsize=7)
     ax.tick_params(labelsize=6); ax.legend(fontsize=6, frameon=False, loc="lower right")

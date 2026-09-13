@@ -86,6 +86,7 @@ this is a transfer and not an expansion.**
 **Two figures, two tables. Not three of either.**
 
 - *NUMBERING NOTE, 2026-09-13: in the compiled letter the training-time curve is **Fig. 1**
+- *NUMBERING NOTE, later on 2026-09-13 (P9 C.3): two figures now precede both — the design figure (II-B) is **Fig. 1** and the sign-replication figure (III-B) is **Fig. 2**; the training-time curve is **Fig. 3** and the panel comparison **Fig. 4**. Every skeleton-era Fig. 1 / Fig. 2 below keeps its old meaning; see `gencp-letter/notes/figure-renumbering-2026-09-13.md`.*
   (it sits in III-E) and the panel comparison is **Fig. 2** (III-F), because LaTeX numbers by
   order of appearance and a figure belongs with its discussion. The names below are the
   skeleton's original and are kept as written; do not "correct" the letter's numbering back.*

@@ -68,3 +68,5 @@ attached to the shape. Nothing beyond the registered reading is claimed from thi
   analysis self-test (planted negative → FAILED) was run before registration.
 - Per-cell edge ratios were also produced by the runner as a by-product; they are committed,
   unregistered, and not read by anything.
+
+*Numbering note, 2026-09-13 (P9 C.3): from this date the compiled letter numbers the curve Fig. 3 (two figures entered ahead of it); line 18's "Fig. 1" and line 57's skeleton-era "Fig. 2" refer to the same figure. Its encoding is grayscale-safe from this date; the numbers are unchanged.*

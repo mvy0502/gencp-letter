@@ -11,7 +11,7 @@ Origin: corrections-log entries 35 and 48. The 260 raster rows pointed at paths 
 exist from 27 August (6750978 reverted the prefix 284571b had applied) until 13 September,
 and nothing noticed, because the manifest was a document and not a check.
 """
-import re, subprocess, sys
+import posixpath, re, subprocess, sys
 MANIFEST = "tubitak/docs/evidence/MANIFEST.md"
 ROW = re.compile(r"^\| `([^`]+)`[^|]*\| `[0-9a-f]{64}` \| [\d,]+ \|")
 
@@ -32,13 +32,14 @@ def main():
         print("manifest check: no manifest in the index, nothing to check"); return
     index = set(git("ls-files", "--cached", "-z").stdout.split("\0"))
     rows = [ROW.match(l).group(1) for l in staged.stdout.splitlines() if ROW.match(l)]
-    missing = [p for p in rows if f"tubitak/docs/evidence/{p}" not in index]
+    # rows may point outside the evidence directory as ../../scripts/...; normalise before the lookup
+    missing = [p for p in rows if posixpath.normpath(f"tubitak/docs/evidence/{p}") not in index]
     if not rows:
         sys.exit("manifest check: the staged manifest has no hashed rows; refusing to certify an empty manifest")
     if missing:
         print(f"manifest check: {len(missing)} of {len(rows)} manifest rows name a path that is not in the index:")
         for p in missing[:10]:
-            print(f"  tubitak/docs/evidence/{p}")
+            print(f"  {posixpath.normpath(f'tubitak/docs/evidence/{p}')}")
         if len(missing) > 10:
             print(f"  ... and {len(missing) - 10} more")
         sys.exit(1)
