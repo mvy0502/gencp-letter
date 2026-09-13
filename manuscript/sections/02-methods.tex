@@ -19,4 +19,110 @@
 % section. If a number is being reported rather than a procedure described, it
 % belongs in III.
 
-TODO.
+% Migrated from manuscript/drafts/draft-section-II.md (Draft 1, 2026-08-26) on
+% 2026-09-13. Prose only, transcribed without compression or correction. Markdown bold is
+% carried as \textbf so nothing the draft emphasised is lost; whether IEEE prose keeps it is
+% a later decision. Values that are columns of Table I, which has not been rebuilt from
+% the six-seed block, are wrapped in \tabone{...} and print as visible placeholders.
+
+\textbf{Sign convention, used throughout this letter: $\Delta$ = candidate $-$ baseline, so
+a negative $\Delta$ means the candidate is better.} Residuals are positional errors in
+pixels at 10~m ground sampling; lower is better.
+
+\subsection{Model and fine-tuning}
+
+We fine-tune a published conditional GAN that renders a Sentinel-2-like image from
+OpenStreetMap vectors and land-cover raster: a U-Net-256 generator (54.414~M parameters)
+with a PatchGAN discriminator, trained image-to-image in the direction from map to image.
+Training used 5,577 Turkish image pairs, 20 epochs, one seed per arm on a single T4 GPU,
+under the generator's own linear schedule---ten epochs at the base learning rate followed
+by ten decaying to zero.
+
+The arms carrying an adversarial term also carry a two-epoch warm-up at $2\times10^{-5}$
+before eighteen main epochs at $10^{-4}$; the arms without one run twenty main epochs at
+$10^{-4}$. \textbf{Integrated over training this gives the adversarial arms 13.40 against
+15.00 in units of $10^{-4}$ epochs, a 10.67\% deficit, borne by the arms that score
+worse.} The warm-up exists because joint training from a randomly initialised
+discriminator at full learning rate is unstable, so the asymmetry is a property of the
+design rather than an accident of it.
+
+\textbf{Its consequence is measured rather than assumed negligible.} Giving a
+non-adversarial arm that exact schedule moves its positional residual by
+$+0.007 \pm 0.034$~px, roughly 1\% of the 0.647~px gap the schedule would have to explain
+(one seed, chip-level bound). \textbf{The LPIPS-only versus L1-only contrast is immune to
+it by construction}, both arms being un-warmed twenty-epoch arms at identical integrated
+learning rate.
+
+\subsection{The design}
+
+A $2\times2$ factorial crosses an adversarial term with the reconstruction loss:
+adversarial + L1, L1 alone, adversarial + LPIPS, and LPIPS alone. \textbf{Held fixed across
+all four cells:} training data, seed, initialisation, evaluation chips, matcher, and
+matcher configuration. \textbf{The learning-rate schedule is an explicit exception to that
+list, quantified in II-A, not an omission from it.}
+
+The published pretrained weights already occupy the adversarial-plus-LPIPS cell, trained
+on European data rather than fine-tuned on ours; they are reported as a fifth arm rather
+than presented as an empty cell. Our adversarial-plus-LPIPS and LPIPS-only arms reproduce
+\textbf{the repository's executable definition} of the published objective---adversarial
++ $\lambda\cdot$LPIPS with $\lambda = 100$ and a binary cross-entropy
+discriminator---since the published text does not name the LPIPS backbone and the released
+code uses VGG.
+
+\subsection{Disclosure}
+
+The discriminator is not published; only the generator is deposited. Every arm with an
+adversarial term therefore begins from a randomly initialised, seeded discriminator,
+recorded in a provenance file per run. Section IV shows this is not what causes the
+adversarial arms to lose, but it is a deviation from the published training setup and we
+state it as one.
+
+\subsection{Evaluation}
+
+Residuals are KLT feature matches against real Sentinel-2, at a confidence threshold of
+0.8, over 130 Ankara chips stratified into five quintiles by land-cover information
+density. Every number states its inference path and input provenance. Test-time dropout is
+active---it is the generator's own design, not a defect---and a deterministic mode was
+measured to be score-neutral within $\pm0.15$~px.
+
+\textbf{Each arm's chip residual is a median over the matches that arm itself produced,
+and the arms do not produce equally many:} median surviving points are \tabone{51} for the
+pretrained generator, \tabone{59} for adversarial + L1, \tabone{62} for adversarial +
+LPIPS, \tabone{72} for L1 alone and \tabone{88} for LPIPS alone. \textbf{This is selection
+on a post-treatment variable and we name it as such.}
+
+We test it by equalising counts. On each chip every arm is truncated to the best $K$ of its
+own matches, ranked by match score, where $K$ is the smallest count any arm achieved on
+that chip; the LPIPS-only arm surrenders 38\% of its points and the adversarial-plus-LPIPS
+arm 7\%. A minimum-match-count sweep over all four arms jointly is reported alongside it.
+\textbf{Both are reported in Section III.}
+
+\textbf{Point-level common support is not constructible here, and we report that rather
+than approximating it.} KLT keypoints are detected independently per arm on that arm's own
+generated image, so the arms share no point identity: at a two-pixel tolerance, 69 of 130
+chips have no common points at all, and a tolerance wide enough to yield a usable set would
+exceed the 1.4--2.0~px residuals under test and absorb the signal. Equal-count truncation
+is therefore the only available substitute. It is ranked by match score and never by
+residual, which would be circular; \textbf{match score is itself post-treatment, so this
+removes the count asymmetry rather than all conditioning, and no result here is unbiased.}
+
+\subsection{The invention measurement}
+
+Input-silent pixels are those with canonical Sobel response $\le 20$ on the input render.
+For each chip we take the edge fraction (Sobel $> 20$) of an arm's output over the real
+chip's edge fraction on those same pixels, and report the per-chip ratio per arm.
+\textbf{The denominator is the input, not the ground truth, deliberately:} it separates
+\emph{invented where nothing was known} from \emph{wrong where something was known}---a
+distinction existing hallucination metrics do not draw.
+
+\subsection{Geometry}
+
+Our path corrects a ground-sampling-distance inconsistency in the published resampling
+step; the correction is applied to every chip scored here, so our geometry is not
+identical to the published pipeline's. The finding itself, its magnitude and its bounded
+contribution to the published variance are reported separately in the extended version.
+
+\subsection{Registration statement}
+
+\textbf{Experiments were pre-registered where stated; deviations from the registered
+protocol are documented in a public corrections log.}

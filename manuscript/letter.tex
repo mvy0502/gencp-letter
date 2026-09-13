@@ -8,6 +8,15 @@
 \usepackage{amsmath}
 \usepackage{booktabs}
 \usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+
+% Placeholder macros, added 2026-09-13 with the first migrated sections.
+% \todo{...}   -- an unresolved item, printed visibly in red.
+% \tabone{...} -- a value that is a column of Table I, which has not been rebuilt from the
+%                 six-seed block. The drafted value is kept visible so nothing is lost;
+%                 the marker comes off only when EVIDENCE.md carries the rebuilt row.
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\newcommand{\tabone}[1]{\textcolor{red}{[T1:\,#1]}}
 
 \graphicspath{{../figures/}}
 
