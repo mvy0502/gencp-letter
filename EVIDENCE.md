@@ -49,6 +49,52 @@ factorial replaces it (`paper-roadmap.md`:180).*
 | Seed defence | pre-registered n >= 60 single-draw rule; regA det/stoch bound <= 0.05 px; measured effects 0.38–0.70 px | `positioning-registrations.md`, `tool-results.md`, `headline-results.md` | `284571b` |
 | Blur vs restraint (Table II row 3) | six-seed informative-mask edge ratio; C2 reproduces real edge density to within 1.5% where the input asserts structure — selective suppression, not blur | `informative-mask-results.md` | `284571b` |
 
+## Section V.1 — the operational figure (decided 2026-09-13: B2, production path)
+
+| Claim | Value | Source | Commit |
+|---|---|---|---|
+| Design rule's operational figure | C2 = 0.593 ± 0.041 px, production path (POST inputs), BT.601 KLT, K = 8, n = 20 urban chips; better than pretrained on 20/20 chips (C2 − pretrained −0.777 ± 0.125); C2 − C1 −0.171 ± 0.042 (19/20) | `tubitak/docs/headline-results.md` B2 ("institution-facing sentence"); reproduced from raw in `B2-B3-audit.md`, 384/384 cells | `a415e25` |
+
+Not chosen, recorded so it is not re-litigated: packageA's urban headline C2 = 0.591 px
+(BT.601 KLT, n = 20, off-path) — the same measurement on the earlier input path; the
+production path is what makes the figure operational.
+
+## Table I — the five-arm panel, rebuilt from the six-seed block (2026-09-13)
+
+Inference path, stated once for every cell: per chip, the median KLT residual (px) over the
+matches that arm itself produced against real Sentinel-2, 130 Ankara chips; per seed, the
+mean (or median) of those 130 per-chip medians; the table entry is the mean over the six
+confirmatory seeds 45–50 (Modal A10G block). The pretrained arm's images were generated once
+and scored in every seed's evaluation, so its row is seed-invariant. Points = per-chip median
+of surviving matches, averaged over seeds. Edge ratio = per-arm mean of the 130 per-chip
+input-silent ratios, averaged over seeds. Computed by
+`tubitak/scripts/seed_eval/table1_six_seed.py` from `docs/evidence/C45_s{45..50}_modal/`;
+the per-seed contrasts it reproduces match `seed-block-results.md` §1 to four decimals.
+
+| Arm | Mean px | Seed sd | Median px | Points | Edge ratio | Commit |
+|---|---|---|---|---|---|---|
+| pretrained | 2.563 | — | 2.588 | 51 | 1.02 | `a415e25` |
+| adversarial + L1 (C1) | 2.070 | 0.025 | 1.987 | 62 | 1.09 | `a415e25` |
+| L1 (C2) | 1.393 | 0.037 | 0.975 | 75 | 0.28 | `a415e25` |
+| adversarial + LPIPS (C4) | 2.065 | 0.025 | 1.939 | 60 | 1.13 | `a415e25` |
+| LPIPS (C5) | 1.456 | 0.013 | 1.110 | 87 | 1.15 | `a415e25` |
+
+Ordering: C2 < C5 < {C1, C4} < pretrained in every seed. **The two adversarial arms are not
+ordered across seeds**: C4 below C1 in seeds 47, 48 and 50, above it in 45, 46 and 49; the
+six-seed means differ by 0.005 px. The draft's "same ordering in every seed" was true of
+seed 42 and is false of the block; corrected in III-A on 2026-09-13.
+
+## Data-availability statement
+
+| Claim | Value | Source | Commit |
+|---|---|---|---|
+| Phase D: six of seven checks and the veto rule have no artifact; scripts never committed; input imagery gone | as stated | `phase-d-audit.md` §C, `phase-d-closeout.md` D-2 | `a415e25` |
+| Two registered Phase D outputs permanently unrecoverable | check 5's Ankara floor sweep; check 7a's per-stratum gains | `phase-d-closeout.md` D-4; corrections-log entry 33 | `a415e25` |
+| B3 harness not preserved; four matcher parameters as configured | as stated | corrections-log entry 22 | `a415e25` |
+| Per-seed arm images not committed (650 files × 6 seeds); re-inference is stochastic | as stated | `evidence/rasters/README.md` | `a415e25` |
+| 260 seed-independent rasters committed | 130 + 130, 26.4 MB | `evidence/rasters/README.md`, `MANIFEST.md`; entry 35 | `a415e25` |
+| Private backup holds checkpoints, generated images, the 130 unregenerable Ankara inputs | Kaggle `gencp-evidence-backup`, `-2` | `evidence/BACKUP.md`, `paper-context-addendum.md` §13 | `a415e25` |
+
 ## Methods — the 1/256 scale bug (one paragraph plus repo pointer)
 
 | Claim | Value | Source | Commit |
@@ -85,5 +131,6 @@ Check `corrections-log.md` before adding any row. Known traps:
 
 | Date | What changed | Rows touched |
 |---|---|---|
+| 2026-09-13 | V.1 figure decided (0.593, B2 production path) and given its row; Table I rebuilt from the six-seed block with its inference path; data-availability rows added; rows read at gencp-validation `a415e25` | V.1, Table I, data availability |
 | 2026-08-26 | Evidence trail created at study-repo baseline `612b7f6` | all |
 | 2026-08-26 | Re-pinned to gencp-validation `main` at `284571b`; repository/branch labels corrected (`612b7f6` was labelled `tubitak-tr`, a GenCP branch). Removed the ODTÜ contamination table, the former Leg 2 (T1/sub-metre) and Leg 3's T1 C1 row — all moved to the second paper. Struck the mediation clause from the B3 row. Former Leg 3 renumbered to Leg 2; primary and secondary rows added as placeholders for the six-seed replication | all |

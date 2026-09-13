@@ -1,0 +1,31 @@
+% DATA AVAILABILITY -- added 2026-09-13. IV-D says the Phase D loss is "disclosed in the
+% data-availability statement"; until this file existed there was no such statement.
+% Sources: phase-d-audit.md §C, phase-d-closeout.md D-2/D-4, corrections-log entries 22
+% and 32-33, evidence/BACKUP.md, evidence/rasters/README.md, paper-context-addendum.md §13.
+
+The study repository (\url{https://github.com/mvy0502/gencp-validation}) holds every
+registration, the corrections log, and the per-chip artifacts the reported numbers derive
+from: per-chip residuals and surviving-point counts for all five arms at each of the six
+confirmatory seeds and the two earlier seeds; the per-chip edge ratios on both masks; the
+260 seed-independent rasters the edge-ratio measurement reads; the equal-count truncation
+outputs; and the frozen analysis scripts, each pinned by hash in the registration that
+freezes it.
+
+Three things are not available, and are stated here rather than in a footnote. First, the
+alternative-explanations package that originally supported the blur-control and
+corrected-georeferencing rows of Table~II: six of its seven registered checks and its veto
+rule have no surviving per-chip artifact, the scripts that produced them were never
+committed, and the generated imagery they consumed no longer exists, so the procedures
+cannot be re-run. Two of its registered outputs---a point-floor sensitivity sweep at Ankara
+and per-stratum gains---are permanently unrecoverable, and it cannot now be determined
+whether they ran and went unreported or never ran. The 86\% scatter decomposition cited in
+Section~IV-D is among the lost results, which is why that row is answered by design. Second,
+the harness of the descriptor-family matcher test was not preserved, so four of its
+registered matcher parameters are reported as configured rather than as verified. Third,
+the generated images of the fine-tuned arms at each seed are not in the repository;
+re-inferring them is a stochastic path, because test-time dropout is active by the
+generator's design, so a re-run is a replication and not a reproduction. Training
+checkpoints and generated images are held in a private backup and are available on request.
+The 130 Ankara evaluation inputs were rendered from a live map API with no dated archive
+and cannot be regenerated; they are in the same backup. The discriminator of the published
+model is not available from its authors.

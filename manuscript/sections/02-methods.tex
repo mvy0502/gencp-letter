@@ -24,6 +24,13 @@
 % carried as \textbf so nothing the draft emphasised is lost; whether IEEE prose keeps it is
 % a later decision. Values that are columns of Table I, which has not been rebuilt from
 % the six-seed block, are wrapped in \tabone{...} and print as visible placeholders.
+%
+% SWEPT 2026-09-13 against the post-replication design. II-A's training description was
+% the 24 August single-seed, single-platform experiment; rewritten to describe the six-seed
+% A10G block, the earlier T4 runs, and the NOT POOLED hardware gate. II-B's "seed" in the
+% held-fixed list scoped to within-replicate. II-D's surviving-point medians replaced by
+% six-seed values; the common-support count and the deterministic-mode bound now say at
+% which seed and on which arms they were measured. The LR-asymmetry paragraph is unchanged.
 
 \textbf{Sign convention, used throughout this letter: $\Delta$ = candidate $-$ baseline, so
 a negative $\Delta$ means the candidate is better.} Residuals are positional errors in
@@ -34,9 +41,20 @@ pixels at 10~m ground sampling; lower is better.
 We fine-tune a published conditional GAN that renders a Sentinel-2-like image from
 OpenStreetMap vectors and land-cover raster: a U-Net-256 generator (54.414~M parameters)
 with a PatchGAN discriminator, trained image-to-image in the direction from map to image.
-Training used 5,577 Turkish image pairs, 20 epochs, one seed per arm on a single T4 GPU,
-under the generator's own linear schedule---ten epochs at the base learning rate followed
-by ten decaying to zero.
+Training used 5,577 Turkish image pairs and 20 epochs per arm, under the generator's own
+linear schedule---ten epochs at the base learning rate followed by ten decaying to zero.
+
+The factorial was trained in full at six independent seeds (45--50) on one platform, one
+A10G GPU per run; that block is the confirmatory evidence behind every seed-level statement
+in Section III. It was preceded by the run that generated the hypothesis (seed 42) and by a
+two-seed block (seeds 43 and 44), both on a different platform, one T4 GPU per run. Before
+the six-seed block was launched, seed 43 was re-trained on the first platform and the two
+platforms were compared under a poolability rule registered in advance. The rule returned
+\emph{not pooled}: one of eleven registered quantities, the edge ratio of the adversarial
++ L1 arm, differed across platforms by more than its seed-to-seed spread. The two platforms
+are therefore analysed as separate blocks throughout, seed counts are reported per block,
+and no pooled statistic appears anywhere in this letter. The six-seed block carries the
+inference; the two-seed block is reported for consistency only.
 
 The arms carrying an adversarial term also carry a two-epoch warm-up at $2\times10^{-5}$
 before eighteen main epochs at $10^{-4}$; the arms without one run twenty main epochs at
@@ -57,8 +75,9 @@ learning rate.
 
 A $2\times2$ factorial crosses an adversarial term with the reconstruction loss:
 adversarial + L1, L1 alone, adversarial + LPIPS, and LPIPS alone. \textbf{Held fixed across
-all four cells:} training data, seed, initialisation, evaluation chips, matcher, and
-matcher configuration. \textbf{The learning-rate schedule is an explicit exception to that
+all four cells within each replicate:} training data, seed, initialisation, evaluation
+chips, matcher, and matcher configuration; the seed varies across the six replicates and
+never within one. \textbf{The learning-rate schedule is an explicit exception to that
 list, quantified in II-A, not an omission from it.}
 
 The published pretrained weights already occupy the adversarial-plus-LPIPS cell, trained
@@ -83,12 +102,13 @@ Residuals are KLT feature matches against real Sentinel-2, at a confidence thres
 0.8, over 130 Ankara chips stratified into five quintiles by land-cover information
 density. Every number states its inference path and input provenance. Test-time dropout is
 active---it is the generator's own design, not a defect---and a deterministic mode was
-measured to be score-neutral within $\pm0.15$~px.
+measured to be score-neutral within $\pm0.15$~px on 30 chips and the earlier arms; the
+bound was not re-measured for the LPIPS arms.
 
 \textbf{Each arm's chip residual is a median over the matches that arm itself produced,
-and the arms do not produce equally many:} median surviving points are \tabone{51} for the
-pretrained generator, \tabone{59} for adversarial + L1, \tabone{62} for adversarial +
-LPIPS, \tabone{72} for L1 alone and \tabone{88} for LPIPS alone. \textbf{This is selection
+and the arms do not produce equally many:} median surviving points per chip, averaged over the six seeds, are 51 for the
+pretrained generator, 62 for adversarial + L1, 60 for adversarial + LPIPS, 75 for L1 alone
+and 87 for LPIPS alone (Table~I). \textbf{This is selection
 on a post-treatment variable and we name it as such.}
 
 We test it by equalising counts. On each chip every arm is truncated to the best $K$ of its
@@ -100,7 +120,7 @@ arm 7\%. A minimum-match-count sweep over all four arms jointly is reported alon
 \textbf{Point-level common support is not constructible here, and we report that rather
 than approximating it.} KLT keypoints are detected independently per arm on that arm's own
 generated image, so the arms share no point identity: at a two-pixel tolerance, 69 of 130
-chips have no common points at all, and a tolerance wide enough to yield a usable set would
+chips have no common points at all (counted at one seed before any contrast was computed), and a tolerance wide enough to yield a usable set would
 exceed the 1.4--2.0~px residuals under test and absorb the signal. Equal-count truncation
 is therefore the only available substitute. It is ranked by match score and never by
 residual, which would be circular; \textbf{match score is itself post-treatment, so this
