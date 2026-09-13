@@ -17,6 +17,14 @@ the **working repository** — not from `gencp-validation`, which is a snapshot 
 Never re-derive a number in the paper repository. Every number must cite the gate or
 registration it came from, and must state its inference path.
 
+*Note of 2026-09-13.* The table above predates the 26 August deletion commit and is kept
+as written. Since that commit the research record the paper cites is **this repository**
+(gencp-validation, `main`), pinned by commit in gencp-letter's `EVIDENCE.md`. The Markdown
+drafts of Sections II, III and IV were moved from `docs/` here to
+`gencp-letter/manuscript/drafts/` on 2026-09-13; the manuscript lives in gencp-letter from
+that date. Reasoning is recorded in `DEVIR.md` ("Makale bu depoda yazılmaz") and in
+gencp-letter's README.
+
 ## Rules that bind the manuscript
 
 1. State the inference path for every number. Two numbers from different paths are not

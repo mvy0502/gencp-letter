@@ -90,6 +90,27 @@ faktöriyeli (2×2, GAN × L1/LPIPS) ve Türkiye'ye genelleme hattı içerir.
 | Ölçüm/analiz scriptleri | [scripts/](scripts/) — açıklamalı liste README'deki dizin ağacında |
 | Türkçe ilerleme + sonuç raporları | [rapor2/](rapor2/), [rapor3/](rapor3/) (PDF'ler `rapor3/build_pdf.py` ile üretilir, git'te tutulmaz) |
 | Makale planı (GRSL letter) | [docs/paper-roadmap.md](docs/paper-roadmap.md) |
+| Makale taslakları (Bölüm II, III, IV) | **Bu depoda değil.** 13 Eylül 2026'da gencp-letter'a taşındı — aşağıdaki nota bakın |
+
+> ### Makale bu depoda yazılmaz — 13 Eylül 2026
+>
+> `docs/draft-section-II.md`, `draft-section-III.md` ve `draft-section-IV.md` bu depodan
+> **taşındı** (kopyalanmadı): artık `gencp-letter/manuscript/drafts/` altındalar. Yazıldıkları
+> commit'ler (`cadad66`, `9b4804d`, `b69f19f`, 26 Ağustos 2026) bu deponun geçmişinde kalır;
+> ileri taşımak onu silmez.
+>
+> Gerekçe:
+>
+> 1. **gencp-validation teslim edilmiş bir üründür.** Kurumdan biri onu almıştır. Teslim
+>    edilmiş bir depoda makale metninin sürekli değişmesi, neyin teslim edildiğini bulanıklaştırır.
+> 2. **Makale bu depoyu sabitlenmiş commit'lerle atıf verir.** Atıf hedefi durağan olmalıdır,
+>    aktif olarak değişen bir şey değil.
+> 3. **gencp-letter bunun için vardır ve özeldir**; yayımlanmamış bir çalışma için doğru olan
+>    budur.
+>
+> Bu depoda kalanlar: ön kayıtlar, sonuçlar, denetimler, düzeltme kaydı, kanıt ve standing
+> practices — makalenin atıf verdiği ve teslim edilen şeyler. Taşınan dosyaları bu depoda
+> okuyan hiçbir şey yoktur (taşıma öncesinde üç depo birden grep ile denetlendi).
 
 Kök dizindeki geri kalan her şey upstream pix2pix/GenCP kodudur; bu çalışma onu
 değiştirmez (tek istisna: eğitim kollarının uyguladığı, kayıtlı yamalar — bkz.
