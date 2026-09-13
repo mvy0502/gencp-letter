@@ -198,6 +198,8 @@ availability) are not repeated. Commit for every row: `a3e1918`.
 | Points surrendered by truncation | LPIPS-only 38–39 % (38.2–39.1 across seeds); adversarial + LPIPS 5.6–7.4 % (quoted 7 %) | `common-support-results.md`:26–31 |
 | Common-support tolerance argument | residuals ~1.4 px (C2) to ~2.0 px (C1); 2 px tolerance is the size of the effect | `common-support-registration.md` §2 |
 | Input-silent definition | canonical Sobel ≤ 20 on the input render; edge fraction Sobel > 20; denominator the real chip on the same pixels | `phase-c-lpips-registration.md`:123–124 |
+| Eq. (1), the edge ratio (II-E) | derived from the implementation, not from prose: mask `grad_mag(bt601(input warp)) <= 20`, edge `grad_mag > 20` on arm and real chip over the same mask, ratio of the two fractions, `grad_mag = hypot(scipy.ndimage.sobel(g,0), sobel(g,1))` on float-cast 8-bit gray (unnormalised kernels), chips with empty mask or zero real edge skipped (none of 130) | `tubitak/scripts/c45_eval/c45_edge_ratio.py` (`96503b7`); six-seed run: `seed_eval_run.py` `step_edge`, verbatim (`48ced64`) |
+| Eq. (2a)/(2b), seed-level inference (II-D) | `seed_mean` = mean over chips of the paired difference of per-chip medians (chips missing either arm dropped; none dropped in the six-seed block, N = 130); `across_seeds` = mean, sd with ddof = 1, se = sd/sqrt(S), df = S − 1, `scipy.stats.t.ppf(0.975, S − 1)`; sign reading `all_negative`/`all_positive` | `tubitak/scripts/seed_eval/seed_analysis.py` `seed_mean`, `across_seeds` (`6418feb`) |
 
 ### Section III
 

@@ -134,12 +134,40 @@ is therefore the only available substitute. It is ranked by match score and neve
 residual, which would be circular; match score is itself post-treatment, so this
 removes the count asymmetry rather than all conditioning, and no result here is unbiased.
 
+Inference is at the seed level. Let $m_{a,s,i}$ be arm $a$'s per-chip residual, the
+median over its own matches, on chip $i$ in seed $s$, with $N = 130$ chips and $S = 6$
+seeds. A contrast between arms $a$ and $b$ is one number per seed, the mean of the
+per-chip paired differences, and its interval is taken across seeds:
+\begin{subequations}\label{eq:seed}
+\begin{align}
+\Delta_s &= \frac{1}{N}\sum_{i=1}^{N}\bigl(m_{a,s,i} - m_{b,s,i}\bigr), \label{eq:seedstat}\\
+\mathrm{CI}_{95} &= \bar{\Delta} \pm t_{0.975,\,S-1}\,\frac{\hat{\sigma}_\Delta}{\sqrt{S}},
+\quad \hat{\sigma}_\Delta^2 = \frac{1}{S-1}\sum_{s=1}^{S}\bigl(\Delta_s - \bar{\Delta}\bigr)^2. \label{eq:seedci}
+\end{align}
+\end{subequations}
+The registered reading of a contrast is the sign of $\Delta_s$ in every seed, with
+$P = 2^{-S} = 1/64$ under a null of no effect and the direction fixed in advance; the
+interval of (\ref{eq:seedci}) is reported beside it, not required by it. The treatment was
+applied once per training run, so a standard error taken across the $N$ chips within one
+seed measures how consistently one checkpoint beats another, not how consistently the
+intervention works.
+
 \subsection{The invention measurement}
 
-Input-silent pixels are those with canonical Sobel response $\le 20$ on the input render.
-For each chip we take the edge fraction (Sobel $> 20$) of an arm's output over the real
-chip's edge fraction on those same pixels, and report the per-chip ratio per arm.
-The denominator is the input, not the ground truth, deliberately: it separates
+Let $I$ be the input render, warped to the chip grid and converted to 8-bit BT.601 gray,
+$Y$ the real chip and $\hat{Y}_a$ arm $a$'s output on the same grid and gray scale, and
+$G(X) = \sqrt{S_x^2 + S_y^2}$ the gradient magnitude of $X$ under the $3\times3$ Sobel
+kernels without normalisation. The input-silent set of a chip is
+$\Omega = \{p : G(I)(p) \le \tau\}$ with $\tau = 20$ on the 8-bit scale, and the chip's
+edge ratio for arm $a$ is
+\begin{equation}
+r_a = \frac{\sum_{p\in\Omega}\,[\,G(\hat{Y}_a)(p) > \tau\,]}{\sum_{p\in\Omega}\,[\,G(Y)(p) > \tau\,]},
+\label{eq:edge}
+\end{equation}
+the arm's edge fraction on $\Omega$ over the real chip's edge fraction on the same
+$\Omega$; a chip with an empty $\Omega$ or no real edge on it is excluded, which happens
+on none of the 130. Table~\ref{tab:panel} reports the mean of $r_a$ over chips, then over
+seeds. The set $\Omega$ is defined by the input, not by the ground truth, deliberately: it separates
 \emph{invented where nothing was known} from \emph{wrong where something was known}---a distinction that, to our knowledge, existing hallucination measures do not draw; the
 nearest, which decouples a restored image's learned-prior component from its data-fidelity
 component \cite{elhelou2022bigprior}, conditions on the prior rather than on the input's
