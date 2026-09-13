@@ -34,10 +34,16 @@
 \subsection{The design rule}
 
 If you generate a reference image for a geometric consumer, do not train it under
-plausibility pressure. The operational figure, on the production path of the delivered
-tool: on 20 urban Ankara chips the L1-only generator reaches a positional error of
-$0.593 \pm 0.041$~px (BT.601 gray, mean of eight stochastic draws per chip), better than
-the published generator on 20 of 20 chips.
+plausibility pressure. The operational figure comes from the delivered reference generator's own render path,
+which we call the production path: the tool renders its inputs from downloaded
+OpenStreetMap extracts, whereas the research chips of Sections~II to IV were rendered
+from a live map API, and the headline was re-measured on the production path so that
+the number a practitioner gets is the number quoted. On that path, scored by KLT on the
+BT.601 gray band against the standard references, the L1-only generator reaches a
+positional error of $0.593 \pm 0.041$~px on 20 urban Ankara chips, each value the mean of
+eight stochastic draws per chip, better than the published generator on 20 of 20 chips.
+It is a single-seed, chip-level figure from a different corpus and estimator than every
+other number in this letter, and is not comparable to them.
 
 \subsection{Relation to the theory}
 

@@ -190,7 +190,9 @@ six seeds, with the reading registered before any cell was scored: the penalty p
 at every scored epoch in every seed. It held in both families, six of six at each of the
 five epochs (Fig.~\ref{fig:epochs}). The six-seed means run 0.26, 0.26, 0.50, 0.53 and
 0.61~px under the perceptual loss and 0.52, 0.47, 0.42, 0.58 and 0.68~px under L1.
-Training longer with a discriminator widens the gap under both reconstruction terms.
+Under the perceptual loss the six-seed mean rises from epoch 2 onward; under L1 it falls
+from epoch 1 to epoch 5 before rising, so the mean gap at epoch 20 exceeds the mean gap at
+epoch 1 in both families while the path between is not monotone in the L1 family.
 
 The dip-then-grow shape read off the single generating run (0.334, 0.254, 0.441, 0.496,
 0.487~px under the perceptual loss) was registered as an exploratory reading with its

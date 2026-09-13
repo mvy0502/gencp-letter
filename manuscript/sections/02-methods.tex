@@ -137,8 +137,10 @@ Input-silent pixels are those with canonical Sobel response $\le 20$ on the inpu
 For each chip we take the edge fraction (Sobel $> 20$) of an arm's output over the real
 chip's edge fraction on those same pixels, and report the per-chip ratio per arm.
 The denominator is the input, not the ground truth, deliberately: it separates
-\emph{invented where nothing was known} from \emph{wrong where something was known}---a
-distinction existing hallucination metrics do not draw.
+\emph{invented where nothing was known} from \emph{wrong where something was known}---a distinction that, to our knowledge, existing hallucination measures do not draw; the
+nearest, which decouples a restored image's learned-prior component from its data-fidelity
+component \cite{elhelou2022bigprior}, conditions on the prior rather than on the input's
+silent regions.
 
 \subsection{Geometry}
 

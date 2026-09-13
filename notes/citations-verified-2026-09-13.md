@@ -31,3 +31,4 @@ Rule adopted (README working rule 6): no bibliography entry is cited until it ha
 | `yu2026offsetnet` | **VERIFIED** | Crossref 10.1109/JSTARS.2026.3731425: Jin-Woo Yu, Hyung-Sup Jung; IEEE JSTARS, 2026, pp. 1–18 (early access; volume not yet assigned) |
 | `cohen2018distribution` | **VERIFIED** | Crossref 10.1007/978-3-030-00928-1_60: Joseph Paul Cohen, Margaux Luck, Sina Honari; LNCS (MICCAI 2018), pp. 529–536; arXiv 1805.08841 abstract read |
 | `sayez2025mitigating` | **VERIFIED** | Crossref 10.1051/0004-6361/202555324: Niels Sayez, Christophe De Vleeschouwer, Véronique Delouille, Sabrina Bechet, Laure Lefèvre; Astronomy & Astrophysics 702:A83, 2025 |
+| `elhelou2022bigprior` | **VERIFIED** | Crossref 10.1109/TIP.2022.3143006: Majed El Helou, Sabine Susstrunk (Crossref strips the umlaut); arXiv 2011.01406 gives Süsstrunk; IEEE TIP 31:1628–1640, 2022; TIP title "Toward", arXiv title "Towards" — the journal title is used |
