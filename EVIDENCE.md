@@ -5,7 +5,12 @@ the LaTeX. No row, no number.
 
 **Study repository:** https://github.com/mvy0502/gencp-validation
 **Branch:** `main`
-**Baseline commit for the rows below:** `284571b` (26 August 2026)
+**Baseline commit for the rows below:** `a3e1918` (13 September 2026)
+
+*Re-pinned 2026-09-13 after the Sections II–IV row audit. Every row below was read, or
+re-read, at `a3e1918`; the two commits after `59612e7` touched only the corrections log
+(entries 39–40) and two related-work notes, so every value is also readable at
+`59612e7`. Rows written earlier today carry the commit they were read at.*
 
 *Re-pinned 2026-08-26. The rows below previously read `612b7f6` on branch `tubitak-tr`,
 which is a **GenCP** branch — gencp-validation has no `tubitak-tr`. The SHAs themselves
@@ -107,6 +112,62 @@ seed 42 and is false of the block; corrected in III-A on 2026-09-13.
 | LR-schedule bound (Section II-A) | +0.007 ± 0.034 px, one seed (43, Modal), chip-level; non-adversarial arms only; reverse manipulation not run | `lr-confound-results.md` §3 | `59612e7` |
 | Deterministic-mode bound (Section II-D) | registered ≤ 0.05 px band met on 30 chips, four earlier arms; resolution ≈ 0.15 px | `tool-results.md` Registration A | `59612e7` |
 
+## Sections II–IV — row audit, 2026-09-13
+
+Every number the three migrated sections quote, with its source line and inference path.
+Values already carried in rows above (Table I, the V.1 figure, Section II bounds, data
+availability) are not repeated. Commit for every row: `a3e1918`.
+
+### Section II
+
+| Claim | Value | Source (line) |
+|---|---|---|
+| Generator size | U-Net-256, 54.414 M parameters, PatchGAN discriminator, map-to-image | `paper-context-addendum.md` §16 (69–73); `phase-c3-results.md`:7 |
+| Training pairs | 5,577 | `hardware-gate-results.md`:120 (`EXPECTED_N_FILES = 5577`, captured file-list hash) |
+| Epochs and schedule | 20 per arm; linear 10 + 10 at base rate then decaying | `seed-replication-registration.md`:64 |
+| Confirmatory block | seeds 45–50, Modal A10G, one platform | `seed-block-results.md` head; `hardware-gate-results.md` title |
+| Earlier runs | seed 42 (generating), seeds 43–44 (two-seed block), Kaggle T4, `gpu_ids=[0]` | `seed-replication-registration.md`:78–101, :116–125; `phase-c-config.md`:145 |
+| Poolability rule and verdict | NOT POOLED: edge_C1 \|Modal−Kaggle\| 0.0177 vs seed spread 0.0042 (4.2×); ten of eleven pass | `hardware-gate-results.md` "Verdict" |
+| Warm-up schedule | adversarial arms: 2 epochs at 2×10⁻⁵ then 18 at 10⁻⁴; others 20 at 10⁻⁴ | `lr-confound-registration.md`; `phase-c-config.md` |
+| Integrated LR | 13.40 vs 15.00 (10⁻⁴ epochs), 10.67 % deficit | `lr-confound-results.md` §3 |
+| LR bound | Δ = warmed − un-warmed, L1 family +0.0065 ± 0.0335 px (quoted +0.007 ± 0.034), 1.0 % of the 0.6473 px gap; one seed (43, Modal), chip-level | `lr-confound-results.md`:10, :74, :158 |
+| Matcher configuration | KLT, confidence threshold 0.8 (upstream README value) | `karios-validation.md`:54 |
+| Chip panel | 130 Ankara chips, 26 per land-cover edge-density quintile | `ankara-acquisition.md`:86 |
+| Test-time dropout | STOCH path, dropout active, single draw, as seed 42 | `seed-replication-registration.md`:491 |
+| Points surrendered by truncation | LPIPS-only 38–39 % (38.2–39.1 across seeds); adversarial + LPIPS 5.6–7.4 % (quoted 7 %) | `common-support-results.md`:26–31 |
+| Common-support tolerance argument | residuals ~1.4 px (C2) to ~2.0 px (C1); 2 px tolerance is the size of the effect | `common-support-registration.md` §2 |
+| Input-silent definition | canonical Sobel ≤ 20 on the input render; edge fraction Sobel > 20; denominator the real chip on the same pixels | `phase-c-lpips-registration.md`:123–124 |
+
+### Section III
+
+| Claim | Value | Source (line) |
+|---|---|---|
+| Primary per seed | −0.6153, −0.6462, −0.6162, −0.5942, −0.6054, −0.5775 px; 6/6; P = 1/64; direction fixed by seed 42 | `seed-block-results.md` §1 |
+| Primary interval | mean −0.6091, 95 % CI [−0.6335, −0.5847], df = 5 | `seed-block-results.md` §5(a) |
+| Interaction | 5/6 on raw, log and rank; seed 46 breaks each (raw +0.0594) | `seed-block-results.md` §1, §3 |
+| Two-seed block | seeds 43–44, interaction negative in both on all three scales; never pooled | `seed-block-results.md` §5(d) |
+| Interaction intervals | log [−0.1092, −0.0125] and rank [−0.3036, −0.0041] exclude zero; raw does not | `seed-block-results.md` §5(a) |
+| Secondary | C5 − C2 6/6; mean +0.0626, CI [+0.0273, +0.0979]; narrowest +0.0068 (seed 46) | `seed-block-results.md` §1, §5(a) |
+| Dose-response under LPIPS | C4 − C5 by epoch 1/2/5/10/20: +0.334, +0.254, +0.441, +0.496, +0.487 px, t = 8.3, 6.4, 11.3, 10.7, 9.2; **seed 42, chip-level, single draw** | `phase-c-lpips-results.md`:176–180 |
+| Equal-count result | primary +0.0108 px (1.8 %), secondary −0.0069 px (11 %), both 6/6 | `common-support-results.md`:100–104 |
+| Floor sweep | K ≥ 30: every seed ≥ +0.0373 px, 6/6 | `common-support-results.md`:84, :90 |
+| Informative-mask ratio | C2 0.986 (mean of 0.9882, 0.9800, 0.9885, 0.9849, 0.9858, 0.9859); silent 0.277; factor 3.56 | `informative-mask-results.md`:17–22 |
+| Single-run interaction | −0.212 ± 0.069 (t = −3.07), seed 42; outside the six-seed range on raw and rank | `phase-c-lpips-results.md`:100; `seed-block-results.md` §5(c) |
+| Sustained trend, arm-level | C4 rises +1.45 % (six-seed mean, range +0.98 to +2.22); C1 at or below zero in two of six seeds | `sustained-trend-results.md`:101, :137, :88 |
+| Sustained trend, gaps | LPIPS family 6.33 points (controlled), L1 family 4.00 | `warmup-deconfound-results.md`:316–317, :436 |
+| Route-difference caveat | edge ratio does not order errors within the unrestrained group | `paper-context-addendum.md` §22 |
+
+### Section IV
+
+| Claim | Value | Source (line) |
+|---|---|---|
+| Informative-mask bands | near unity ≥ 0.80; suppressed ≤ 0.50; reused from the registered measurement | `informative-mask-registration.md`:27–31 |
+| Informative-mask per-seed C2 | 0.9800–0.9885 (quoted 0.980 to 0.989); other arms 1.03–1.05 | `informative-mask-results.md`:17–22, :42 |
+| Checkpoint sweep | C1 − pre at epoch 1 −0.399 ± 0.064 (6.3 SE); C1 − C2 +0.546 ± 0.048 (e1), +0.384 ± 0.052 (e5), +0.700 ± 0.059 (e20); **seed 42, chip-level** | `headline-results.md` B1 table |
+| Descriptor families | ORB −0.6127 ± 0.1354 (n = 29 paired; C2 matched 53/130), AKAZE n = 11, MI −1.2600 ± 0.2613 lower bound, refinement never ran, 15.8 % censored at the bound | `B2-B3-audit.md`:161–166, :96–97, :353, :456 |
+| Matcher families | KLT, NCC grid, phase correlation × 2 band conversions × urban subset; 6,510 scored comparisons; ordering preserved except two EU-150 urban phase-correlation cells, both far below 2 SE; template matcher widened C2's margin in all eight set × band combinations | `packageA-audit.md`:59, :183; `packageA-results.md`:20–27; corrections-log entry 30 |
+| Scatter decomposition | ~86 % of the European gain is scatter; artifacts lost, not reproducible | `phase-c-europe-results.md`:31; corrections-log entry 32 |
+
 ## Methods — the 1/256 scale bug (one paragraph plus repo pointer)
 
 | Claim | Value | Source | Commit |
@@ -143,6 +204,7 @@ Check `corrections-log.md` before adding any row. Known traps:
 
 | Date | What changed | Rows touched |
 |---|---|---|
+| 2026-09-13 | Sections II–IV row audit: 36 rows added with source lines; header re-pinned from `284571b` to `a3e1918` | header, II, III, IV |
 | 2026-09-13 | Sections I and V drafted; rows for their numbers and for three Section II bounds added at gencp-validation `59612e7` | I, V, II |
 | 2026-09-13 | V.1 figure decided (0.593, B2 production path) and given its row; Table I rebuilt from the six-seed block with its inference path; data-availability rows added; rows read at gencp-validation `a415e25` | V.1, Table I, data availability |
 | 2026-08-26 | Evidence trail created at study-repo baseline `612b7f6` | all |
