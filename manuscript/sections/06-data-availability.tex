@@ -31,10 +31,10 @@ Section~III-G, and per-stratum gains---are permanently unrecoverable, and it can
 whether they ran and went unreported or never ran. The 86\% scatter decomposition cited in
 Section~IV-D is among the lost results, which is why that row is answered by design. Second,
 the harness of the descriptor-family matcher test was not preserved, so four of its
-registered matcher parameters are reported as configured rather than as verified. Third,
-the generated images of the fine-tuned arms at each seed are not in the repository;
-re-inferring them is a stochastic path, because test-time dropout is active by the
-generator's design, so a re-run is a replication and not a reproduction. The generated images produced up to 26 August 2026, the training checkpoints of the
+registered matcher parameters are reported as configured rather than as verified. Third, the generated images of the fine-tuned arms at each seed are not in the repository;
+re-inference is not the only route to them, but for anyone who chooses it the path is
+stochastic, because test-time dropout is active by the generator's design, so a re-run is a
+replication and not a reproduction. The generated images produced up to 26 August 2026, the training checkpoints of the
 generating and confirmatory runs, and the 96 epoch checkpoints behind Fig.~1 are held in
 a private backup, verified by hash from the copy, and are available on request. The
 generated images of the 24 epoch cells scored on 13 September 2026 are not in that backup
