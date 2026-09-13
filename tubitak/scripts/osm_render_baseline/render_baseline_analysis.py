@@ -5,8 +5,8 @@ Inputs: tool_runs/osm_render_baseline/render_per_chip.csv (render, seed-invarian
 tool_runs/C45_s{45..50}_modal/C45_per_chip.csv (arms), and the KLT rows of both for the
 equal-count truncation. Every comparison is a paired CHIP-LEVEL difference over 130 chips,
 D = render - arm, positive = render worse; SE across chips. Fine-tuned arms: one D per seed,
-reported as mean and range over the six seeds. Pretrained: once, raw only (its KLT rows on
-this path are not retained). Equal-count: per chip K = min(n_render, n_arm at that seed),
+reported as mean and range over the six seeds. Pretrained: once; the raw row and, since the
+amendment of 2026-09-13, the equal-count row from its retained KLT rows. Equal-count: per chip K = min(n_render, n_arm at that seed),
 both truncated to the best K by KLT score descending, medians recomputed.
 
 Bands (registered): WELL = D(render - L1-only) <= 0 at >= 2 SE in all six seeds under both
@@ -56,6 +56,18 @@ def main():
     arms={s: pd.read_csv(root/f"tubitak/data/tool_runs/C45_s{s}_modal/C45_per_chip.csv").set_index("stem").loc[stems] for s in SEEDS}
     # pretrained, seed-invariant, raw only
     pre=arms[45]["pre_med"]; res["raw"]["pretrained"]=paired(R.render_med-pre)
+    # AMENDMENT 2026-09-13: the pretrained arm's KLT rows on the Table I path ARE retained, at
+    # tubitak/data/ankara/run/results/<stem>/*/KLT_matcher_*.csv (they reproduce the record's
+    # per-chip medians and counts, turkey_karios.csv, on 130/130 chips). Equal-count row built
+    # from them with the same rule as the fine-tuned arms.
+    diffs=[]
+    for stt in stems:
+        dr=klt_rows(str(root/f"tubitak/data/tool_runs/osm_render_baseline/karios/{stt}/*/KLT_matcher_*.csv"))
+        dp=klt_rows(str(root/f"tubitak/data/ankara/run/results/{stt}/*/KLT_matcher_*.csv"))
+        if dr is None or dp is None or len(dr)==0 or len(dp)==0: diffs.append(np.nan); continue
+        K=min(len(dr),len(dp)); r=dr.sort_values("score",ascending=False).head(K); m=dp.sort_values("score",ascending=False).head(K)
+        diffs.append(float(np.median(np.hypot(r.dx,r.dy))-np.median(np.hypot(m.dx,m.dy))))
+    res["equal_count"]["pretrained"]=paired(diffs)
     for a in ARMS:
         res["raw"][a]=[paired(R.render_med-arms[s][f"{a}_med"]) for s in SEEDS]
     # equal-count per seed per arm
@@ -78,7 +90,7 @@ def main():
     res["points_L1_only_six_seed_median_mean"]=pts_C2
     json.dump(res, open(out/"render_baseline_summary.json","w"), indent=1)
     print(f"render: mean of medians {res['render']['mean_of_medians']:.3f} px, median {res['render']['median_of_medians']:.3f}, points median {res['render']['points_median']:.0f}, zero-point chips {res['render']['zero_point_chips']}")
-    p=res["raw"]["pretrained"]; print(f"raw render - pretrained: {p['mean']:+.3f} ± {p['se']:.3f} (t {p['t']:.1f}; render better on {p['render_better']}/{p['n']})")
+    p=res["raw"]["pretrained"]; q=res["equal_count"]["pretrained"]; print(f"raw render - pretrained: {p['mean']:+.3f} ± {p['se']:.3f} (t {p['t']:.1f}; n {p['n']}; render better on {p['render_better']}/{p['n']}); equal-count {q['mean']:+.3f} ± {q['se']:.3f} (t {q['t']:.1f}; n {q['n']})")
     for a in ARMS:
         ms=[x["mean"] for x in res["raw"][a]]; es=[x["mean"] for x in res["equal_count"][a]]
         print(f"raw render - {a}: mean over seeds {st.mean(ms):+.3f} (range {min(ms):+.3f}..{max(ms):+.3f}); |t| min {min(abs(x['t']) for x in res['raw'][a]):.1f}; equal-count {st.mean(es):+.3f} (range {min(es):+.3f}..{max(es):+.3f})")

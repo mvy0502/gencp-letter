@@ -116,3 +116,37 @@ matched: the warped input render in place of a generated image.
 
 New registration, not a reproduction of anything. Open-items ledger: a new item, opened
 13 September 2026 by the supervising session, closed by the results document.
+
+---
+
+## AMENDMENT, 13 September 2026 — the equal-count row against the pretrained arm
+
+**Why this is an amendment and not a new registration.** The comparison against the
+pretrained arm was already registered above and already run: the raw row exists. The
+equal-count row did not, because section (c) stated that the pretrained arm's KLT rows on
+the Table I path were not retained. **That statement was wrong: it was a failure to locate,
+not a loss.** The rows are at `tubitak/data/ankara/run/results/<stem>/*/KLT_matcher_*.csv`
+and reproduce the record's per-chip medians and counts (`turkey_karios.csv`, the source of
+every pretrained value in Table I) on 130 of 130 chips exactly. The row is therefore
+completed from the retained rows under the rule already registered for the fine-tuned
+arms (per chip K = min of the two counts, best K by KLT score, medians recomputed), with
+its own denominator, and no chip is re-matched. No new ledger item is opened.
+
+The supervising session's instruction asked for the pretrained arm's KLT to be re-run
+under the render's invocation; that rested on the wrong statement above and is not
+executed, because the retained rows are the Table I path's own rows and a re-run could
+only equal them or differ from them for a reason unrelated to this question.
+
+**Recorded beside the opposite precedent, so the two are not read as inconsistent:** the
+supervising session ruled *against* regenerating the European scatter decomposition
+(Section IV-D), because that was a merit question already settled by a design argument and
+a fresh measurement there would have been a new registration. This is the opposite case:
+a registered, run comparison with one row missing because of what was retained.
+
+Why it must be done: Sections III-D and III-G establish that raw counts can flatter and
+that equal-count is the test the argument demands; III-L made that claim for four arms
+while the fifth, the published model, stood raw only. If the equal-count row reverses or
+narrows materially, that is the result and it goes in as such.
+
+Script amended (sha16 in the token below) and gated:
+`self-test gate: PASS 4e46b931ad357192 scripts/osm_render_baseline/render_baseline_analysis.py /opt/homebrew/Caskroom/miniforge/base/envs/gencp/bin/python 2026-09-13T21:47Z`
