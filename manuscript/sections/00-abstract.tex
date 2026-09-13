@@ -36,8 +36,8 @@
 % primary does not appear. Word count checked by script at commit time.
 
 Generated reference imagery has been proposed for satellite georeferencing: a conditional
-GAN renders a Sentinel-2-like image from OpenStreetMap and land cover, .  A
-$2\times2$ factorial crosses an adversarial term with the reconstruction loss, L1 against the perceptual loss LPIPS, , everything else held fixed except a disclosed learning-rate warm-up on the adversarial arms whose consequence is bounded, and scores
+GAN renders a Sentinel-2-like image from OpenStreetMap and land cover. A
+$2\times2$ factorial crosses an adversarial term with the reconstruction loss, L1 against the perceptual loss LPIPS, everything else held fixed except a disclosed learning-rate warm-up on the adversarial arms whose consequence is bounded, and scores
 each arm by the
 positional error of feature matches against real Sentinel-2 over 130 chips. Removing the
 adversarial term improves positional accuracy under the perceptual loss in all six
@@ -46,7 +46,7 @@ and the perceptual loss alone, with no discriminator anywhere, carries its own p
 penalty in all six seeds. An input-conditioned measurement supplies the necessary condition, not a complete
 explanation: the edge density
 an arm renders where the conditioning input asserts no structure is lowest for the L1-only
-arm and highest for the LPIPS-only arm, which invents more than either adversarial arm . The mechanism is plausibility pressure, not the adversarial term. Matched directly, the rasterised map itself localises better than every generated arm
+arm and highest for the LPIPS-only arm, which invents more than either adversarial arm. The mechanism is plausibility pressure, not the adversarial term. Matched directly, the rasterised map itself localises better than every generated arm
 where it matches, including at equal counts; what remains of the case for a generated
 reference is point yield and coverage. The design rule: if you generate a reference image for a geometric consumer, do not
 train it under plausibility pressure.
