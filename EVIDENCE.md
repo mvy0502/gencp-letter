@@ -100,6 +100,13 @@ seed 42 and is false of the block; corrected in III-A on 2026-09-13.
 | 260 seed-independent rasters committed | 130 + 130, 26.4 MB | `evidence/rasters/README.md`, `MANIFEST.md`; entry 35 | `a415e25` |
 | Private backup holds checkpoints, generated images, the 130 unregenerable Ankara inputs | Kaggle `gencp-evidence-backup`, `-2` | `evidence/BACKUP.md`, `paper-context-addendum.md` §13 | `a415e25` |
 
+## Fig. 1 — per-chip values in the caption (2026-09-13)
+
+| Claim | Value | Source | Commit |
+|---|---|---|---|
+| Chip (a), largest input-silent fraction | `ank_3_34`, silent 1.000; r: pretrained 1.12, C1 1.18, C2 0.94, C4 1.18, C5 1.15 | `docs/evidence/C45_s45_modal/C45_edge_ratio.csv` (seed 45) | `a3e1918` |
+| Chip (b), median input-silent fraction | `ank_18_29`, silent 0.847 (panel median 0.850); r: pretrained 0.93, C1 0.94, C2 0.36, C4 0.93, C5 0.99 | same | `a3e1918` |
+
 ## Sections I and V — rows added 2026-09-13 when the sections were drafted
 
 | Claim | Value | Source | Commit |

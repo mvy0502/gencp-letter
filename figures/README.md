@@ -9,7 +9,7 @@ Study repository: https://github.com/mvy0502/gencp-validation
 
 | File | What it shows | Command (run in the study repo) | Commit |
 |---|---|---|---|
-| _(none yet)_ | | | |
+| `fig1_invention.pdf` (+ `.png`) | Fig. 1: input render with the input-silent outline, real chip, five arms at seed 45, per-chip edge ratios; chips `ank_3_34` (largest silent fraction, 100%) and `ank_18_29` (median, 85%) chosen by rule | `/opt/homebrew/Caskroom/miniforge/base/envs/gencp/bin/python tubitak/scripts/figures/fig1_invention.py --out ../gencp-letter/figures` (reads per-seed warps under `tubitak/data/tool_runs/`, not committed, plus committed rasters and the seed-45 edge-ratio CSV) | gencp-validation `68b9f83` |
 
 Rules:
 

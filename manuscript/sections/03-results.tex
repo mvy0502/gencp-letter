@@ -177,7 +177,27 @@ a dose.
 
 \subsection{Mechanism}
 
-The edge-ratio column of Table~\ref{tab:panel} measures, per chip, how much structure an arm
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig1_invention}
+\caption{What each arm renders where the input asserts nothing. Two chips from the
+130-chip Ankara panel, chosen by rule rather than by eye: (a) the chip with the largest
+input-silent fraction, where the entire input render falls below the Sobel threshold;
+(b) the chip at the median input-silent fraction. Columns: the input render as the mask
+sees it (BT.601 gray; the input-silent region is everything outside the red outline),
+the real Sentinel-2 chip, and the five arms at seed 45 (the pretrained arm is
+seed-invariant), each labelled with that chip's input-silent edge ratio $r$
+(Section~II-E; Table~\ref{tab:panel} gives the panel means). In (b) the L1-only arm
+renders edges only along the input's own structure ($r = 0.36$) while every other arm
+fills the silent area at close to the real image's edge density. In (a), with no
+information in the input at all, every arm including L1-only renders structure at
+roughly the real density ($r = 0.94$ to $1.18$): information absent from the input
+cannot be recovered, and restraint is conditional on the input having something to say.}
+\label{fig:invention}
+\end{figure*}
+
+
+The edge-ratio column of Table~\ref{tab:panel} (illustrated in Fig.~\ref{fig:invention}) measures, per chip, how much structure an arm
 renders where the conditioning input asserts none, relative to the real image.
 With no discriminator anywhere, the perceptual loss alone invents the most:
 1.15 against 1.13 for adversarial+LPIPS, 1.09 for
