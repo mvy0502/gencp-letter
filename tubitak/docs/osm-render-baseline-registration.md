@@ -104,6 +104,14 @@ matched: the warped input render in place of a generated image.
   must read INTERMEDIATE; output at registration time: "self-test passed: WELL, POORLY, and
   two planted near-misses read INTERMEDIATE". Both scripts refuse unknown arguments.
 
+  *Correction, same day, before any chip was matched.* The commit that carried this
+  registration (`a5314b1`) stated that output, but the self-test had not produced it: it
+  was launched with the system interpreter, which lacks numpy, and printed a traceback
+  that the commit step did not stop on. The self-test was then run with the project
+  interpreter and produced exactly that line, and both refusal checks passed; this note
+  records the slip rather than rewriting the sentence above. Same class as practice 15's
+  origin: a check believed to have run.
+
 ## Where it is recorded
 
 New registration, not a reproduction of anything. Open-items ledger: a new item, opened
