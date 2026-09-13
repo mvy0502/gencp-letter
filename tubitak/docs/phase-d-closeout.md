@@ -154,4 +154,4 @@ and blur/restraint (six-seed positive test). The georeferencing row's content be
 28-word design argument rather than a table row, and the mediation row is struck.
 
 Corrections-log entries 30–34 remain **drafted, not applied**. `corrections-log.md` is
-untouched.
+untouched. *Applied 2026-09-13, together with the restored entry 35 and the entry-26 addendum.*

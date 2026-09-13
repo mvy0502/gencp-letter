@@ -89,6 +89,17 @@ Rules of general force, collected where future work will see them. Each carries 
     permanently unverifiable) is the earlier instance of the same class that this practice
     exists to stop recurring for a third time.
 
+    **Final clause, added 2026-09-13 by corrections-log entry 35.** After an evidence commit,
+    **verify from a fresh clone that the files are actually there.** Not `git status`, which
+    is silent about ignored paths, and not `git log`, which reports what was committed rather
+    than what was intended: clone the pushed remote into a scratch directory and re-run the
+    manifest check against that tree. A file is evidence when a stranger can obtain it, not
+    when the committing session believes it was added. If the check cannot be run, the
+    artifacts are not committed yet and the manifest rows must not be written. Type rules are
+    fixed at the class level: `.gitignore` carries `!tubitak/docs/evidence/**` as its last
+    rule. Origin: entry 35 — 260 rasters listed in the manifest with sha256s were never
+    tracked, because `*.tif` swallowed them and nobody read the repository state back.
+
 11. **A registration that names a set, a threshold or a condition QUOTES the implementing
     code's expression of it** (2026-08-26). **FORWARD-ONLY.** When a registration fixes a
     reading in prose, the line of code that implements it is quoted in the registration
@@ -118,4 +129,4 @@ Rules of general force, collected where future work will see them. Each carries 
     which way it cuts is indistinguishable from a rule adjusted to pass. **When
     corrections-log entries 30–34 are applied, these three are grouped under one heading in
     the tiering**, so a reader sees one class with three instances rather than three
-    unrelated slips.
+    unrelated slips. *Done 2026-09-13: entries 36–38 under one heading in Tier 1.*

@@ -308,7 +308,7 @@ failure). **Those two facts belong in the same sentence whenever this package is
 
 ---
 
-## Corrections-log entries DRAFTED FOR REVIEW — not applied
+## Corrections-log entries DRAFTED FOR REVIEW — APPLIED 2026-09-13: 32 and 33 in Tier 2, 34 in Tier 3
 
 `corrections-log.md` is untouched. Proposed as entries **32**, **33** and **34**.
 

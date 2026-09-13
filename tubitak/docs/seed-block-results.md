@@ -682,4 +682,4 @@ to preserve.
 - **No manuscript, title or claim text has been edited.** §6 is a review list; the edits
   follow review, and §6.0 records what must be added before they are executed.
 - **No corrections-log entry.** See the head of this document. The warm-up package proposes
-  an addition to entry 26, drafted for review and likewise not applied.
+  an addition to entry 26, drafted for review and likewise not applied. *(Applied 2026-09-13 as the entry 26 addendum in Tier 1.)*

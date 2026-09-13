@@ -10,7 +10,7 @@
 > lost without anyone noticing. The file is restored byte for byte below this note, and
 > the entry is applied to `corrections-log.md` in the same package.
 
-**Status: drafted, awaiting review.** Not yet merged into
+**Status: APPLIED 2026-09-13 to Tier 3 of the log; this file is the drafting record.** *(Original status line: drafted, awaiting review.)* Not yet merged into
 [corrections-log.md](corrections-log.md), which stands at entry 29 in git; entries 30-34 are
 drafted and under the same review. Tier 2 (unrecoverable artifacts) is the wrong home — nothing
 was lost — so this is filed for **Tier 3, reporting errors**, with the standing-practice

@@ -312,7 +312,7 @@ behaviour (§D) is the best of the six.
 
 ---
 
-## Corrections-log entries DRAFTED FOR REVIEW — not applied
+## Corrections-log entries DRAFTED FOR REVIEW — APPLIED 2026-09-13 as entries 30 and 31 (Tier 3)
 
 `corrections-log.md` is untouched. Proposed as entries **30** and **31**, in the log's
 existing column format.
