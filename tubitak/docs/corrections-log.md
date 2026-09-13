@@ -96,6 +96,12 @@ warmed variants fall by roughly 60% of their un-warmed counterparts' proportiona
 arms survive, the magnitude is attenuated. Nothing is withdrawn. n = 1 seed, a mechanism
 probe; it enters no contrast.
 
+**Decision reversals are recorded here too, because a reader of the log should see them beside the corrections they resemble.**
+
+| # | date | what was decided | why it was reversed | resolution | where |
+|---|---|---|---|---|---|
+| 41 | 26 Aug / 13 Sep | **Supervising session's decision, reversed by the supervising session.** On 26 August the structural decision cut the 1/256 geometric-error finding from the letter for space (letter-skeleton.md binding sentence 13 amended to an arXiv-only rule), leaving Section II-F with a one-clause disclosure that deferred the finding to "the extended version" | The arXiv version has no page limit, and by 13 September the arXiv-length draft *was* the extended version, so the deferral in II-F pointed at itself and the finding appeared in no document a reader could reach | Reversed 13 September by the supervising session: the finding restored to II-F from the 26 August draft text (cadad66, block F), numbers re-checked against `geometry-finding.md` and `paper-context-addendum.md` §19, the deferral sentence deleted, the variance qualifier in the same paragraph as required. Recorded as a decision reversed, not as a correction of the drafting session | [letter-skeleton.md](letter-skeleton.md) §4 item 13; the letter's `EVIDENCE.md` |
+
 ### Registration-versus-implementation mismatches — one class, three instances (entries 36–38, applied 13 Sep per standing practice 11)
 
 Each was found after the fact and is disclosed where it was found and **not repaired**: a
