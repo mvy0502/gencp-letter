@@ -18,6 +18,6 @@ run in any later session even if this disk does not survive.
 `ref_ank/bt601/{stem}.tif`. **The per-seed arm warps are NOT committed here** — they are
 650 files × 6 seeds and remain in `tool_runs/`; if they are lost the arm outputs must be
 re-inferred, and that is a stochastic path, so it would be a replication rather than a
-reproduction.
+reproduction. *[Checked 2026-09-13 (absence-claims audit, F): the generated images of every seed are in Kaggle backup-2 (`generated_fakes.tar`, 520 per Modal seed), and the warps are regenerable from them by the registered affine; re-inference would be needed only if that backup were lost too. The sentence above overstated the loss.]*
 
 Total 26.4 MB. sha256 for all 260 files is in [../MANIFEST.md](../MANIFEST.md).

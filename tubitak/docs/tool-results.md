@@ -136,5 +136,5 @@ map is simply not strong enough at the registered bar to replace the input heuri
 Production tool: **deterministic by default** (dropout off; `--stochastic` preserves the
 evaluated path), seeded, 640 m overlap, corrected transform mandatory, provenance embeds
 inference path/seed/torch/snapshot/checkpoint-hash/commit. `--bands single` still refuses
-pending Package A — which has no artifacts in this repository and is scored elsewhere; the
+pending Package A — which has no artifacts in this repository *[true when written; `evidence/pkgA/` committed 26 Aug — absence-claims audit 2026-09-13, TR]* and is scored elsewhere; the
 branch stays isolated from `tubitak-tr` until that score exists.
