@@ -29,7 +29,7 @@ def centre(row, col): return COLS[col] + W / 2, ROWS[row] + H / 2
 for (row, col), (name, code) in CELLS.items():
     x, y = COLS[col], ROWS[row]
     ax.add_patch(FancyBboxPatch((x, y), W, H, boxstyle="round,pad=0,rounding_size=0.04", fc="white", ec="black", lw=0.8))
-    ax.text(x + W / 2, y + H / 2 + 0.08, name, ha="center", va="center", fontsize=6.2)
+    ax.text(x + W / 2, y + H / 2 + 0.08, name, ha="center", va="center", fontsize=5.8)
     ax.text(x + W / 2, y + H / 2 - 0.12, f"repository code: {code}", ha="center", va="center", fontsize=4.8, color="0.35")
 # headers
 ax.text(X0 + W + GX / 2, Y0 + 2 * H + GY + 0.30, "adversarial term", ha="center", va="center", fontsize=6.5, style="italic")
@@ -37,13 +37,13 @@ for col, lab in (("absent", "absent"), ("present", "present")):
     ax.text(COLS[col] + W / 2, Y0 + 2 * H + GY + 0.13, lab, ha="center", va="center", fontsize=6.5)
 ax.text(X0 - 0.80, Y0 + H + GY / 2, "reconstruction\nloss", ha="center", va="center", fontsize=6.5, style="italic", rotation=90)
 for row in ROWS:
-    ax.text(X0 - 0.22, ROWS[row] + H / 2, row, ha="center", va="center", fontsize=6.5)
+    ax.text(X0 - 0.30, ROWS[row] + H / 2, row, ha="center", va="center", fontsize=6.5)
 # the fifth arm, outside the grid
-PX = COLS["present"] + W + 0.30; PW = 1.55
+PX = COLS["present"] + W + 0.30; PW = 1.70
 ax.add_patch(FancyBboxPatch((PX, ROWS["LPIPS"]), PW, H, boxstyle="round,pad=0,rounding_size=0.04", fc="white", ec="black", lw=0.8, ls=(0, (3, 2))))
 ax.text(PX + PW / 2, ROWS["LPIPS"] + H / 2 + 0.16, "pretrained", ha="center", va="center", fontsize=6.2)
 ax.text(PX + PW / 2, ROWS["LPIPS"] + H / 2 + 0.02, "repository code: pre", ha="center", va="center", fontsize=4.8, color="0.35")
-ax.text(PX + PW / 2, ROWS["LPIPS"] + H / 2 - 0.16, "adv. + LPIPS objective;\nEuropean training data", ha="center", va="center", fontsize=4.8)
+ax.text(PX + PW / 2, ROWS["LPIPS"] + H / 2 - 0.16, "adv. + LPIPS objective;\nEuropean training data", ha="center", va="center", fontsize=4.6)
 # contrasts: arrow from subtrahend to minuend, as the letter writes each one
 def arrow(frm, to, label, lpos, dx=0.0, dy=0.0):
     (x1, y1), (x2, y2) = centre(*frm), centre(*to)
