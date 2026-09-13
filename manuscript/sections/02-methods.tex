@@ -78,7 +78,21 @@ learning rate.
 
 \subsection{The design}
 
-A $2\times2$ factorial crosses an adversarial term with the reconstruction loss:
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_design}
+\caption{The $2\times2$ loss factorial and the fifth arm. Rows: the reconstruction loss;
+columns: the adversarial term. Each cell carries the arm name used in this letter and, in
+small type, the arm code used in the study repository the data-availability statement
+points to. The pretrained arm has the adversarial-plus-LPIPS objective but was trained on
+European data rather than fine-tuned on ours, and stands outside the grid. Arrows mark the
+three seed-level contrasts of Section~III-B, each drawn from subtrahend to minuend in the
+direction the letter reports it: primary, LPIPS-only minus adversarial + LPIPS; L1 family,
+adversarial + L1 minus L1-only; secondary, LPIPS-only minus L1-only.}
+\label{fig:design}
+\end{figure}
+
+A $2\times2$ factorial (Fig.~\ref{fig:design}) crosses an adversarial term with the reconstruction loss:
 adversarial + L1, L1 alone, adversarial + LPIPS, and LPIPS alone. Held fixed across
 all four cells within each replicate: training data, seed, initialisation, evaluation
 chips, matcher, and matcher configuration; the seed varies across the six replicates and
@@ -107,7 +121,7 @@ Residuals are KLT feature matches \cite{saunier2024karios} against real Sentinel
 0.8, over 130 Ankara chips, each a $228\times228$-pixel window at 10~m, stratified into five
 quintiles by land-cover information density. Every number states its inference path and input provenance, and band handling is part
 of it: the residuals of Table~I and of Section~III-L are KLT run on the three-band warped
-rasters; the invention measurement of II-E and Fig.~2 use a BT.601 gray conversion; the
+rasters; the invention measurement of II-E and Fig.~\ref{fig:invention} use a BT.601 gray conversion; the
 production-path figure of Section~V-A is KLT on the BT.601 gray band. Test-time dropout is
 active---it is the generator's own design, not a defect---and a deterministic mode was
 measured to be score-neutral within $\pm0.15$~px on 30 chips and the earlier arms; the

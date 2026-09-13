@@ -100,7 +100,7 @@ seed 42 and is false of the block; corrected in III-A on 2026-09-13.
 | 260 seed-independent rasters committed | 130 + 130, 26.4 MB | `evidence/rasters/README.md`, `MANIFEST.md`; entry 35 | `a415e25` |
 | Private backup holds checkpoints, generated images, the 130 unregenerable Ankara inputs | Kaggle `gencp-evidence-backup`, `-2` | `evidence/BACKUP.md`, `paper-context-addendum.md` §13 | `a415e25` |
 
-## The panel figure (Fig. 2 as compiled) — per-chip values in the caption (2026-09-13)
+## The panel figure (Fig. 4 as compiled from 13 Sep 2026; Fig. 2 before) — per-chip values in the caption (2026-09-13)
 
 | Claim | Value | Source | Commit |
 |---|---|---|---|
@@ -110,7 +110,7 @@ seed 42 and is false of the block; corrected in III-A on 2026-09-13.
 | Fully input-silent chips | 2 of 130 per seed (silent_frac = 1.000), identical across the six seeds | `docs/evidence/C45_s{45..50}_modal/C45_edge_ratio.csv`, counted 2026-09-13 | `a3e1918` |
 | Chips excluded from the informative-mask statistic | 3 per seed, identical across seeds (empty mask or zero real-chip edge fraction), by the registered rule | `informative-mask-results.md`:12–13, :52–53 | `a3e1918` |
 
-## The training-time curve (Fig. 1 as compiled) at six seeds (scored 2026-09-13)
+## The training-time curve (Fig. 3 as compiled from 13 Sep 2026; Fig. 1 before) at six seeds (scored 2026-09-13)
 
 Registration `epoch-curve-registration.md` (gencp-validation `36875ba`, before any cell was
 scored). Inference path: frozen per-seed runner (commit `48ced64`), shim seed 42, KARIOS
@@ -145,7 +145,7 @@ chip-level means. Reading: INTERMEDIATE.
 
 | D vs pretrained, equal-count (amendment) | −1.778 ± 0.109 px, t −16.3, render better on 121/123; from the retained rows at `ankara/run/results/` (130/130 reproduce `turkey_karios.csv`) | `osm-render-baseline-results.md` amendment | `f27f710` |
 | Denominators, III-L | 123 chips (render matched) for every raw and equal-count comparison; the 7 unmatched chips enter only the point-yield criterion | `render_baseline_summary.json` (`n` fields) | `f27f710` |
-| Band handling (II-D) | Table I and III-L: KARIOS on three-band warped rasters; II-E and Fig. 2: BT.601 gray; V-A: KLT on BT.601 gray | `c45_karios.py`; `c45_edge_ratio.py`; `headline-registrations.md` B2 | `f27f710` |
+| Band handling (II-D) | Table I and III-L: KARIOS on three-band warped rasters; II-E and Fig. 4: BT.601 gray; V-A: KLT on BT.601 gray | `c45_karios.py`; `c45_edge_ratio.py`; `headline-registrations.md` B2 | `f27f710` |
 
 ## P4 rows, 2026-09-13 — restored, added or qualified text
 
@@ -200,6 +200,8 @@ availability) are not repeated. Commit for every row: `a3e1918`.
 | Input-silent definition | canonical Sobel ≤ 20 on the input render; edge fraction Sobel > 20; denominator the real chip on the same pixels | `phase-c-lpips-registration.md`:123–124 |
 | Eq. (1), the edge ratio (II-E) | derived from the implementation, not from prose: mask `grad_mag(bt601(input warp)) <= 20`, edge `grad_mag > 20` on arm and real chip over the same mask, ratio of the two fractions, `grad_mag = hypot(scipy.ndimage.sobel(g,0), sobel(g,1))` on float-cast 8-bit gray (unnormalised kernels), chips with empty mask or zero real edge skipped (none of 130) | `tubitak/scripts/c45_eval/c45_edge_ratio.py` (`96503b7`); six-seed run: `seed_eval_run.py` `step_edge`, verbatim (`48ced64`) |
 | Eq. (2a)/(2b), seed-level inference (II-D) | `seed_mean` = mean over chips of the paired difference of per-chip medians (chips missing either arm dropped; none dropped in the six-seed block, N = 130); `across_seeds` = mean, sd with ddof = 1, se = sd/sqrt(S), df = S − 1, `scipy.stats.t.ppf(0.975, S − 1)`; sign reading `all_negative`/`all_positive` | `tubitak/scripts/seed_eval/seed_analysis.py` `seed_mean`, `across_seeds` (`6418feb`) |
+| Fig. 1, the design (II-B) | no number; arm codes pre, C1, C2, C4, C5 are the column stems of `C45_per_chip.csv` | `tubitak/scripts/figures/fig_design.py` (`952cb7b`) |
+| Fig. 2, sign replication (III-B) | the per-seed values, means and intervals of the three rows above and of the L1-family row, reproduced by the script from the committed CSVs and asserted to four decimals before drawing | `tubitak/scripts/figures/fig_sign_replication.py` (`952cb7b`) |
 
 ### Section III
 

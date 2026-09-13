@@ -102,8 +102,21 @@ two non-adversarial arms are separated by 0.063~px.
 
 \subsection{Primary result}
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_sign_replication}
+\caption{Sign replication across the six confirmatory seeds for the three seed-level
+contrasts of this section, in px; each point is one seed's $\Delta_s$ of
+(\ref{eq:seedstat}), labelled by seed. The registered reading is what the points show:
+all six on one side of zero, $P = 1/64$ with the direction fixed in advance. The seed-level
+mean (bar) and its 95\% interval of (\ref{eq:seedci}) (gray band) are reported, not
+required, and are drawn behind the points for that reason. The render of Section~III-L is
+absent by design: it is chip-level and seed-invariant, a different inference path.}
+\label{fig:signs}
+\end{figure}
+
 Removing the adversarial term improves positional accuracy under the perceptual
-reconstruction loss in all six seeds. Per seed, LPIPS-only minus adversarial+LPIPS is
+reconstruction loss in all six seeds (Fig.~\ref{fig:signs}). Per seed, LPIPS-only minus adversarial+LPIPS is
 $-0.615$, $-0.646$, $-0.616$, $-0.594$, $-0.605$ and $-0.578$~px. The direction was fixed
 in advance from an earlier seed and registered before these six were trained, so under a
 null of no effect the probability of six agreeing signs is 1/64.
