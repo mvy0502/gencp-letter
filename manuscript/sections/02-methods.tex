@@ -104,8 +104,8 @@ training setup and we state it as one.
 \subsection{Evaluation}
 
 Residuals are KLT feature matches \cite{saunier2024karios} against real Sentinel-2, at a confidence threshold of
-0.8, over 130 Ankara chips stratified into five quintiles by land-cover information
-density. Every number states its inference path and input provenance. Test-time dropout is
+0.8, over 130 Ankara chips, each a $228\times228$-pixel window at 10~m, stratified into five
+quintiles by land-cover information density. Every number states its inference path and input provenance. Test-time dropout is
 active---it is the generator's own design, not a defect---and a deterministic mode was
 measured to be score-neutral within $\pm0.15$~px on 30 chips and the earlier arms; the
 bound was not re-measured for the LPIPS arms.
@@ -116,8 +116,8 @@ pretrained generator, 62 for adversarial + L1, 60 for adversarial + LPIPS, 75 fo
 and 87 for LPIPS alone (Table~I). This is selection
 on a post-treatment variable and we name it as such.
 
-We test it by equalising counts. On each chip every arm is truncated to the best $K$ of its
-own matches, ranked by match score, where $K$ is the smallest count any arm achieved on
+We test it by equalising counts. On each chip every arm is truncated to the best $K$ of its own matches, ranked by match score (the matcher's own
+per-match quality value, descending), where $K$ is the smallest count any arm achieved on
 that chip; the LPIPS-only arm surrenders 38\% of its points and the adversarial-plus-LPIPS
 arm 7\%. A minimum-match-count sweep over all four arms jointly is reported alongside it.
 Both are reported in Section III.

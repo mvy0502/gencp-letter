@@ -210,8 +210,9 @@ with convergence; it is reported as a curve, not as a dose.
 \caption{What each arm renders where the input asserts nothing. Two chips from the
 130-chip Ankara panel, chosen by rule rather than by eye: (a) the chip with the largest
 input-silent fraction, where the entire input render falls below the Sobel threshold;
-(b) the chip at the median input-silent fraction. Columns: the input render as the mask
-sees it (BT.601 gray; the input-silent region is everything outside the red outline),
+(b) the chip at the median input-silent fraction. Columns: the input render as the mask sees it (BT.601 gray, the luminance-weighted
+conversion of the three-band render to one band; the input-silent region is everything
+outside the red outline),
 the real Sentinel-2 chip, and the five arms at seed 45 (the pretrained arm is
 seed-invariant), each labelled with that chip's input-silent edge ratio $r$
 (Section~II-E; Table~\ref{tab:panel} gives the panel means). In (b) the L1-only arm
@@ -247,8 +248,9 @@ included, renders structure at roughly the real density (0.94 to 1.18 on the chi
 largest input-silent fraction). Information absent from the input cannot be recovered,
 and an arm with nothing to copy fills the frame from its prior; restraint operates only
 where there is something to be restrained by. Those two chips do not move the panel mean
-of 0.28, and they are excluded by rule from the informative-mask comparison of
-Section~III-H, which needs an informative region to compare against.
+of 0.28, and they are excluded by rule from the comparison on the informative mask, the complement of
+the input-silent mask, in Section~III-H, which needs an informative region to compare
+against.
 
 \subsection{The point-count argument, and the selection objection}
 
@@ -270,7 +272,7 @@ predicts.
 \subsection{Restraint, not smoothing}
 
 A remaining explanation is that L1-only is simply blurrier, and that the matcher prefers
-smoother imagery. Computing the same edge ratio on the complementary mask---the
+smoother imagery. Computing the same edge ratio on the complementary mask---the informative mask, the
 pixels where the input does assert structure---separates the two, because blur suppresses
 edges uniformly while restraint suppresses them conditionally. L1-only reproduces the
 real image's edge density to within 1.5\% there (0.986) while sitting at 0.277
@@ -300,8 +302,11 @@ not support: that adversarial arms fail to reduce the reconstruction loss. That 
 reading holds for adversarial+LPIPS in all six seeds, mean $+1.45$\%, but fails for
 adversarial+L1, which falls in one seed and is indistinguishable from flat in another.
 
-Adversarial+LPIPS is the arm whose training-stability rule fired, so the operative form of
-the argument is the one that replicates. The comparison that isolates the discriminator
+Adversarial+LPIPS is the arm whose registered training-stability rule fired, so the
+operative form of the argument is the one that replicates; that rule read the generator's
+perceptual reconstruction loss rising over the first two main-stage epochs as the sign of
+adversarial destabilisation, it fired at seed 42, and it was disclosed rather than acted
+on. The comparison that isolates the discriminator
 holds the learning-rate schedule fixed on both sides and gives a gap of 6.33 points under
 the perceptual loss; the L1-family figure of 4.00 rests on an arm whose sign is not stable
 and on an attenuation inside the seed spread, and is not quoted as equivalent.
