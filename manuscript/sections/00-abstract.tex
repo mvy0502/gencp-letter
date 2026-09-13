@@ -28,21 +28,27 @@
 % Index terms: image registration, generative adversarial networks, ground control
 % points, perceptual loss, georeferencing, Sentinel-2.
 
+% P4 block 3, 2026-09-13: four claims brought down to the body (LR exception; comparison
+% class of "worse"; "necessary condition" not "explains"); the L1-family reading added to
+% III-B so "and under L1 as well" has an explicit body statement. Rule: the abstract never
+% speaks more strongly than the body.
 % DRAFTED 2026-09-13. Order per the comment block above; NO interval; the struck chip-level
 % primary does not appear. Word count checked by script at commit time.
 
 Generated reference imagery has been proposed for satellite georeferencing: a conditional
 GAN renders a Sentinel-2-like image from OpenStreetMap and land cover, and the real scene
 is matched against the rendering. We ask how such a generator should be trained. A
-$2\times2$ factorial crosses an adversarial term with the reconstruction loss, L1 against
-the perceptual loss LPIPS, with everything else held fixed, and scores each arm by the
+$2\times2$ factorial crosses an adversarial term with the reconstruction loss, L1 against the perceptual loss LPIPS, with everything else held fixed except a disclosed
+learning-rate warm-up on the adversarial arms whose consequence is bounded, and scores
+each arm by the
 positional error of feature matches against real Sentinel-2 over 130 chips. Removing the
 adversarial term improves positional accuracy under the perceptual loss in all six
 confirmatory training seeds ($P = 1/64$, direction fixed in advance), and under L1 as well;
 and the perceptual loss alone, with no discriminator anywhere, carries its own positional
-penalty in all six seeds. An input-conditioned measurement explains why: the edge density
+penalty in all six seeds. An input-conditioned measurement supplies the necessary condition, not a complete
+explanation: the edge density
 an arm renders where the conditioning input asserts no structure is lowest for the L1-only
-arm and highest for the LPIPS-only arm, which invents more than either adversarial arm and
-yields more, but worse, matches. The mechanism is plausibility pressure, not the adversarial
+arm and highest for the LPIPS-only arm, which invents more than either adversarial arm and, against the L1-only arm, yields more
+matches at worse positions. The mechanism is plausibility pressure, not the adversarial
 term. The design rule: if you generate a reference image for a geometric consumer, do not
 train it under plausibility pressure.

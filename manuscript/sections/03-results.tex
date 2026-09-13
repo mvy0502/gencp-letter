@@ -112,8 +112,12 @@ The seed-level mean is $-0.609$~px, with a 95\% interval of $[-0.634, -0.585]$ a
 degrees of freedom. That interval is reported, not required: the registered
 reading is the sign replication, and no interval was a gate for it in either direction.
 
-Inference is at the seed level throughout. The treatment was applied once per training
-run, so a standard error computed across evaluation chips measures how consistently one
+The same holds under L1, on the same inference path: adversarial + L1 minus L1-only is
+positive in all six seeds, per seed $+0.675$, $+0.587$, $+0.701$, $+0.754$, $+0.702$ and
+$+0.644$~px, a reading registered at seed level beside the primary; its seed-level mean is
+$+0.677$~px with a 95\% interval of $[+0.617, +0.737]$, reported, not required.
+
+Inference is at the seed level throughout. The treatment was applied once per training run, so a standard error computed across evaluation chips measures how consistently one
 checkpoint beats another, not how consistently the intervention works. Every
 contrast in this section is one number per seed, with variability taken across seeds.
 
