@@ -81,6 +81,11 @@ coverage, not positional accuracy. Per the registration, this earns paragraph le
 Section III; whether it also touches Section I is the supervising session's decision after
 seeing it, and that decision is to be recorded here when taken.
 
+**Decision taken, 13 September 2026 (P6, ruling C.3, supervising session):** the result reaches
+Section I and the abstract with **both** halves — better localisation where it matches, on far
+fewer points — not the dramatic half alone; the title does not change. Applied in the letter at
+`6e1c0e2`; the abstract's conditional "where it matches" added at P7 part B.
+
 ## What is not claimed
 
 No sweep, no threshold variation, no second matcher, no extension beyond the 130 Ankara
