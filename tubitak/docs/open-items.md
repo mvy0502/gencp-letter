@@ -95,3 +95,9 @@ plugins loaded in one process).
 
 **Standing state of the ledger:** 26 items, 8 closed, 18 open — every open item carries a
 written reason and none blocks the final report.
+
+## Package review 2026-09-13 (standing practice 8, sixth pass — P5, the OSM-render premise check)
+
+| # | item | source | status |
+|---|---|---|---|
+| 27 | Has the rasterised OSM render itself ever been tested as a reference, skipping the generator? Opened by the supervising session on 13 September 2026; **never run and never registered before that date**, and absent from this ledger until this row | [osm-render-baseline-registration.md](osm-render-baseline-registration.md) | **CLOSED 13 Sep, same day:** registered at `a5314b1`, run, results in [osm-render-baseline-results.md](osm-render-baseline-results.md). Reading INTERMEDIATE: the render localises better than every generated arm where it matches (chip-level, raw and equal-count), on far fewer points (median 30 vs 75) and with 7 of 130 chips unmatched. One decision remains open: whether the result also touches Section I of the letter (supervising session) |

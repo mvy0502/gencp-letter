@@ -490,3 +490,10 @@ sha256, size in bytes, path relative to this directory.
 | `epoch_curve/driver.log` | `a53890840cf50598aeeb276f07e042056e4eaca49a249f0ee72df9f0ee1a3173` | 44,720 |
 | `epoch_curve/fig2_epoch_curve.pdf` | `33c59205243baf39dfac420cb8ee33ebb3fb2046ad3b1a3d25571bea074e0ebc` | 17,939 |
 | `epoch_curve/fig2_epoch_curve.png` | `ef5603101e8b7bf82d260153a87d03600fef61e9781c29c84ef32521144f11c7` | 110,877 |
+
+### Added 2026-09-13 — the OSM-render premise check (registration `osm-render-baseline-registration.md`)
+
+| file | sha256 | bytes |
+|---|---|---|
+| `osm_render_baseline/render_per_chip.csv` | `42dd3e6ef30c6d67fe32e84009d45ea88d163fca13072f46f4987e789cd74b7b` | 3,991 |
+| `osm_render_baseline/render_baseline_summary.json` | `d4160055858cd02dca6607c675f85c1f945559e7c31a15ab5903ce43d03c9ae0` | 7,383 |
