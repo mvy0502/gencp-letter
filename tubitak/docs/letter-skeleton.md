@@ -227,7 +227,7 @@ Sentinel-2.
      suppressing contrary evidence, which is the single accusation this letter can least
      afford. The distinguishing sentence stays: joint training there, frozen deliverable and
      exogenous matcher here.
-   - **Chen, Ohayon et al.** — proves information-theoretically that pursuing perceptual
+   - **Chen, Ohayon et al.** *(WRONG — corrections-log entry 39, 13 Sep 2026: the paper is by Cohen, Kligvasser, Rivlin and Freedman; the name is preserved here as written on 24 Aug)* — proves information-theoretically that pursuing perceptual
      quality converts uncertainty into confidently rendered false detail. Our mechanism,
      predicted in advance by someone else; it makes the finding expected rather than odd.
    - **Merkle et al.** — established feeding translation output into a matching pipeline and

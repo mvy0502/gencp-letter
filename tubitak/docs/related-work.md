@@ -57,6 +57,8 @@ matcher is exogenous. Their metric is roughly 7 px on deformable registration; o
 sub-pixel on rigid georeferencing, the regime where invented edges dominate. A reviewer who
 knows this paper will otherwise read our result as contradicted by CVPR 2020.
 
+**CORRECTED 13 September 2026 (corrections-log entry 39): the authors are Regev Cohen, Idan Kligvasser, Ehud Rivlin and Daniel Freedman — arXiv:2405.16475 and the NeurIPS 2024 proceedings record. "Chen, Ohayon et al." below is wrong and is preserved as written.**
+
 **Chen, Ohayon et al., "Looks Too Good To Be True: An Information-Theoretic Analysis of
 Hallucinations in Generative Restoration Models", NeurIPS 2024, arXiv:2405.16475.** Ties
 hallucination directly to the pursuit of perceptual quality: as the output distribution is
