@@ -110,6 +110,22 @@ seed 42 and is false of the block; corrected in III-A on 2026-09-13.
 | Fully input-silent chips | 2 of 130 per seed (silent_frac = 1.000), identical across the six seeds | `docs/evidence/C45_s{45..50}_modal/C45_edge_ratio.csv`, counted 2026-09-13 | `a3e1918` |
 | Chips excluded from the informative-mask statistic | 3 per seed, identical across seeds (empty mask or zero real-chip edge fraction), by the registered rule | `informative-mask-results.md`:12–13, :52–53 | `a3e1918` |
 
+## Fig. 2 — the training-time curve at six seeds (scored 2026-09-13)
+
+Registration `epoch-curve-registration.md` (gencp-validation `36875ba`, before any cell was
+scored). Inference path: frozen per-seed runner (commit `48ced64`), shim seed 42, KARIOS
+config unchanged; penalty = chip mean over 130 chips of (adversarial − counterpart per-chip
+median), one value per seed per epoch; epoch 20 is the six-seed block.
+
+| Claim | Value | Source | Commit |
+|---|---|---|---|
+| Registered reading, LPIPS family | HELD: positive 6/6 at epochs 1, 2, 5, 10, 20 | `epoch-curve-results.md`; `evidence/epoch_curve/epoch_curve_summary.json` | `5e32c23` |
+| Registered reading, L1 family | HELD: positive 6/6 at every epoch | same | `5e32c23` |
+| Six-seed means, LPIPS | 0.262, 0.258, 0.499, 0.532, 0.609 px (seed sd 0.044, 0.031, 0.053, 0.061, 0.023) | `evidence/epoch_curve/epoch_curve_per_seed.csv` | `5e32c23` |
+| Six-seed means, L1 | 0.521, 0.473, 0.423, 0.575, 0.677 px (sd 0.067, 0.065, 0.085, 0.074, 0.057) | same | `5e32c23` |
+| Exploratory dip-then-grow | 3 of 6 seeds (LPIPS), 5 of 6 (L1): not stable, not claimed | `epoch_curve_summary.json` | `5e32c23` |
+| Seed-42 LPIPS curve (superseded as Fig. 2, quoted as the generating run) | 0.334, 0.254, 0.441, 0.496, 0.487 px | `phase-c-lpips-results.md`:176–180 | `a3e1918` |
+
 ## Sections I and V — rows added 2026-09-13 when the sections were drafted
 
 | Claim | Value | Source | Commit |

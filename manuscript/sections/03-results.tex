@@ -166,14 +166,35 @@ re-measured for the two LPIPS arms, so it is not a bound on this contrast in eit
 direction. What the comparison does license is the reading already given: a consistent
 small effect, not a comfortable one.
 
-\subsection{Dose-response}
+\subsection{The training-time curve}
 
-The adversarial penalty under the perceptual loss, measured at epochs 1, 2, 5, 10 and 20,
-runs 0.334, 0.254, 0.441, 0.496 and 0.487~px, every value at six standard errors or more,
-with the same dip-then-grow-then-plateau shape as the L1 family. Training longer with a
-discriminator widens the gap under both reconstruction terms. This is a
-training-time curve and is confounded with convergence; it is reported as a shape, not as
-a dose.
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig2_epoch_curve}
+\caption{The adversarial penalty against training epoch, both reconstruction families,
+six confirmatory seeds. Penalty: per seed, the chip mean over 130 chips of the adversarial
+arm's per-chip median residual minus its non-adversarial counterpart's, positive when the
+adversarial arm is worse; thin lines are seeds, points are six-seed means with the
+seed-to-seed s.d. Epoch 20 is the block of Table~\ref{tab:panel}; epochs 1, 2, 5 and 10
+were scored from the retained checkpoints through the same frozen pipeline. This is a
+training-time curve, confounded with convergence: the arms are trained longer, not dosed.}
+\label{fig:epochs}
+\end{figure}
+
+The adversarial penalty was scored at epochs 1, 2, 5, 10 and 20 for both families at all
+six seeds, with the reading registered before any cell was scored: the penalty positive
+at every scored epoch in every seed. It held in both families, six of six at each of the
+five epochs (Fig.~\ref{fig:epochs}). The six-seed means run 0.26, 0.26, 0.50, 0.53 and
+0.61~px under the perceptual loss and 0.52, 0.47, 0.42, 0.58 and 0.68~px under L1.
+Training longer with a discriminator widens the gap under both reconstruction terms.
+
+The dip-then-grow shape read off the single generating run (0.334, 0.254, 0.441, 0.496,
+0.487~px under the perceptual loss) was registered as an exploratory reading with its
+band stated in advance, and it is not stable across seeds: an early dip followed by
+growth appears in three of six seeds under the perceptual loss and five of six under L1.
+The shape is therefore reported and not claimed. What the figure supports is the
+registered reading and nothing finer. This is a training-time curve and is confounded
+with convergence; it is reported as a curve, not as a dose.
 
 \subsection{Mechanism}
 

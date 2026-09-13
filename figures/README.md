@@ -16,3 +16,4 @@ Rules:
 1. Vector (PDF/EPS) for plots, high-resolution raster only for imagery panels.
 2. Panel labels and axis text in English, sized for a two-column IEEE page.
 3. No number appears in a caption unless it has a row in [`../EVIDENCE.md`](../EVIDENCE.md).
+| `fig2_epoch_curve.pdf` (+ `.png`) | Fig. 2: adversarial penalty against epoch, both families, six seeds; registered reading HELD in both | `epoch_sweep_run.py` then `epoch_curve_analysis.py --root <GenCP working repo> --out <dir>` (study repository, `tubitak/scripts/seed_eval/`); reads the 24 epoch cells scored 13 Sep 2026 and the six-seed block | gencp-validation `5e32c23` |
