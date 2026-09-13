@@ -752,6 +752,7 @@ existed would mean deleting answers to objections a reviewer will raise.
   task ahead**, not a constraint on drafting. Every line is re-costed below against current
   required content and labelled **measured** (drafted) or **estimated** (not yet drafted) —
   because until now most were estimates presented as plan.
+- *2026-09-13: the six-seed epoch sweep was registered and scored ([epoch-curve-results.md](epoch-curve-results.md)); the registered reading held in both families and the out-of-range-endpoint objection below no longer applies. The confounded-with-convergence point stands and is in the caption.*
 - **The reserve cut is SUSPENDED, not taken.** Fig. 2's merits are re-decided for the arXiv
   version on their own terms. **The out-of-range-endpoint objection is still real and still
   argues against it** — its terminal point is seed 42's value, which the six-seed block places

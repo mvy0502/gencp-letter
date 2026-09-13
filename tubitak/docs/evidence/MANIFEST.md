@@ -430,3 +430,61 @@ sha256, size in bytes, path relative to this directory.
 | `real_chip_bt601/ank_9_25.tif` | `6f0521305924c7de6be741a6c1c9d6cf766bdd0cda602cd0801287f7c27842ba` | 52,386 |
 
 **343 files, 27.8 MB.** (260 rasters added 2026-08-26 as insurance for the informative-mask test.) (2 added by the LR-confound probe, 1 by the common-support re-scoring, 2026-08-26.) (2 added 2026-08-26 by the LR-confound probe.) Regenerate this table with `shasum -a 256` over the directory.
+
+### Added 2026-09-13 — the six-seed epoch sweep (registration `epoch-curve-registration.md`)
+
+| file | sha256 | bytes |
+|---|---|---|
+| `C45_s45_modal_e1/C45_per_chip.csv` | `ba052fd40307ffb4cd733844052c2bc046872ea2a36742adc145625f04f9e9fb` | 15,488 |
+| `C45_s45_modal_e1/C45_edge_ratio.csv` | `689d6683693f0b91829291ae77f7479ca94361c048092fc2ca5f1084062a77b9` | 18,477 |
+| `C45_s45_modal_e2/C45_per_chip.csv` | `0a38e796dcd50bfe1ab3fec2f1c20fa33ccc0e5bd53b2fba99f71f95b0849b01` | 15,513 |
+| `C45_s45_modal_e2/C45_edge_ratio.csv` | `2bf04f82a19e91a693cf5b546aad636c0d18006350ccfd936567f921339678d9` | 18,474 |
+| `C45_s45_modal_e5/C45_per_chip.csv` | `4ce3fe6118eff53ba89a54a006bada68866aa52ed582dba6b501ad4d8006d6cf` | 15,557 |
+| `C45_s45_modal_e5/C45_edge_ratio.csv` | `8909a4dba861c0a56666d877eba68e078c2e8f7a4a84af9b4b5c05437d1cb5ee` | 18,498 |
+| `C45_s45_modal_e10/C45_per_chip.csv` | `75e64d717ad27540dc2a45ed281a1c8b9eef7e93675d25f83cd577c3a4ff3760` | 15,563 |
+| `C45_s45_modal_e10/C45_edge_ratio.csv` | `f73342040c84574a838f061722d0e31ee944ad83bd8939003ffa3caac8a5ce7f` | 18,491 |
+| `C45_s46_modal_e1/C45_per_chip.csv` | `b26655a139563502a726a8ae1dd12971c9ff23ba2f931b0966e09422d01b8b26` | 15,486 |
+| `C45_s46_modal_e1/C45_edge_ratio.csv` | `2a7f4da7dc782160ead7e5254ef2f27f14d41260bbae60407146f4d25128e847` | 18,474 |
+| `C45_s46_modal_e2/C45_per_chip.csv` | `ee4db8adec3a7a5ebd9cc246e3edbc683b1f8150cc2fb3daf93580c4b9c2d387` | 15,521 |
+| `C45_s46_modal_e2/C45_edge_ratio.csv` | `7fe8f5aea5f752416a366e39ef82ad109eb2c3d972a7b5a0b853f30e3bf1d6f2` | 18,476 |
+| `C45_s46_modal_e5/C45_per_chip.csv` | `95455e8a9d5759e16c81d1d739032eb8d4b265d7586212dc8b1d5300a6dd0601` | 15,560 |
+| `C45_s46_modal_e5/C45_edge_ratio.csv` | `c567843842d46ae0fe5990583ea29cdd9c090a78a14e7c4b1d12d77e71168bc0` | 18,484 |
+| `C45_s46_modal_e10/C45_per_chip.csv` | `fd2055261c21bd3ccf26414ebdde7c9a5e93adf24e0200a0636bef4b04c40b61` | 15,560 |
+| `C45_s46_modal_e10/C45_edge_ratio.csv` | `d8b6936748fd465cf6767fa69b61135bab620b922f42373f5ae0cb7441dbd28f` | 18,491 |
+| `C45_s47_modal_e1/C45_per_chip.csv` | `e89d72e5be2fd9db887aa39ca656dd0bc030f0cd004b5487fbdca1601f957c38` | 15,510 |
+| `C45_s47_modal_e1/C45_edge_ratio.csv` | `73d9a6ec79175497a408458616fc89c4d90a50dd3d27cc5db23379a76aa121cc` | 18,497 |
+| `C45_s47_modal_e2/C45_per_chip.csv` | `92a5ecd098a38b4f84c55c2ad4489511e1bfe62505ff5803cdae286c9cb0a4fa` | 15,539 |
+| `C45_s47_modal_e2/C45_edge_ratio.csv` | `a9b00f3d53137fac1a79fe25e8462b118bbc47ea81dae2ce2893809bdab207f5` | 18,487 |
+| `C45_s47_modal_e5/C45_per_chip.csv` | `bf921803cffe35ca8580afa3321bbd325f5b33107232c46a3ca094cea9285729` | 15,559 |
+| `C45_s47_modal_e5/C45_edge_ratio.csv` | `f10ff1569622f689907dc112873dea856d11afc9e6c913337b0d18ae5e2d7ae3` | 18,512 |
+| `C45_s47_modal_e10/C45_per_chip.csv` | `99ac4cf2c97eb66d1f88609ac08630b2ef9826a0b32dce079bd1ba5e405503e2` | 15,563 |
+| `C45_s47_modal_e10/C45_edge_ratio.csv` | `254224a60e6b26aae1325715fd899b367b5294f28f6b371ff229d4a23b2285a3` | 18,533 |
+| `C45_s48_modal_e1/C45_per_chip.csv` | `354d8ebfd187b04a30eddfe59944103f02de90c6eb101dd721ff06e2610a9314` | 15,499 |
+| `C45_s48_modal_e1/C45_edge_ratio.csv` | `aa5e5f2297067b7b5e9cc7f7801d60a77ef31bf33bdbd8469c9a4e430fa1557e` | 18,496 |
+| `C45_s48_modal_e2/C45_per_chip.csv` | `d42679e1fc9c21ea08361c8fb96cb6e02430f55f442f4c249c4007a2dd700280` | 15,527 |
+| `C45_s48_modal_e2/C45_edge_ratio.csv` | `cd096158e3957199c0c7fbca704c3e2a431ed96d55b19ae4823d118dd2b9eb19` | 18,510 |
+| `C45_s48_modal_e5/C45_per_chip.csv` | `2a555420b66a769e2b9c76cc93e450f269f42a7c5c857b8e95a164e99aa26bc9` | 15,554 |
+| `C45_s48_modal_e5/C45_edge_ratio.csv` | `caeed616270372871f358806f8b3508911deef573aef3ac0a63ca5fe37f944f9` | 18,499 |
+| `C45_s48_modal_e10/C45_per_chip.csv` | `5c45d40ab87b6de241c69d5d8156289808461545e1182cf5b19f24c794d95240` | 15,576 |
+| `C45_s48_modal_e10/C45_edge_ratio.csv` | `db95eff3ecf8944a557bc2d84b2af8b85fdcdb9bfb1c144916c256a3d6944beb` | 18,488 |
+| `C45_s49_modal_e1/C45_per_chip.csv` | `1cc58b4d663f89174c9805561b371f599b9318e194b6b326cef8586270f87d02` | 15,492 |
+| `C45_s49_modal_e1/C45_edge_ratio.csv` | `789c2c4d88477cdb0bf0de75e3ad392f6aceabf6cd956ce843555b64201e379a` | 18,481 |
+| `C45_s49_modal_e2/C45_per_chip.csv` | `d4559a1f836a47aa64fb23299e2803fd62298d525b18fd78f013b4b80593a1c2` | 15,525 |
+| `C45_s49_modal_e2/C45_edge_ratio.csv` | `10966422b2e8f2afe326e5675db9d2b2584903ae87be48c8da37c95645251212` | 18,481 |
+| `C45_s49_modal_e5/C45_per_chip.csv` | `b4abd8e55d9dfdee39cccfb78e7587c79fbcd1cb615abb801fa615a932fa9c25` | 15,573 |
+| `C45_s49_modal_e5/C45_edge_ratio.csv` | `9b5a342c4baaf80139438158aeaa6fb93429c00ca54b0a62a6d7b276540ba7cf` | 18,502 |
+| `C45_s49_modal_e10/C45_per_chip.csv` | `a05906d2e86b0f0b92dce1e982233091670f2ecc2ffc4e5cdda44a301a841983` | 15,557 |
+| `C45_s49_modal_e10/C45_edge_ratio.csv` | `ed62579f0ed51d0a1bdd766117f80039d2562c8fcd0dd9e72e92d7d46a48f43c` | 18,479 |
+| `C45_s50_modal_e1/C45_per_chip.csv` | `e569a0986a00b31d6ec909b3681276b2e3929e5cf9ad7dee53d255b4bdec12b9` | 15,506 |
+| `C45_s50_modal_e1/C45_edge_ratio.csv` | `bb03c150199d85aa19beb447bbfd80aa72f16cad7a307894ed728d6d679f4485` | 18,487 |
+| `C45_s50_modal_e2/C45_per_chip.csv` | `7cea51ae5ebe1242583ce63539c04d85ce4fbc0f9152e5c4dd5156d0bcb31a7c` | 15,520 |
+| `C45_s50_modal_e2/C45_edge_ratio.csv` | `e9e41389a1c071d4b9e79f7ef357a7e3616620d77133ffb489f747317563a260` | 18,468 |
+| `C45_s50_modal_e5/C45_per_chip.csv` | `dec982a62911e65bbbed12372aba076ffa9c6cc11fc4a3d7a0c2a637e453163f` | 15,552 |
+| `C45_s50_modal_e5/C45_edge_ratio.csv` | `b8edce810d188ef4e0e15d38c72389a26b5209fdafb3e8966dc35c0c24c8d9db` | 18,519 |
+| `C45_s50_modal_e10/C45_per_chip.csv` | `f40f3807594d314b4a868604289c64207923472bc413908e902707cb35b99e7e` | 15,541 |
+| `C45_s50_modal_e10/C45_edge_ratio.csv` | `0f24de02418842dc5adb3dea61e7c37d54a7d7f60c749fca062b8e669234b126` | 18,485 |
+| `epoch_curve/epoch_curve_per_seed.csv` | `248ba223a8ffaae87cf5988223bcf0ac7ec1e1188c34763cedda937764ed0a2f` | 552 |
+| `epoch_curve/epoch_curve_summary.json` | `a97a441938c8ed8acc2cefe49478e76c48a86492477f65e13d3ecbcf3878c7f5` | 3,196 |
+| `epoch_curve/driver.log` | `a53890840cf50598aeeb276f07e042056e4eaca49a249f0ee72df9f0ee1a3173` | 44,720 |
+| `epoch_curve/fig2_epoch_curve.pdf` | `33c59205243baf39dfac420cb8ee33ebb3fb2046ad3b1a3d25571bea074e0ebc` | 17,939 |
+| `epoch_curve/fig2_epoch_curve.png` | `ef5603101e8b7bf82d260153a87d03600fef61e9781c29c84ef32521144f11c7` | 110,877 |
