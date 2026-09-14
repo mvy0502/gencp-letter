@@ -1,5 +1,7 @@
 # Evidence trail
 
+*From 14 September 2026 the study record lives in this repository under `tubitak/`, merged from `mvy0502/gencp-validation` with full history and no prefix; every commit SHA cited below resolves here with `git show`, and every path is unchanged.*
+
 Every number that appears in the manuscript gets a row here before it is written into
 the LaTeX. No row, no number.
 

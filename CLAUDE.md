@@ -1,35 +1,33 @@
-# Paper repository
+# Paper and record repository
 
-This repository holds the manuscript (TeX) and its Markdown drafts only. No code, no
-data, no experiments.
+From 14 September 2026 this repository holds both the manuscript and the research record.
+The record was merged in from `mvy0502/gencp-validation` (`main` at `e26c7fa`, tag
+`pre-move-2026-09-14`) with full history and no subtree prefix, so every path under
+`tubitak/` and every commit SHA the manuscript cites is the same here as there.
 
-Measurements, results and the research record live in `mvy0502/gencp-validation`,
-branch `main`, under `tubitak/` — registrations, results, audits, the corrections log,
-evidence and standing practices. `EVIDENCE.md` here pins the commit each number was
-read at. Read `tubitak/` there for numbers; never re-derive a number here. Every number
-that enters the manuscript must cite the gate or registration it came from, and must
-state its inference path.
+| repository | role from 14 September 2026 |
+|---|---|
+| `mvy0502/gencp-letter` (this one) | the manuscript (`manuscript/`, `EVIDENCE.md`, `figures/`, `notes/`) and the research record (`tubitak/docs/`, `tubitak/docs/evidence/`, `tubitak/scripts/`); public once the preprint has an identifier |
+| `mvy0502/gencp-validation` | the internship delivery as handed over to the institution; frozen, one dated line at the top of its READMEs points here; hosts the plugin releases |
+| `mvy0502/GenCP` (`tubitak-tr`) | the working repository for the pix2pix fork, the QGIS plugin and the corpus chain; not where the paper's numbers are read from |
 
-`mvy0502/GenCP` (branch `tubitak-tr`) is the working repository for the pix2pix fork,
-the QGIS plugin and the corpus chain. It is not where the paper's numbers are read from.
+**The merge rule, rewritten with its reason.** The working notes said "no merge in either
+direction". That rule existed because merging `tubitak-tr` INTO `gencp-validation` would have
+propagated deletions and destroyed the record (263 files). The 14 September merge ran the
+other way, `gencp-validation` INTO `gencp-letter`, additively, and deleted nothing. The rule's
+letter was broken and its purpose kept; the rule now reads: never merge anything into
+`gencp-validation`; the record moves forward only additively and only into this repository.
 
-*Corrected 2026-09-13. The 26 August text of this file said the record lived in GenCP
-`tubitak-tr` and that gencp-validation was "a handover snapshot, not the source of
-record". That was written at 07:05 that day and was overtaken by the deletion commit
-(`b815b46`) the same afternoon, which moved the research record to gencp-validation.
-`EVIDENCE.md` had already been re-pinned to gencp-validation `main`; this file had not
-caught up.*
+Rules that continue: every number in the manuscript cites the registration or results
+document it came from and states its inference path (`EVIDENCE.md`); no number is re-derived
+in the manuscript; research changes to the record are made here and never in
+`gencp-validation`; the upstream GenCP directories (`models/`, `data/`, `options/`, `util/`,
+root `scripts/`, `test.py`, `train.py`, the two demo directories) are read and imported, never
+edited; no emoji in any file. The pre-commit hook (`tubitak/scripts/hooks/pre-commit`) runs
+the manifest path check and the practice-15 gate; install it with
+`cp tubitak/scripts/hooks/pre-commit .git/hooks/ && chmod +x .git/hooks/pre-commit`.
 
-## The manuscript lives here — from 13 September 2026
-
-The Markdown drafts of Sections II, III and IV were moved here from
-`gencp-validation/tubitak/docs/` into `manuscript/drafts/` (history stays there). The
-reasons, recorded in both repositories' handover files:
-
-1. gencp-validation is a delivered artifact; manuscript churn there blurs what was
-   delivered.
-2. The paper cites gencp-validation at pinned commits; a citation target should be stable.
-3. This repository exists for the manuscript and is private, which is right for
-   unpublished work.
-
-Do not write manuscript text into gencp-validation. Do not copy analysis code here.
+*History of this file: the 26 August text said the record lived in GenCP `tubitak-tr`; the
+13 September correction moved that to gencp-validation; this 14 September text records the
+move here. The manuscript's Markdown drafts moved here on 13 September for the reasons
+recorded in the repository README of that date (preserved in git history).*

@@ -5,7 +5,7 @@ copied from a report PDF. Each figure gets a row here recording the command that
 produces it and the study-repo commit it was produced at, so a reviewer question can be
 answered by re-running one line.
 
-Study repository: https://github.com/mvy0502/gencp-validation
+Study repository: this repository from 14 September 2026 (the record merged in from https://github.com/mvy0502/gencp-validation with its history; commands below run from the repository root, paths unchanged)
 
 | File | What it shows | Command (run in the study repo) | Commit |
 |---|---|---|---|

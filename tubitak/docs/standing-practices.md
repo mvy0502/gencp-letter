@@ -106,6 +106,13 @@ Rules of general force, collected where future work will see them. Each carries 
     practice-11 test is met: the class is the claim about existence, not the three instances
     that prompted it.
 
+    *Mechanism note, 2026-09-14 (P15 B.2).* From this date the research record lives in
+    `mvy0502/gencp-letter`, into which `gencp-validation` `main` (`e26c7fa`, tag
+    `pre-move-2026-09-14`) was merged with full history and no prefix. `gencp-validation` is
+    the internship delivery as handed over and is frozen: no research change is made there
+    again, and a change made there by mistake is not a change to the record. Paths and
+    cited SHAs are unchanged by the move.
+
     *Cross-reference, 2026-09-14 (P13 D).* The same two-directional form governs checks that
     a text change preserved content: nothing protected removed and nothing unsupported
     introduced. Written prospectively from one instance in the letter's P12 prose pass and
