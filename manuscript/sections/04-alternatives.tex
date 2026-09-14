@@ -82,9 +82,10 @@ Optimising the evaluation metric &
 (b) matcher family: KLT, NCC template grid, phase correlation, two band conversions, an
 urban subset, 6,510 comparisons &
 (a) L1-only ahead in every family; ORB $-0.613 \pm 0.135$ ($n = 29$), MI a lower bound;
-(b) ordering preserved in every cell but two, both far below threshold; the template
-matcher widened the margin in all eight combinations &
-Refuted by two registrations sharing no matcher, chip set or code \\
+(b) L1-only first, or tied within noise with an arm outside this factorial, in every cell
+but two, both far below threshold; the template matcher widened the margin in all eight
+combinations &
+Refuted by two registrations sharing no matcher and no scoring code, on the same chip sets \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -166,21 +167,28 @@ figure is a paired difference over the 29 chips where both arms matched, not ove
 the 53 chips where the L1-only arm matched at all; the AKAZE figure rests on 11 paired
 chips. And the mutual-information margin of $-1.260 \pm 0.261$ is a lower bound,
 not an estimate: the registered subpixel refinement never ran, and the search grid censors
-15.8\% of chips at its bound, censoring the worse arms harder and therefore compressing the
-margin toward zero.
+70 of the 390 Ankara measurements, 17.9\%, at its bound---36 of 130 for the pretrained
+arm, 23 for adversarial + L1 and 11 for L1-only---censoring the worse arms harder and
+therefore compressing the margin toward zero.
 
 The second registration varied the \emph{matcher family} rather than the descriptor: KLT,
 an NCC template grid, and phase correlation, crossed with two band conversions and an
-urban subset over 6,510 scored comparisons. The arm ordering is preserved in every
-condition cell except two, both at the European urban subset under phase correlation,
-one in each band conversion, and both far below the threshold at which an ordering change
-would be claimed. A registered prediction that the template matcher would favour the
+urban subset over 6,510 scored comparisons. L1-only ranks first, or ties within noise with
+an arm outside this factorial, in every condition cell except two, both at the European
+urban subset under phase correlation, one in each band conversion, where adversarial + L1
+leads it by $0.025 \pm 0.208$ and $0.009 \pm 0.217$~px, far below the threshold at which
+an ordering change would be claimed; the rank changes recorded in six further cells, all
+on the 30-chip Ankara subsets, are within noise and none displaces L1-only from that
+position. A registered prediction that the template matcher would favour the
 sharper arm failed in the direction that strengthens the result: the L1-only
 arm's margin grew rather than shrank, in all eight set-by-conversion combinations.
 
-The reading. The candidate is refuted by two registrations that share no matcher,
-no chip set and no scoring code. That is stronger evidence than either alone, and
-it is the reason this row is reported as two tests rather than one.
+The reading. The candidate is refuted by two registrations that share no matcher and no
+scoring code. They were scored on the same four chip sets and the same seed-42 generated
+images, which does not weaken the refutation: the factor under suspicion is the matcher,
+and the matcher is what varied. Two matcher families agreeing on the same chips is
+stronger evidence than either alone, and it is the reason this row is reported as two
+tests rather than one.
 
 \subsection{Corrected georeferencing in the fine-tuning pairs}
 

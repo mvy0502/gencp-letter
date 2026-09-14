@@ -143,7 +143,7 @@ Point-level common support is not constructible here, and we report that rather
 than approximating it. KLT keypoints are detected independently per arm on that arm's own
 generated image, so the arms share no point identity: at a two-pixel tolerance, 69 of 130
 chips have no common points at all (counted at one seed before any contrast was computed), and a tolerance wide enough to yield a usable set would
-exceed the 1.4--2.0~px residuals under test and absorb the signal. Equal-count truncation
+exceed the 1.4--2.1~px residuals under test and absorb the signal. Equal-count truncation
 is therefore the only available substitute. It is ranked by match score and never by
 residual, which would be circular; match score is itself post-treatment, so this
 removes the count asymmetry rather than all conditioning, and no result here is unbiased.
@@ -195,9 +195,10 @@ an error of exactly $1/256$, zero at the north-west corner and reaching 14.1~m a
 south-east corner of a chip. Our path corrects it, and the correction is applied to every
 chip scored here, so our geometry is not identical to the published pipeline's. The
 qualifier travels with the claim: the systematic component is consistent with the signs
-and magnitudes of the published means, but the predicted standard deviation is 2.89~m
-against an observed 14.5 to 17.3~m, so it accounts for roughly 3.9\% of the reported
-variance and does not invalidate the published conclusions. We describe it as a
+and magnitudes of the published means, but the predicted standard deviation is 2.89~m against the 14.5 to 17.3~m reported
+upstream \cite{guasch2026gencp}, so it accounts for between $(2.89/17.3)^2 = 2.8\%$
+and $(2.89/14.5)^2 = 4.0\%$ of the reported variance and does not invalidate the
+published conclusions. We describe it as a
 text-versus-data inconsistency, not as a code bug, and pin the audited upstream commit
 (\texttt{e218f29}).
 

@@ -362,8 +362,10 @@ number. Where the render matches, it localises better than every generated arm: 
 per-chip median residual is 0.583~px (mean of medians 0.797~px), and the paired chip-level difference render minus arm over those 123 chips is
 $-1.715 \pm 0.091$~px against the pretrained generator, between $-1.15$ and $-1.22$~px against adversarial + L1, between $-1.13$ and $-1.22$~px
 against adversarial + LPIPS, between $-0.53$ and $-0.57$~px against LPIPS-only and between
-$-0.44$ and $-0.56$~px against L1-only across the six seeds' arms, every one at six standard errors or more; the equal-count truncation of Section~II-D
-leaves each fine-tuned comparison within 0.02~px of its raw value and gives $-1.778 \pm 0.109$~px against the pretrained generator, over the same 123 chips.
+$-0.44$ and $-0.56$~px against L1-only across the six seeds' arms, every one at six standard errors or more; under the equal-count truncation of Section~II-D the six-seed mean of each fine-tuned
+comparison moves by at most 0.019~px, while individual seed-arm comparisons move by up to
+0.082~px, against advantages of 0.44 to 1.22~px; the truncation gives
+$-1.778 \pm 0.109$~px against the pretrained generator, over the same 123 chips.
 Moving to equal counts did not shrink the render's advantage against the pretrained
 generator but grew it, from 1.715 to 1.778~px over the same chips; that is the direction
 the minimum-match-count sweep of Section~III-G also moves, and two independent
