@@ -1,0 +1,12 @@
+# term | heading of the subsection that defines it (as printed: II-D, V-A, ...). P4 ruling 5.1's list plus the P10 additions.
+production path | II-D
+informative mask | III-F
+training-stability rule | III-J
+hardware gate | Data Availability
+match score | II-D
+BT.601 gray | II-D
+chip | II-D
+input-silent | II-E
+plausibility pressure | I
+minimum-match-count sweep | II-D
+equal-count truncation | II-D

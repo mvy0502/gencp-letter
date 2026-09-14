@@ -19,6 +19,11 @@
 - [ ] GRSL's current preprint and supplementary-material policy verified
 - [ ] arXiv identifier cited in the submission where the venue allows it
 - [ ] E3 absent from every results table (exploratory only)
+- [ ] Term first-use check passes on the final PDF (P11 part D, 14 Sep 2026):
+      `python3 tools/term_first_use.py manuscript/letter.pdf notes/terms.txt` exits 0.
+      It reports the section of each term's first body use and fails if that precedes the
+      defining section named in `notes/terms.txt`; it cannot judge whether the definition is
+      adequate, so read the defining sentence too
 - [ ] B1 presented as dose-response support, not as the spine of the argument
 - [ ] Caveats travelling with each leg: E1 right-censoring, E2 alternative reading
 
