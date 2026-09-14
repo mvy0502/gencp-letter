@@ -1,0 +1,828 @@
+driver start 2026-09-13T15:26:07Z pid 78405
+pull complete: 96 rc=0 lines
+runner /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/scripts/seed_eval/seed_eval_run.py sha256 3df87c807cefce860b4c870a36ba5e7e9c3d09051a63395ffed945b8ad46f977
+seed 45 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s45_modal_e1   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e1
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 d97d7b65cf9f66606449130ed8ba6a376fb7b0c9f0c66bb8f5c3cc595270e4ea - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 5dcefe02135b812471ae0aed08e9435b7bdba5573212f923e82599d6ff056ece - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 34d290fceb16fb52c742348ab6a0f0ba5e7e040523ecf51254883011ba095e31 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 07bb72290f8fa9a88cce88a5843e02d806816aa1d9f061ab95097d1ae1d8dcb1 - assert against the Modal-side verify_latest record
+  infer C2: rc=0 130 fakes
+  infer C1: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s45_modal_e1/C45_per_chip.csv
+sha256 C45_per_chip.csv: ba052fd40307ffb4cd733844052c2bc046872ea2a36742adc145625f04f9e9fb
+sha256 C45_edge_ratio.csv: 689d6683693f0b91829291ae77f7479ca94361c048092fc2ca5f1084062a77b9
+seed 45 epoch 1: rc=0 180s
+seed 45 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s45_modal_e2   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e2
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 2c707f11359e5d4c1a5b1bba66b56733c6bed9ffdcd5450862fda09db3701363 - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 d32fa5623abdb32a85d7288f5917d6d7d3cc9b5922bd39d56f8c054b748a740d - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 514622b4f30407cfc34c079c3e51a824f075ffcdff605f4c4d060be4cc908883 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 a9ce18e03b074e540ad5a50aaa5248c10d5ee989bfe8efdc4d1a6185d9b367b6 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s45_modal_e2/C45_per_chip.csv
+sha256 C45_per_chip.csv: 0a38e796dcd50bfe1ab3fec2f1c20fa33ccc0e5bd53b2fba99f71f95b0849b01
+sha256 C45_edge_ratio.csv: 2bf04f82a19e91a693cf5b546aad636c0d18006350ccfd936567f921339678d9
+seed 45 epoch 2: rc=0 181s
+seed 45 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s45_modal_e5   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e5
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 01325d3363554736966cf1b5bbc7c7df9c8bf81c7ff5cfb76387a400ef80cd09 - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 6393e5c488d0621ec330cd45a52689a8df294eee64982ea5eb6ea77053b06442 - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 180c32649e23a63da17c4a7de8a47bbbb916156741f72bbca4f9c8ccf5ae5f53 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 11945723fa5044d40279d2c0eb622c9a96d3ac311f12a03ece692acd57384b52 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s45_modal_e5/C45_per_chip.csv
+sha256 C45_per_chip.csv: 4ce3fe6118eff53ba89a54a006bada68866aa52ed582dba6b501ad4d8006d6cf
+sha256 C45_edge_ratio.csv: 8909a4dba861c0a56666d877eba68e078c2e8f7a4a84af9b4b5c05437d1cb5ee
+seed 45 epoch 5: rc=0 181s
+seed 45 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s45_modal_e10   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e10
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 c181a0167622b84232ca227ebb43fec6732c1d2366d40ffb026d60ac7aa0ff54 - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 30ac4c16f1c9db9fa0a14fcb59fd3f3a092335113285936003dac3c446bb058c - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 13fbbf5ebd6acca68c56c5773ca4b9d1ba016803e641194d8827104905af2313 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 c578c0e1f647993cafd749307a2101bf5273874c57fb6a26924a77ed8157dac5 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s45_modal_e10/C45_per_chip.csv
+sha256 C45_per_chip.csv: 75e64d717ad27540dc2a45ed281a1c8b9eef7e93675d25f83cd577c3a4ff3760
+sha256 C45_edge_ratio.csv: f73342040c84574a838f061722d0e31ee944ad83bd8939003ffa3caac8a5ce7f
+seed 45 epoch 10: rc=0 181s
+seed 46 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s46_modal_e1   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e1
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 7e0abe3355772f1751484a2b284dea39efc9165fe8cc35aada897b700cacbcf8 - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 626c313f6cd67a444ccfd4efd2858b5c525fa2ce69e24ac7e0cc39259c6cdbd0 - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 257d3ed8a3be641c6731709c19985e89066bbb8867ffe1bdee268adc12bb3338 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 86f0fe76cd0767f1037235b074c7e2bee95e618e5e6a9745057512ef6206c75f - assert against the Modal-side verify_latest record
+  infer C2: rc=0 130 fakes
+  infer C1: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s46_modal_e1/C45_per_chip.csv
+sha256 C45_per_chip.csv: b26655a139563502a726a8ae1dd12971c9ff23ba2f931b0966e09422d01b8b26
+sha256 C45_edge_ratio.csv: 2a7f4da7dc782160ead7e5254ef2f27f14d41260bbae60407146f4d25128e847
+seed 46 epoch 1: rc=0 183s
+seed 46 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s46_modal_e2   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e2
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 261f99ce1fdba5c848f83388c1a7ad1704a5609810e54310d966ddfd371bc974 - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 ed97b0cdfc7e460bcfc454f394b05613a14cd282cd70f4345c0eb728b4a8719b - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 e99cbc89b2a101735e68b8718ada7f3912178cb50913a53cdbdc9b89fdcc79f3 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 6da0ea0736e076f7c8db5225d19b52804f7d1c9bd3ed51a54022e764a755e303 - assert against the Modal-side verify_latest record
+  infer C2: rc=0 130 fakes
+  infer C1: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s46_modal_e2/C45_per_chip.csv
+sha256 C45_per_chip.csv: ee4db8adec3a7a5ebd9cc246e3edbc683b1f8150cc2fb3daf93580c4b9c2d387
+sha256 C45_edge_ratio.csv: 7fe8f5aea5f752416a366e39ef82ad109eb2c3d972a7b5a0b853f30e3bf1d6f2
+seed 46 epoch 2: rc=0 183s
+seed 46 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s46_modal_e5   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e5
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 f550bbc3e6a4c52a2e9002a5df5fcfc78ab9a01c4e6428f8a7d1a1640d46a8c2 - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 2f2af86176ab1e6e8d4b4ad187bb6164e5da724e1053abf9b3235e71558c2d3c - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 bb21dc36f55a6a75d1f82977a1099cb62b284c310c62924da71a06a19244e497 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 690905476816d08bda62336ed8c484fdf724798096add6606fed6c85c85fcf77 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s46_modal_e5/C45_per_chip.csv
+sha256 C45_per_chip.csv: 95455e8a9d5759e16c81d1d739032eb8d4b265d7586212dc8b1d5300a6dd0601
+sha256 C45_edge_ratio.csv: c567843842d46ae0fe5990583ea29cdd9c090a78a14e7c4b1d12d77e71168bc0
+seed 46 epoch 5: rc=0 181s
+seed 46 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s46_modal_e10   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e10
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 e81900595ddec185230236de059f26457a38dc553ae2bbf5e5eb230b42fcc74e - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 f6442250fb1966e5cd624309460eb6ee1d01d12f1db815086b18e0b68858ed30 - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 1d058f149b3b3fcbbcb8731034f76f5d293e76891f75f127a1b3c3c3b9906d80 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 efdc89c5a705b13356333123e1d02e380f7c69fb3d41c6416e5b89a56d63f99c - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s46_modal_e10/C45_per_chip.csv
+sha256 C45_per_chip.csv: fd2055261c21bd3ccf26414ebdde7c9a5e93adf24e0200a0636bef4b04c40b61
+sha256 C45_edge_ratio.csv: d8b6936748fd465cf6767fa69b61135bab620b922f42373f5ae0cb7441dbd28f
+seed 46 epoch 10: rc=0 183s
+seed 47 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s47_modal_e1   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e1
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 2809886886265d2175dce45d2afb9ef43f963b24ec347ad0f4a5cc8fe82c2990 - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 c9c32ca7c740982267736cec06fde92a99e4d611fa7734f1677d9e6601e534b1 - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 10dd8bb7288c888859887b4430551e312ce6ff7b2f1d68d02b53099b08e3bfe2 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 124802ddc98a7682cbfb821c5fe42d4abee79adfdb808e1e1e1259f5ed3e4d9f - assert against the Modal-side verify_latest record
+  infer C2: rc=0 130 fakes
+  infer C1: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s47_modal_e1/C45_per_chip.csv
+sha256 C45_per_chip.csv: e89d72e5be2fd9db887aa39ca656dd0bc030f0cd004b5487fbdca1601f957c38
+sha256 C45_edge_ratio.csv: 73d9a6ec79175497a408458616fc89c4d90a50dd3d27cc5db23379a76aa121cc
+seed 47 epoch 1: rc=0 187s
+seed 47 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s47_modal_e2   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e2
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 7f97a1b82ed7551c6de6c1579d2755bf890fa0f0395a4708cb05c5d53df7d3df - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 2f8adfa74a62dfcc1f68defae9be3473e4dfb069417ca469a5cc222e5bbe2bfb - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 127ae05917d5f5aaf5c7b4d64ffb36b38ba0774b96700333b68fda34174e4f49 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 e1ef4c92095b78fb13a1e8a24f6a827d80f6d2c8db1d52466a59b8d4a1d76517 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s47_modal_e2/C45_per_chip.csv
+sha256 C45_per_chip.csv: 92a5ecd098a38b4f84c55c2ad4489511e1bfe62505ff5803cdae286c9cb0a4fa
+sha256 C45_edge_ratio.csv: a9b00f3d53137fac1a79fe25e8462b118bbc47ea81dae2ce2893809bdab207f5
+seed 47 epoch 2: rc=0 186s
+seed 47 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s47_modal_e5   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e5
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 4e116959170c1779a3a2981c72abec5af23b0c02bdfc8c0d0a2970e12d6d44c3 - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 58ad977beb5545633ee86f7506ae7723195bec026b6b438d1b0cca01dab54623 - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 f01e1907f13c0cd5d793affa0fb826aa4d6c838558144bc20fddc27a7692097b - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 bed6d7195b5bdaa9ccf879adc7724ec311c86c11212c25cc85aa9e48b7892187 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s47_modal_e5/C45_per_chip.csv
+sha256 C45_per_chip.csv: bf921803cffe35ca8580afa3321bbd325f5b33107232c46a3ca094cea9285729
+sha256 C45_edge_ratio.csv: f10ff1569622f689907dc112873dea856d11afc9e6c913337b0d18ae5e2d7ae3
+seed 47 epoch 5: rc=0 188s
+seed 47 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s47_modal_e10   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e10
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 26a975af0cc44295ae59bbd419d59a64ff8c85a9c616d38a20d6343dde8ffa8e - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 c1cd1c0f1495f3f8173b6209eafe7c7929d8c711f5ff3eefed980b2c7af2805a - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 21864e00f8c1ac2760febe3716af89d727af9e09115217b6e29a576d5a52c032 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 000cbace5a0411aa8368c6544b9d27bc5b1e40de0d463aed5aff8904fe418768 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s47_modal_e10/C45_per_chip.csv
+sha256 C45_per_chip.csv: 99ac4cf2c97eb66d1f88609ac08630b2ef9826a0b32dce079bd1ba5e405503e2
+sha256 C45_edge_ratio.csv: 254224a60e6b26aae1325715fd899b367b5294f28f6b371ff229d4a23b2285a3
+seed 47 epoch 10: rc=0 187s
+seed 48 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s48_modal_e1   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e1
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 c966eadc52820ddeac67729446d586c3afc4327b4a4cc1a40cab4b6bfbc5d0e4 - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 a9ce9a2693da96880e3b65b9dfbc7373fc05bf0149d18c6858c1a6213a63c8ed - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 308a3958fd75990c2bdc00427eb9f151f2134310a0ad02aa7988a3a075cb83b6 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 7e0ff5f8e65a02bdc915dd779ea725c275b84bf03a6916a80073c8c9263067ac - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s48_modal_e1/C45_per_chip.csv
+sha256 C45_per_chip.csv: 354d8ebfd187b04a30eddfe59944103f02de90c6eb101dd721ff06e2610a9314
+sha256 C45_edge_ratio.csv: aa5e5f2297067b7b5e9cc7f7801d60a77ef31bf33bdbd8469c9a4e430fa1557e
+seed 48 epoch 1: rc=0 187s
+seed 48 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s48_modal_e2   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e2
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 a1cde63c3cb7e6d03810b350fe8e94ad904a11ffbf4487191e892d23fe92be20 - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 72b0d5e0b771d53eb6040562aeffb2058b7918359aaee51dd539d5ff96ad46fe - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 d29fde9ab00c8119f1d3a526c670caae0e466ce2f15a13440c3f39f7c246f810 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 8af25bedf4972111fa3791da7153fac83f5ef48fc65a0535f5122a447705a23d - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s48_modal_e2/C45_per_chip.csv
+sha256 C45_per_chip.csv: d42679e1fc9c21ea08361c8fb96cb6e02430f55f442f4c249c4007a2dd700280
+sha256 C45_edge_ratio.csv: cd096158e3957199c0c7fbca704c3e2a431ed96d55b19ae4823d118dd2b9eb19
+seed 48 epoch 2: rc=0 183s
+seed 48 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s48_modal_e5   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e5
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 36aa1c376379bcef6b174d0c9e71f23a194f6c7d944a34a8eb35f207bb882500 - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 7b430fa0851b534f947c08ef1852980839c12b6166ac2faf3b1bb1ae4c2ca2d7 - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 ed9605bc9e6f504631d30d63f095d69f2c1a940c8b32d2d45490942fb971cce1 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 9883f85a7927a6de43d852c1199aa3d2376277b2abf0f6df0846c9f1d96020aa - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s48_modal_e5/C45_per_chip.csv
+sha256 C45_per_chip.csv: 2a555420b66a769e2b9c76cc93e450f269f42a7c5c857b8e95a164e99aa26bc9
+sha256 C45_edge_ratio.csv: caeed616270372871f358806f8b3508911deef573aef3ac0a63ca5fe37f944f9
+seed 48 epoch 5: rc=0 183s
+seed 48 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s48_modal_e10   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e10
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 467780319015949bfc21bfa5ffb1b2506858e3f12cf90a390f586959099048dd - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 bb84eaa598dae9416f2fd9452efab4ce71d0109995ffa5d3a41b1d2b47b98e64 - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 3007fd21fd0bd75528c1bc5cf0e6f008e97095f469f3fe8fcd736b9c2f95d391 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 41c06e24a75247b078bfc0e1bc84b8ae9f52dea5a5622dfdcdfabf088453c226 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s48_modal_e10/C45_per_chip.csv
+sha256 C45_per_chip.csv: 5c45d40ab87b6de241c69d5d8156289808461545e1182cf5b19f24c794d95240
+sha256 C45_edge_ratio.csv: db95eff3ecf8944a557bc2d84b2af8b85fdcdb9bfb1c144916c256a3d6944beb
+seed 48 epoch 10: rc=0 179s
+seed 49 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s49_modal_e1   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e1
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 d42e13f00924150debd8aa5f1c96bc278851e6bd5cdf43d31d30ca48db80198f - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 7f748796ae03e214769573c0e65a58f641d91d7592ae4c2748d6b6dbe49a17cc - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 cb5dd7651898f45fdd945fa30fa13172aebce0af834919c6f037833517421644 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 d40e8ff8f8c0fccd38a6e4f2d40a5b74ab94ecc79900941afe0fe473d52a600a - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s49_modal_e1/C45_per_chip.csv
+sha256 C45_per_chip.csv: 1cc58b4d663f89174c9805561b371f599b9318e194b6b326cef8586270f87d02
+sha256 C45_edge_ratio.csv: 789c2c4d88477cdb0bf0de75e3ad392f6aceabf6cd956ce843555b64201e379a
+seed 49 epoch 1: rc=0 180s
+seed 49 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s49_modal_e2   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e2
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 93daf0968a80bf4ab6bcb627889bd701c9890dd57c8d087adbf28f889bbeb8eb - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 0050a1eaf0380db3272e54201fc1173f031bf85d25a21f483b7ee38c1fc7909c - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 3aa5637c8a8cbce845a9dc9b946976c5f7bcfc2d2c3decfd2918dc46358100c2 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 64c0158a8aaf9720397635c963819e57426797b922321d8ccfb8808b32440fc1 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s49_modal_e2/C45_per_chip.csv
+sha256 C45_per_chip.csv: d4559a1f836a47aa64fb23299e2803fd62298d525b18fd78f013b4b80593a1c2
+sha256 C45_edge_ratio.csv: 10966422b2e8f2afe326e5675db9d2b2584903ae87be48c8da37c95645251212
+seed 49 epoch 2: rc=0 180s
+seed 49 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s49_modal_e5   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e5
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 56d68c9a7b3bf4ce9f89969679e695c5ef81109cc2fe90b43126565d8bdb570d - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 1a9a9a7c2173b005b92294b928a37058dcf0c23305e902feeb7b8d1ff6bf60d9 - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 d57e08c3450e51d7668b51b3fa17c18c200df23eb01ed0d842b03ef96797aec3 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 e2a5bf5f62c1f98d745054aca6a6a2a2d5d9db98d2aee35ab07b7d60fc6ae644 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s49_modal_e5/C45_per_chip.csv
+sha256 C45_per_chip.csv: b4abd8e55d9dfdee39cccfb78e7587c79fbcd1cb615abb801fa615a932fa9c25
+sha256 C45_edge_ratio.csv: 9b5a342c4baaf80139438158aeaa6fb93429c00ca54b0a62a6d7b276540ba7cf
+seed 49 epoch 5: rc=0 170s
+seed 49 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s49_modal_e10   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e10
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 fe0ff280275114d0aada162d097bae9209d44aaf66c4de0b70b153a5a96b88bc - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 a4c7f15a2d668d4ab9ddeb75cb4e3881bb568904965270c219441e45b97abf10 - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 26aa071bda068416296d6f2f5831041a94dcc49b06d6c972086eb8d0f09b7d0d - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 0ec2112b23113068739c373249babda1246a0bdcd860190a6be15e0027f3dfa4 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s49_modal_e10/C45_per_chip.csv
+sha256 C45_per_chip.csv: a05906d2e86b0f0b92dce1e982233091670f2ecc2ffc4e5cdda44a301a841983
+sha256 C45_edge_ratio.csv: ed62579f0ed51d0a1bdd766117f80039d2562c8fcd0dd9e72e92d7d46a48f43c
+seed 49 epoch 10: rc=0 172s
+seed 50 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s50_modal_e1   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e1
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 ca50e26c7d66c89c01067093c33a0734e4a54386eeafa977cf8e7b89bbbf4938 - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 a80b2a9d7070d76a671e1f0088df03f12fc4dd783d81ae9a07186bbd6bc98fdd - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 70a630d811c7caa9cfa1260ff1d226c762490667d7d2ac59f7962b0356a48657 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 bc6b295114601513dda4081869bf4fbabf74a78839dc682169f6e7a6b8d72194 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s50_modal_e1/C45_per_chip.csv
+sha256 C45_per_chip.csv: e569a0986a00b31d6ec909b3681276b2e3929e5cf9ad7dee53d255b4bdec12b9
+sha256 C45_edge_ratio.csv: bb03c150199d85aa19beb447bbfd80aa72f16cad7a307894ed728d6d679f4485
+seed 50 epoch 1: rc=0 170s
+seed 50 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s50_modal_e2   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e2
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 2eefdd6614dd03ed5fb87b2ec02e987e1515dee1ac178867cdfd49e717bb493b - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 776267081c0c613ba0b3f191dd1f07c7e4a44648787cd3ad664dbae0ecccac2c - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 584969c4e72f539cc25584ee3cb5e63df9f4b88c9f723a93cef4c74aa8744d67 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 55687675101656f42baa60215e1e74137da5fa06cf2cb4bd71d407cc3448e414 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s50_modal_e2/C45_per_chip.csv
+sha256 C45_per_chip.csv: 7cea51ae5ebe1242583ce63539c04d85ce4fbc0f9152e5c4dd5156d0bcb31a7c
+sha256 C45_edge_ratio.csv: e9e41389a1c071d4b9e79f7ef357a7e3616620d77133ffb489f747317563a260
+seed 50 epoch 2: rc=0 170s
+seed 50 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s50_modal_e5   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e5
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 f02bd3e0c4e6b3b06d25586ed097661f41091ed65594a7cbcaee24b03c5837b3 - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 578d37542355b212fa105f0ab7bff8f564ae87b10aa3c258d394e4ed4043cf94 - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 f86ede5363effc64542a6cf161c16416e146c3b5cc1668653ca81771644a516c - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 04e932f021439d7a88a15c16f83b76f8f11621d061427f27e3e796a40f2ad793 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s50_modal_e5/C45_per_chip.csv
+sha256 C45_per_chip.csv: dec982a62911e65bbbed12372aba076ffa9c6cc11fc4a3d7a0c2a637e453163f
+sha256 C45_edge_ratio.csv: b8edce810d188ef4e0e15d38c72389a26b5209fdafb3e8966dc35c0c24c8d9db
+seed 50 epoch 5: rc=0 169s
+seed 50 -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s50_modal_e10   arms ('C1', 'C2', 'C4', 'C5') (pretrained from B1_per_chip.csv)   variant modal_e10
+inference shim pinned to seed 42 (AMENDMENT SEED-a)
+
+step 1/5 inference
+  C1: 20_net_G.pth absent (latest-only download); latest sha256 651c71da7e98dc928569c9589531328ce6ad9ab5ad79279acf14cf7d6d27a421 - assert against the Modal-side verify_latest record
+  C2: 20_net_G.pth absent (latest-only download); latest sha256 24af097a3e61d0867dab8c7a2ab4e1b0fa1bcffbcb06d13e8bd09aa3ba69847a - assert against the Modal-side verify_latest record
+  C4: 20_net_G.pth absent (latest-only download); latest sha256 1f914fbdb88df1fde256bafa0673375aa97ad6ecb3becc160a997b9cf70294d8 - assert against the Modal-side verify_latest record
+  C5: 20_net_G.pth absent (latest-only download); latest sha256 a5126a610d99e6f33cdfc3b95637d02f31364b61b2d38109ecb1407d2dbd6801 - assert against the Modal-side verify_latest record
+  infer C1: rc=0 130 fakes
+  infer C2: rc=0 130 fakes
+  infer C4: rc=0 130 fakes
+  infer C5: rc=0 130 fakes
+step 2/5 warp
+  warp 100/650
+  warp 200/650
+  warp 300/650
+  warp 400/650
+  warp 500/650
+  warp 600/650
+  warp complete 650/650 (650 newly written)
+step 3/5 KARIOS
+  KARIOS 100/520
+  KARIOS 200/520
+  KARIOS 300/520
+  KARIOS 400/520
+  KARIOS 500/520
+  KARIOS complete: 520/520, failures: 0
+step 4/5 edge ratio
+  edge ratio: 130 chips, skipped []
+step 5/5 score
+  scored 130 chips -> /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/C45_s50_modal_e10/C45_per_chip.csv
+sha256 C45_per_chip.csv: f40f3807594d314b4a868604289c64207923472bc413908e902707cb35b99e7e
+sha256 C45_edge_ratio.csv: 0f24de02418842dc5adb3dea61e7c37d54a7d7f60c749fca062b8e669234b126
+seed 50 epoch 10: rc=0 169s
+sweep complete
+sweep rc=0
+LPIPS HELD {1: 6, 2: 6, 5: 6, 10: 6, 20: 6} dip-then-grow seeds: 3
+  mean by epoch: {1: 0.2617, 2: 0.2579, 5: 0.499, 10: 0.5317, 20: 0.6091}
+L1 HELD {1: 6, 2: 6, 5: 6, 10: 6, 20: 6} dip-then-grow seeds: 5
+  mean by epoch: {1: 0.5213, 2: 0.4727, 5: 0.4226, 10: 0.5751, 20: 0.6773}
+wrote /Users/vedat/Documents/GenCP-Generative-Goruntu-Uretimi-OpenStreetMap/tubitak/data/tool_runs/epoch_sweep
+analysis rc=0
+driver end 2026-09-13T16:44:01Z

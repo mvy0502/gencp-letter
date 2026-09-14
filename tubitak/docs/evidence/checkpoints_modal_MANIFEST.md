@@ -1,0 +1,120 @@
+# Retained Modal checkpoints — manifest, 13 September 2026
+
+Pulled from the Modal volume `gencp-out` on 13 September 2026 with `modal volume get`, one file per
+(seed, arm, epoch), into `tubitak/data/checkpoints_modal/seed{S}/{ARM}/{E}_net_G.pth` on the
+working machine (gitignored; **not in any repository**). Full sha256 computed locally after the
+pull; the 16-character prefixes in `pull.log` match. These are the generator checkpoints the
+letter's training-time curve (Fig. 2; `epoch-curve-registration.md`) reads.
+
+96 files, 20,901,728,544 bytes (20.9 GB); file sizes 217,726,189 bytes (epochs 1, 2, 5) and 217,726,789 bytes (epoch 10).
+
+**The 600-byte difference is established, not presumed** (13 Sep, `seed45/C1/5_net_G.pth`
+against `seed45/C1/10_net_G.pth`, and the size pattern holds across all 96 files: every
+epoch-10 file is exactly 600 bytes larger). A PyTorch checkpoint is a zip archive whose 88
+entries are named with the file's own stem as a prefix (`5_net_G/data.pkl` versus
+`10_net_G/data.pkl`), and `10_net_G` is one byte longer than `5_net_G`. Field by field:
+88 extra name bytes in the local headers plus 88 in the central directory (176), and 424
+extra bytes of local-header alignment padding, which shifts when names lengthen; 176 +
+424 = 600. Compressed payload bytes are identical (217,710,165 in both), the entry sets
+are identical after stripping the prefix, and the loaded state dicts have the same 82 keys
+with the same shapes and dtypes. Nothing about the weights is implied either way; the
+container accounts for the whole difference.
+
+| seed | arm | epoch | sha256 |
+|---|---|---|---|
+| 45 | C1 | 1 | `d97d7b65cf9f66606449130ed8ba6a376fb7b0c9f0c66bb8f5c3cc595270e4ea` |
+| 45 | C1 | 2 | `2c707f11359e5d4c1a5b1bba66b56733c6bed9ffdcd5450862fda09db3701363` |
+| 45 | C1 | 5 | `01325d3363554736966cf1b5bbc7c7df9c8bf81c7ff5cfb76387a400ef80cd09` |
+| 45 | C1 | 10 | `c181a0167622b84232ca227ebb43fec6732c1d2366d40ffb026d60ac7aa0ff54` |
+| 45 | C2 | 1 | `5dcefe02135b812471ae0aed08e9435b7bdba5573212f923e82599d6ff056ece` |
+| 45 | C2 | 2 | `d32fa5623abdb32a85d7288f5917d6d7d3cc9b5922bd39d56f8c054b748a740d` |
+| 45 | C2 | 5 | `6393e5c488d0621ec330cd45a52689a8df294eee64982ea5eb6ea77053b06442` |
+| 45 | C2 | 10 | `30ac4c16f1c9db9fa0a14fcb59fd3f3a092335113285936003dac3c446bb058c` |
+| 45 | C4 | 1 | `34d290fceb16fb52c742348ab6a0f0ba5e7e040523ecf51254883011ba095e31` |
+| 45 | C4 | 2 | `514622b4f30407cfc34c079c3e51a824f075ffcdff605f4c4d060be4cc908883` |
+| 45 | C4 | 5 | `180c32649e23a63da17c4a7de8a47bbbb916156741f72bbca4f9c8ccf5ae5f53` |
+| 45 | C4 | 10 | `13fbbf5ebd6acca68c56c5773ca4b9d1ba016803e641194d8827104905af2313` |
+| 45 | C5 | 1 | `07bb72290f8fa9a88cce88a5843e02d806816aa1d9f061ab95097d1ae1d8dcb1` |
+| 45 | C5 | 2 | `a9ce18e03b074e540ad5a50aaa5248c10d5ee989bfe8efdc4d1a6185d9b367b6` |
+| 45 | C5 | 5 | `11945723fa5044d40279d2c0eb622c9a96d3ac311f12a03ece692acd57384b52` |
+| 45 | C5 | 10 | `c578c0e1f647993cafd749307a2101bf5273874c57fb6a26924a77ed8157dac5` |
+| 46 | C1 | 1 | `7e0abe3355772f1751484a2b284dea39efc9165fe8cc35aada897b700cacbcf8` |
+| 46 | C1 | 2 | `261f99ce1fdba5c848f83388c1a7ad1704a5609810e54310d966ddfd371bc974` |
+| 46 | C1 | 5 | `f550bbc3e6a4c52a2e9002a5df5fcfc78ab9a01c4e6428f8a7d1a1640d46a8c2` |
+| 46 | C1 | 10 | `e81900595ddec185230236de059f26457a38dc553ae2bbf5e5eb230b42fcc74e` |
+| 46 | C2 | 1 | `626c313f6cd67a444ccfd4efd2858b5c525fa2ce69e24ac7e0cc39259c6cdbd0` |
+| 46 | C2 | 2 | `ed97b0cdfc7e460bcfc454f394b05613a14cd282cd70f4345c0eb728b4a8719b` |
+| 46 | C2 | 5 | `2f2af86176ab1e6e8d4b4ad187bb6164e5da724e1053abf9b3235e71558c2d3c` |
+| 46 | C2 | 10 | `f6442250fb1966e5cd624309460eb6ee1d01d12f1db815086b18e0b68858ed30` |
+| 46 | C4 | 1 | `257d3ed8a3be641c6731709c19985e89066bbb8867ffe1bdee268adc12bb3338` |
+| 46 | C4 | 2 | `e99cbc89b2a101735e68b8718ada7f3912178cb50913a53cdbdc9b89fdcc79f3` |
+| 46 | C4 | 5 | `bb21dc36f55a6a75d1f82977a1099cb62b284c310c62924da71a06a19244e497` |
+| 46 | C4 | 10 | `1d058f149b3b3fcbbcb8731034f76f5d293e76891f75f127a1b3c3c3b9906d80` |
+| 46 | C5 | 1 | `86f0fe76cd0767f1037235b074c7e2bee95e618e5e6a9745057512ef6206c75f` |
+| 46 | C5 | 2 | `6da0ea0736e076f7c8db5225d19b52804f7d1c9bd3ed51a54022e764a755e303` |
+| 46 | C5 | 5 | `690905476816d08bda62336ed8c484fdf724798096add6606fed6c85c85fcf77` |
+| 46 | C5 | 10 | `efdc89c5a705b13356333123e1d02e380f7c69fb3d41c6416e5b89a56d63f99c` |
+| 47 | C1 | 1 | `2809886886265d2175dce45d2afb9ef43f963b24ec347ad0f4a5cc8fe82c2990` |
+| 47 | C1 | 2 | `7f97a1b82ed7551c6de6c1579d2755bf890fa0f0395a4708cb05c5d53df7d3df` |
+| 47 | C1 | 5 | `4e116959170c1779a3a2981c72abec5af23b0c02bdfc8c0d0a2970e12d6d44c3` |
+| 47 | C1 | 10 | `26a975af0cc44295ae59bbd419d59a64ff8c85a9c616d38a20d6343dde8ffa8e` |
+| 47 | C2 | 1 | `c9c32ca7c740982267736cec06fde92a99e4d611fa7734f1677d9e6601e534b1` |
+| 47 | C2 | 2 | `2f8adfa74a62dfcc1f68defae9be3473e4dfb069417ca469a5cc222e5bbe2bfb` |
+| 47 | C2 | 5 | `58ad977beb5545633ee86f7506ae7723195bec026b6b438d1b0cca01dab54623` |
+| 47 | C2 | 10 | `c1cd1c0f1495f3f8173b6209eafe7c7929d8c711f5ff3eefed980b2c7af2805a` |
+| 47 | C4 | 1 | `10dd8bb7288c888859887b4430551e312ce6ff7b2f1d68d02b53099b08e3bfe2` |
+| 47 | C4 | 2 | `127ae05917d5f5aaf5c7b4d64ffb36b38ba0774b96700333b68fda34174e4f49` |
+| 47 | C4 | 5 | `f01e1907f13c0cd5d793affa0fb826aa4d6c838558144bc20fddc27a7692097b` |
+| 47 | C4 | 10 | `21864e00f8c1ac2760febe3716af89d727af9e09115217b6e29a576d5a52c032` |
+| 47 | C5 | 1 | `124802ddc98a7682cbfb821c5fe42d4abee79adfdb808e1e1e1259f5ed3e4d9f` |
+| 47 | C5 | 2 | `e1ef4c92095b78fb13a1e8a24f6a827d80f6d2c8db1d52466a59b8d4a1d76517` |
+| 47 | C5 | 5 | `bed6d7195b5bdaa9ccf879adc7724ec311c86c11212c25cc85aa9e48b7892187` |
+| 47 | C5 | 10 | `000cbace5a0411aa8368c6544b9d27bc5b1e40de0d463aed5aff8904fe418768` |
+| 48 | C1 | 1 | `c966eadc52820ddeac67729446d586c3afc4327b4a4cc1a40cab4b6bfbc5d0e4` |
+| 48 | C1 | 2 | `a1cde63c3cb7e6d03810b350fe8e94ad904a11ffbf4487191e892d23fe92be20` |
+| 48 | C1 | 5 | `36aa1c376379bcef6b174d0c9e71f23a194f6c7d944a34a8eb35f207bb882500` |
+| 48 | C1 | 10 | `467780319015949bfc21bfa5ffb1b2506858e3f12cf90a390f586959099048dd` |
+| 48 | C2 | 1 | `a9ce9a2693da96880e3b65b9dfbc7373fc05bf0149d18c6858c1a6213a63c8ed` |
+| 48 | C2 | 2 | `72b0d5e0b771d53eb6040562aeffb2058b7918359aaee51dd539d5ff96ad46fe` |
+| 48 | C2 | 5 | `7b430fa0851b534f947c08ef1852980839c12b6166ac2faf3b1bb1ae4c2ca2d7` |
+| 48 | C2 | 10 | `bb84eaa598dae9416f2fd9452efab4ce71d0109995ffa5d3a41b1d2b47b98e64` |
+| 48 | C4 | 1 | `308a3958fd75990c2bdc00427eb9f151f2134310a0ad02aa7988a3a075cb83b6` |
+| 48 | C4 | 2 | `d29fde9ab00c8119f1d3a526c670caae0e466ce2f15a13440c3f39f7c246f810` |
+| 48 | C4 | 5 | `ed9605bc9e6f504631d30d63f095d69f2c1a940c8b32d2d45490942fb971cce1` |
+| 48 | C4 | 10 | `3007fd21fd0bd75528c1bc5cf0e6f008e97095f469f3fe8fcd736b9c2f95d391` |
+| 48 | C5 | 1 | `7e0ff5f8e65a02bdc915dd779ea725c275b84bf03a6916a80073c8c9263067ac` |
+| 48 | C5 | 2 | `8af25bedf4972111fa3791da7153fac83f5ef48fc65a0535f5122a447705a23d` |
+| 48 | C5 | 5 | `9883f85a7927a6de43d852c1199aa3d2376277b2abf0f6df0846c9f1d96020aa` |
+| 48 | C5 | 10 | `41c06e24a75247b078bfc0e1bc84b8ae9f52dea5a5622dfdcdfabf088453c226` |
+| 49 | C1 | 1 | `d42e13f00924150debd8aa5f1c96bc278851e6bd5cdf43d31d30ca48db80198f` |
+| 49 | C1 | 2 | `93daf0968a80bf4ab6bcb627889bd701c9890dd57c8d087adbf28f889bbeb8eb` |
+| 49 | C1 | 5 | `56d68c9a7b3bf4ce9f89969679e695c5ef81109cc2fe90b43126565d8bdb570d` |
+| 49 | C1 | 10 | `fe0ff280275114d0aada162d097bae9209d44aaf66c4de0b70b153a5a96b88bc` |
+| 49 | C2 | 1 | `7f748796ae03e214769573c0e65a58f641d91d7592ae4c2748d6b6dbe49a17cc` |
+| 49 | C2 | 2 | `0050a1eaf0380db3272e54201fc1173f031bf85d25a21f483b7ee38c1fc7909c` |
+| 49 | C2 | 5 | `1a9a9a7c2173b005b92294b928a37058dcf0c23305e902feeb7b8d1ff6bf60d9` |
+| 49 | C2 | 10 | `a4c7f15a2d668d4ab9ddeb75cb4e3881bb568904965270c219441e45b97abf10` |
+| 49 | C4 | 1 | `cb5dd7651898f45fdd945fa30fa13172aebce0af834919c6f037833517421644` |
+| 49 | C4 | 2 | `3aa5637c8a8cbce845a9dc9b946976c5f7bcfc2d2c3decfd2918dc46358100c2` |
+| 49 | C4 | 5 | `d57e08c3450e51d7668b51b3fa17c18c200df23eb01ed0d842b03ef96797aec3` |
+| 49 | C4 | 10 | `26aa071bda068416296d6f2f5831041a94dcc49b06d6c972086eb8d0f09b7d0d` |
+| 49 | C5 | 1 | `d40e8ff8f8c0fccd38a6e4f2d40a5b74ab94ecc79900941afe0fe473d52a600a` |
+| 49 | C5 | 2 | `64c0158a8aaf9720397635c963819e57426797b922321d8ccfb8808b32440fc1` |
+| 49 | C5 | 5 | `e2a5bf5f62c1f98d745054aca6a6a2a2d5d9db98d2aee35ab07b7d60fc6ae644` |
+| 49 | C5 | 10 | `0ec2112b23113068739c373249babda1246a0bdcd860190a6be15e0027f3dfa4` |
+| 50 | C1 | 1 | `ca50e26c7d66c89c01067093c33a0734e4a54386eeafa977cf8e7b89bbbf4938` |
+| 50 | C1 | 2 | `2eefdd6614dd03ed5fb87b2ec02e987e1515dee1ac178867cdfd49e717bb493b` |
+| 50 | C1 | 5 | `f02bd3e0c4e6b3b06d25586ed097661f41091ed65594a7cbcaee24b03c5837b3` |
+| 50 | C1 | 10 | `651c71da7e98dc928569c9589531328ce6ad9ab5ad79279acf14cf7d6d27a421` |
+| 50 | C2 | 1 | `a80b2a9d7070d76a671e1f0088df03f12fc4dd783d81ae9a07186bbd6bc98fdd` |
+| 50 | C2 | 2 | `776267081c0c613ba0b3f191dd1f07c7e4a44648787cd3ad664dbae0ecccac2c` |
+| 50 | C2 | 5 | `578d37542355b212fa105f0ab7bff8f564ae87b10aa3c258d394e4ed4043cf94` |
+| 50 | C2 | 10 | `24af097a3e61d0867dab8c7a2ab4e1b0fa1bcffbcb06d13e8bd09aa3ba69847a` |
+| 50 | C4 | 1 | `70a630d811c7caa9cfa1260ff1d226c762490667d7d2ac59f7962b0356a48657` |
+| 50 | C4 | 2 | `584969c4e72f539cc25584ee3cb5e63df9f4b88c9f723a93cef4c74aa8744d67` |
+| 50 | C4 | 5 | `f86ede5363effc64542a6cf161c16416e146c3b5cc1668653ca81771644a516c` |
+| 50 | C4 | 10 | `1f914fbdb88df1fde256bafa0673375aa97ad6ecb3becc160a997b9cf70294d8` |
+| 50 | C5 | 1 | `bc6b295114601513dda4081869bf4fbabf74a78839dc682169f6e7a6b8d72194` |
+| 50 | C5 | 2 | `55687675101656f42baa60215e1e74137da5fa06cf2cb4bd71d407cc3448e414` |
+| 50 | C5 | 5 | `04e932f021439d7a88a15c16f83b76f8f11621d061427f27e3e796a40f2ad793` |
+| 50 | C5 | 10 | `a5126a610d99e6f33cdfc3b95637d02f31364b61b2d38109ecb1407d2dbd6801` |

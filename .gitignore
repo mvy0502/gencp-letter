@@ -22,3 +22,105 @@ manuscript/letter.pdf
 *~
 .idea/
 .vscode/
+
+# ---- gencp-validation's rules, merged 2026-09-14 (P15); the evidence negation stays last of them ----
+.DS_Store
+debug*
+datasets/
+checkpoints/
+results/
+build/
+dist/
+*.png
+torch.egg-info/
+*/**/__pycache__
+torch/version.py
+torch/csrc/generic/TensorMethods.cpp
+torch/lib/*.so*
+torch/lib/*.dylib*
+torch/lib/*.h
+torch/lib/build
+torch/lib/tmp_install
+torch/lib/include
+torch/lib/torch_shm_manager
+torch/csrc/cudnn/cuDNN.cpp
+torch/csrc/nn/THNN.cwrap
+torch/csrc/nn/THNN.cpp
+torch/csrc/nn/THCUNN.cwrap
+torch/csrc/nn/THCUNN.cpp
+torch/csrc/nn/THNN_generic.cwrap
+torch/csrc/nn/THNN_generic.cpp
+torch/csrc/nn/THNN_generic.h
+docs/src/**/*
+test/data/legacy_modules.t7
+test/data/gpu_tensors.pt
+test/htmlcov
+test/.coverage
+*/*.pyc
+*/**/*.pyc
+*/**/**/*.pyc
+*/**/**/**/*.pyc
+*/**/**/**/**/*.pyc
+*/*.so*
+*/**/*.so*
+*/**/*.dylib*
+test/data/legacy_serialized.pt
+*~
+.idea
+
+#Ignore Wandb
+wandb/
+
+# ---- TUBITAK work additions ----
+*.tif
+!GenCP_HR_demo/data/dataset/test/*.tif
+!GenCP_VHR_demo/gencp_VHR_data_test/**/*.tif
+**/data/GenCP_DB/
+**/data/fake_images/
+tubitak/data/*
+!tubitak/data/.gitkeep
+tubitak/outputs/*
+!tubitak/outputs/.gitkeep
+# report figures are deliverables: keep them despite the *.png rule above
+!tubitak/docs/figures/*.png
+
+# Plugin screenshots are what a visitor sees before deciding to install. Cleared against
+# the imagery rules: the base raster is Sentinel-2 (Copernicus, open), the rasterised input
+# is our own OSM/CLC+ render, and no institutional or Google Earth imagery appears.
+!docs/plugin/*.png
+*.pth
+*.zip
+.venv/
+*.egg-info/
+
+# Turkish progress report: source markdown is versioned, rendered PDF and figure
+# binaries are reproducible from it and stay out of git (same policy as tubitak/outputs/).
+tubitak/rapor2/*.pdf
+tubitak/rapor2/gorseller/
+
+# Sonuç raporu: kaynak sürümlenir, PDF ve figürler üretilebilir olduğu için hariç
+tubitak/rapor3/*.pdf
+tubitak/rapor3/gorseller/
+
+# Yayınlanmış makalenin yerel kopyası (telifli, depoya girmez)
+tubitak/data/paper/
+
+# Kişisel/idari belgeler ve oturum notları depoya girmez
+tubitak/docs/*.pdf
+tubitak/docs/teke-proposal.md
+RESUME.md
+
+# ---- Evidence is the study record, and type rules must not swallow it ----
+# The *.tif rule above silently refused 260 committed evidence rasters while
+# MANIFEST.md went on asserting their sha256 and byte size (corrections entry 35).
+# This negation fixes the class, not the incident: anything under the evidence
+# directory is tracked regardless of its extension. Placed last so it wins.
+!tubitak/docs/evidence/**
+
+# ---- union repairs, 2026-09-14 (P15 A.3): rules above would otherwise swallow record files ----
+# the letter's figures are tracked PNG/PDF despite *.png above
+!figures/**
+# the study's training logs and gate logs are tracked despite *.log above
+!tubitak/docs/gates/**
+# the evidence layer, restated so it is last: anything under it is tracked regardless of extension
+!tubitak/docs/evidence/**

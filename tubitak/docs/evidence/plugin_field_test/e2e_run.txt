@@ -1,0 +1,168 @@
+cleared the render cache at /var/folders/my/zq5vn6hj0ys8xb2fwt0f7mlm0000gn/T/gencp_work so the timing below is a cold one
+
+========================================================================
+PHASE A - is the plugin actually INSTALLED in this profile?
+========================================================================
+  profile in use : /Users/vedat/Library/Application Support/QGIS/QGIS4/profiles/default/
+  QGIS           : 4.2.1-Belém do Pará
+  executable     : /Applications/QGIS-final-4_2_1.app/Contents/MacOS/QGIS-final-4_2_1
+  loaded plugins : ['MetaSearch', 'db_manager', 'gencp_synthetic_reference', 'grassprovider', 'processing', 'sentinel_stac_loader', 'stac_browser']
+  [PASS] plugin is loaded by QGIS from the user profile  - gencp_synthetic_reference in qgis.utils.plugins
+  plugin object  : <gencp_synthetic_reference.plugin.GenCPPlugin object at 0x1568b8e00>
+  plugin module  : /Users/vedat/Library/Application Support/QGIS/QGIS4/profiles/default/python/plugins/gencp_synthetic_reference/__init__.py
+  [PASS] initGui() completed - the QAction exists  - GenCP Synthetic Reference...
+  [PASS] the action is registered on the main window (menu/toolbar)  - GenCP Synthetic Reference...
+
+========================================================================
+PHASE B - drive the dialog the way the toolbar button does
+========================================================================
+  [PASS] triggering the toolbar action opened the dialog
+    [shot] 01_dialog_on_open.png  780x1180  ok
+  [PASS] shot 1: dialog on open, nothing selected
+  [PASS] the empty extent field explains itself rather than showing a bare dash  - <span style='color:gray'>katman seçilmedi</span>
+  [PASS] Generate is disabled on open
+  [PASS] reference layer loads  - ank_0_30.tif
+    extent : 399960, 4420330 → 402530, 4422900  (2570 × 2570 m)
+    crs    : EPSG:32636
+    tiles  : <b>1 karo</b> · 257 × 257 piksel · yaklaşık 0.1 dk
+    [shot] 02_reference_selected.png  780x1180  ok
+  [PASS] shot 2: reference chosen, extent and CRS displayed
+  [PASS] section 1 displays the extent
+  [PASS] section 1 displays the CRS  - EPSG:32636
+  [PASS] section 1 displays tile count and an estimate  - looked for 'dk' from strings.tiles_value
+    parsed estimate: None min for 1 tile(s)
+
+  --- preview ---
+  [PASS] preview renders a real rasterised input  - 320x320 px in 5.1s
+    [shot] 03_preview_rendered.png  780x1180  ok
+  [PASS] shot 3: preview section with the render in it
+    [shot] 03b_preview_tile_only.png (the preview pixmap alone)
+  [PASS] Generate is enabled without the preview
+
+  --- run ---
+  [PASS] clicking Generate created a QgsTask  - QgsTask
+    [shot] 04_run_in_progress.png  780x1180  ok
+  [PASS] shot 4: run in progress, progress bar advancing  - captured at 80%
+    stage first seen at (s): {'render': 0.09, 'mosaic': 0.28}
+  [PASS] generation completed  - Hazır
+  [PASS] inference ran OFF the main thread  - <PyQt6.QtCore.QThread object at 0x162b7a2b0>
+  [PASS] progress bar advanced through distinct values  - 3 distinct values, max 100%
+    wall clock (Generate click -> done): 0.44s (0.007 min)
+    preview render before it:            5.12s
+    what the user actually waits for:    5.56s
+    what the dialog PREDICTED:           0.00s (None min for 1 tile(s))
+    [shot] 05_after_completion.png  780x1180  ok
+  [PASS] shot 5: final state after the output layer was added
+    [shot] 05b_full_form.png  762x1031  ok
+  [PASS] shot 5b: the whole form in one image, no scrolling
+    status line: Hazır
+  [PASS] GeoTIFF written to the chosen path  - 0.10 MB
+  [PASS] output added to the project as a layer  - plugin_e2e_output, plugin_e2e_output_osm, reference (ank_0_30)
+  [PASS] the added layer is valid and opens  - 257x257 px, EPSG:32636
+  [PASS] output layer CRS == reference layer CRS  - EPSG:32636 vs EPSG:32636
+  [PASS] output extent overlaps the reference extent  - out 399960.0,4420330.0 : 402530.0,4422900.0  ref 399960.0,4420330.0 : 402530.0,4422900.0
+  [PASS] output NW corner coincides with the reference NW corner  - dx 0.0 m, dy 0.0 m
+
+  --- Gate G georeferencing contract, on the dialog's own output ---
+  [PASS] G/A pixel size is exactly 10.0 m on both axes  - x=10.0 y=10.0
+  [PASS] G/A origin is the reference NW corner exactly  - offset x 0.0 m, y 0.0 m
+  [PASS] G/A size == ceil(span / GSD)  - got 257x257, expected 257x257
+  [PASS] G/A transform equals the registered affine term by term  - (10.0, 0.0, 399960.0, 0.0, -10.0, 4422900.0)
+  [PASS] G/A output CRS == reference CRS  - EPSG:32636 vs EPSG:32636
+  [PASS] G provenance embedded in the dialog's output  - 17 fields; model gencp_C3_fp32.onnx
+    [canvas] 06_canvas_output_only.png  760x760  ok
+    [canvas] 07_canvas_reference_only.png  760x760  ok
+    [checker] 08_checkerboard_output_vs_reference.png  760x760  (8x8 blocks: generated output vs the real reference image)
+  [PASS] shot 8: checkerboard of output against reference
+
+========================================================================
+PHASE C - the confidence layer
+========================================================================
+  [PASS] an uncalibrated model refuses the confidence layer, with a reason  - Güven bantları bu modelde ölçülmedi — ölçüm yalnızca gencp_C2_fp32.onnx dosyasında 
+    [shot] 09_confidence_refused_wrong_model.png  762x1031  ok
+  [PASS] shot 9: the refusal, shown in section 6
+  [PASS] the calibrated model is accepted  - <span style='color:gray'>Güven bantları bu dosyada ölçüldü.</span>
+    [shot] 10_preview_with_osm_breakdown.png  762x1031  ok
+  [PASS] shot 10: preview with the OSM content breakdown beside it
+  [PASS] the OSM breakdown panel is populated  - Karodaki OSM: 195 yol · 0 bina · 0 su · 0 arazi (piksel)
+    previewed tile band: red  (green 8.3%  amber 24.3%  red 67.4%)
+  [PASS] the preview judgement is driven by the registered score, not a hand-set threshold  - dialog exposes no SPARSE_OSM_FRACTION constant
+  [PASS] an open preview shows the OSM breakdown and no prose  - Karodaki OSM: 195 yol · 0 bina · 0 su · 0 arazi (piksel)
+    stages seen: ['render', 'infer', 'mosaic']
+    wall clock with confidence: 0.46s
+  [PASS] generation with confidence completed
+  [PASS] confidence is written into the output's ALPHA band, not a side file  - 4 bands, alpha
+  [PASS] the alpha band is continuous, not the 3-band rounding  - 70 distinct alpha values
+  [PASS] the rasterised OSM input is written beside the output  - plugin_e2e_conf_osm.tif
+    verdict: green 8.4%  amber 23.9%  red 67.8%  run band red
+  [PASS] a run-level verdict is shown in section 6  - Güven — yeşil %8, turuncu %24, kırmızı %68
+    [shot] 11_confidence_verdict.png  762x971  ok
+  [PASS] shot 11: the verdict after a confidence run
+    (stage sampling is best-effort; saw ['render', 'infer', 'mosaic'])
+    render: 2/4          -> Rasterleştiriliyor (2/4)
+    infer: 3/4           -> Üretiliyor (3/4)
+    confidence: 1/4      -> Güven hesaplanıyor (1/4)
+    mosaic: 1/1          -> Birleştiriliyor
+  [PASS] every pipeline stage maps to a readable step name, not a bare percentage  - Rasterleştiriliyor (2/4) | Üretiliyor (3/4) | Güven hesaplanıyor (1/4) | Birleştiriliyor
+  [PASS] the OSM input was added as a layer named <output>_osm  - plugin_e2e_conf, plugin_e2e_conf_osm, plugin_e2e_output, plugin_e2e_output_osm, reference (ank_0_30)
+  [PASS] the 4-band output is added with a renderer that ignores the alpha band  - QgsMultiBandColorRenderer
+  [PASS] what QGIS draws is the stored RGB, not a blend with the background  - mean |drawn - stored| = 0.94 DN (a blend measured 83 DN)
+
+  --- opt-in coloured band layer ---
+  [PASS] ticking the option also writes the coloured band layer  - 8 kB
+  [PASS] confidence layer added to the project  - plugin_e2e_conf_band, plugin_e2e_conf_band_confidence, plugin_e2e_conf_band_osm, plugin_e2e_conf, plugin_e2e_conf_osm, plugin_e2e_output, plugin_e2e_output_osm, reference (ank_0_30)
+  [PASS] the confidence layer is auto-styled (paletted, not a grey ramp)  - QgsPalettedRasterRenderer
+  [PASS] its legend carries band NAMES, not raw values 1/2/3  - Kırmızı — kullanmayın | Turuncu — dikkatli kullanın | Yeşil — kullanılabilir
+    [canvas] 12_canvas_confidence_layer.png  760x760  ok
+    [canvas] 13_canvas_confidence_over_ref.png  760x760  ok
+    [shot] 14_legend_layer_tree.png  420x180  ok
+  [PASS] shot 14: the QGIS legend for the confidence layer
+
+  --- warning path: an extent with no OSM coverage at all ---
+  [PASS] an extent with zero OSM features raises a message-bar warning  - 1 message-bar item(s)
+    [shot] 15_zero_osm_warning.png  762x971  ok
+  [PASS] shot 15: the zero-OSM warning as the user sees it
+
+========================================================================
+PHASE D - empty state, window sizes, light and dark themes
+========================================================================
+  [PASS] with an empty project the layer combo is empty  - 0 entries
+  [PASS] and the dialog SAYS what is missing, in the status line  - Referans katman seçin.
+  [PASS] the preview starts CLOSED (Part 5: off by default)  - section 3 is one button until asked
+  [PASS] the parameter fields read as waiting, not failed  - <span style='color:gray'>katman seçilmedi</span>
+    UI themes available: ['default']
+    light 700x460: h-scroll=False  scrollBody=466px viewport=311px  GenerateTop=381px dialogH=460px visible=True
+  [PASS] the light capture really is light  - window background lightness 239
+  [PASS] no horizontal scrollbar at light 700x460
+  [PASS] Generate is visible without scrolling at light 700x460  - button spans 381..411px of a 460px dialog
+    [shot] 20_empty_light_700x460.png  700x460  ok
+    light 840x760: h-scroll=False  scrollBody=466px viewport=611px  GenerateTop=681px dialogH=760px visible=True
+  [PASS] the light capture really is light  - window background lightness 239
+  [PASS] no horizontal scrollbar at light 840x760
+  [PASS] Generate is visible without scrolling at light 840x760  - button spans 681..711px of a 760px dialog
+    [shot] 20_empty_light_840x760.png  840x760  ok
+    light 1000x900: h-scroll=False  scrollBody=466px viewport=751px  GenerateTop=821px dialogH=900px visible=True
+  [PASS] the light capture really is light  - window background lightness 239
+  [PASS] no horizontal scrollbar at light 1000x900
+  [PASS] Generate is visible without scrolling at light 1000x900  - button spans 821..851px of a 900px dialog
+  [PASS] all scrolling section headers exist and are laid out  - 5 group boxes in the scroll body
+    [shot] 20_empty_light_1000x900.png  1000x900  ok
+    dark  1000x900: h-scroll=False  scrollBody=466px viewport=751px  GenerateTop=821px dialogH=900px visible=True
+  [PASS] the dark capture really is dark  - window background lightness 43
+  [PASS] no horizontal scrollbar at dark 1000x900
+  [PASS] Generate is visible without scrolling at dark 1000x900  - button spans 821..851px of a 900px dialog
+  [PASS] all scrolling section headers exist and are laid out  - 5 group boxes in the scroll body
+    [shot] 20_empty_dark_1000x900.png  1000x900  ok
+    dark  700x460: h-scroll=False  scrollBody=466px viewport=311px  GenerateTop=381px dialogH=460px visible=True
+  [PASS] the dark capture really is dark  - window background lightness 43
+  [PASS] no horizontal scrollbar at dark 700x460
+  [PASS] Generate is visible without scrolling at dark 700x460  - button spans 381..411px of a 460px dialog
+    [shot] 20_empty_dark_700x460.png  700x460  ok
+    [shot] 21_populated_dark.png  822x851  ok
+  [PASS] shot 21: populated dialog in the dark theme
+    [shot] 22_populated_light.png  822x851  ok
+  [PASS] shot 22: the same state in the light theme
+
+========================================================================
+82/82 checks passed
+========================================================================
