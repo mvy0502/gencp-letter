@@ -505,7 +505,7 @@ Paths are relative to this directory, so the scripts appear as `../../scripts/..
 
 | file | sha256 | bytes |
 |---|---|---|
-| `../../scripts/figures/fig_design.py` | `33a48b309bb69f43270c650489da2b5021150caa0ac1cd21a67500f34cc80a95` | 4,415 |
+| `../../scripts/figures/fig_design.py` | `767a828b07cf6728f15253b0236249481bb619b217e363321d6498dca9d7c495` | 4,599 |
 | `../../scripts/figures/fig_sign_replication.py` | `c1ef9c1da3c0a2fe2324e9289131a0653d384f0afd8e4f4be6c51ff7dacecb4e` | 4,721 |
 | `../../scripts/figures/fig1_invention.py` | `94b18f160cc7ba29e7445e01056a6ae834ccbf9c228ef4348c4d174db7aa610b` | 4,750 |
 | `../../scripts/seed_eval/epoch_curve_analysis.py` | `cd5ddea168e356efefa71937490380d8e7f6b2f2bc30d51f473ad610d5e3b8ad` | 6,128 |
