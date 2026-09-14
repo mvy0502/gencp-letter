@@ -461,3 +461,16 @@ does not enter the six-seed block, it does not touch any registered contrast, an
 checkpoints it produced are kept but not scored through the chip pipeline. Wherever any
 number from this document appears — in the paper, in a talk, in another document — that
 scope sentence appears with it.
+
+## 7. Addendum, 14 September 2026 — the seed-42 comparators' loss logs, committed
+
+The cross-platform figures of §4a (54.3 % and 22.1 %) rested on the seed-42 Kaggle loss logs, which were not in the repository; the P10 number audit classed them as having no artifact. The logs were located in the checkpoint tarballs of the 26 August backup (`evidence_backup/checkpoints_C1.tar`, `checkpoints_C2.tar`; `evidence_backup_2/checkpoints_C4.tar`, `checkpoints_C5.tar`) and are committed at `docs/gates/loss_logs/`:
+
+| arm | file | sha256 (16) | form |
+|---|---|---|---|
+| C1 | `s42-C1-loss_log.txt` | `3c4eb52df2edfe88` | pix2pix `loss_log.txt`, header-counting window rule applies |
+| C2 | `s42-C2-loss_log.txt` | `17700c3d28b54c04` | pix2pix `loss_log.txt`, header-counting window rule applies |
+| C4 | `s42-C4-kaggle-notebook.log` | `44cde1336738c368` | the Kaggle notebook stdout log (JSON stream lines); it carries no `Training Loss` header, so the main-stage window is the registration epoch count (3–20) |
+| C5 | `s42-C5-kaggle-notebook.log` | `7683ce5527707060` | the Kaggle notebook stdout log (JSON stream lines); it carries no `Training Loss` header, so the main-stage window is the registration epoch count (1–20) |
+
+Recomputed from them with the sustained-trend registration's rule: C1 +1.16 %, C2 −7.90 %, C4 +2.50 %, C5 −7.54 % (33.582 → 33.970; 30.894 → 28.455; 54.374 → 55.732; 53.013 → 49.014; 279 iterations per epoch), and the cross-platform attenuation 9.06 → 4.14 (54.3 %) and 10.04 → 7.82 (22.1 %). Every figure in §4a's cross-platform table reproduces.

@@ -22,8 +22,8 @@ W, H, GX, GY = 1.55, 0.60, 0.72, 0.46          # cell size and gaps (arrow corri
 X0, Y0 = 0.98, 0.15                            # grid origin (room for row headers)
 COLS = {"absent": X0, "present": X0 + W + GX}
 ROWS = {"L1": Y0 + H + GY, "LPIPS": Y0}        # L1 row on top
-CELLS = {("L1", "absent"): ("L1 only", "C2"), ("L1", "present"): ("adversarial + L1", "C1"),
-         ("LPIPS", "absent"): ("LPIPS only", "C5"), ("LPIPS", "present"): ("adversarial + LPIPS", "C4")}
+CELLS = {("L1", "absent"): ("L1-only", "C2"), ("L1", "present"): ("adversarial + L1", "C1"),
+         ("LPIPS", "absent"): ("LPIPS-only", "C5"), ("LPIPS", "present"): ("adversarial + LPIPS", "C4")}
 fig, ax = plt.subplots(figsize=(3.5, 1.85)); ax.set_axis_off()
 def centre(row, col): return COLS[col] + W / 2, ROWS[row] + H / 2
 for (row, col), (name, code) in CELLS.items():

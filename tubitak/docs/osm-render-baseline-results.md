@@ -97,3 +97,5 @@ chips, no transfer claim, no seed-level statement about the render.
 `evidence/osm_render_baseline/render_baseline_summary.json` (sha256 `d4160055858cd02dca6607c675f85c1f945559e7c31a15ab5903ce43d03c9ae0`).
 The 130 KARIOS output trees are under `tool_runs/osm_render_baseline/karios/` (not committed;
 regenerable from the committed inputs in about a minute).
+
+*Amendment, 14 September 2026 (P11 A.3).* The letter's III-L said the equal-count truncation left each fine-tuned comparison "within 0.02 px" of its raw value; this document never carried that number and the audit found it understated the spread. From `render_baseline_summary.json`: per arm, the six-seed mean of the equal-count render-minus-arm contrast differs from the raw one by 0.015 (C1), 0.019 (C2), 0.003 (C4) and 0.003 px (C5); individual seed-arm comparisons differ by up to 0.073, 0.082, 0.058 and 0.062 px. Against advantages of 0.44 to 1.22 px, neither matters; both are now stated.

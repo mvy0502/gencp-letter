@@ -3,7 +3,7 @@
 contrasts of Section III-B, six confirmatory seeds each, every seed as a point against a zero
 line; the seed-level mean and its 95% t-interval (df = 5) drawn BEHIND the points in gray,
 because in this letter the registered reading is the sign replication (P = 1/64) and the
-interval is reported, not required. The render of III-L is deliberately absent: chip-level,
+interval is reported, not required. Panels are autoscaled per contrast; the zero line is dashed. The render of III-L is deliberately absent: chip-level,
 seed-invariant, a different inference path.
 
 Reads docs/evidence/C45_s{45..50}_modal/C45_per_chip.csv (committed; sha256 in MANIFEST.md).
@@ -25,9 +25,9 @@ ROOT = Path(__file__).resolve().parents[2] / "docs" / "evidence"
 SEEDS = (45, 46, 47, 48, 49, 50)
 T975_5 = 2.570581835636314          # scipy.stats.t.ppf(0.975, 5), the value seed_analysis.py uses
 CONTRASTS = [  # (panel title, minuend, subtrahend, committed mean, committed CI)
-    ("primary\nLPIPS-only $-$ adv.+LPIPS", "C5", "C4", -0.6091, (-0.6335, -0.5847)),
-    ("L1 family\nadv.+L1 $-$ L1-only", "C1", "C2", +0.6773, (+0.6172, +0.7374)),
-    ("secondary\nLPIPS-only $-$ L1-only", "C5", "C2", +0.0626, (+0.0273, +0.0979)),
+    ("primary (III-B)\nLPIPS-only $-$ adv. + LPIPS", "C5", "C4", -0.6091, (-0.6335, -0.5847)),
+    ("L1 family (III-B)\nadv. + L1 $-$ L1-only", "C1", "C2", +0.6773, (+0.6172, +0.7374)),
+    ("secondary (III-D)\nLPIPS-only $-$ L1-only", "C5", "C2", +0.0626, (+0.0273, +0.0979)),
 ]
 def per_seed(a, b):
     out = []
@@ -53,15 +53,16 @@ fig, axes = plt.subplots(1, 3, figsize=(3.5, 1.9))
 for ax, (title, v, m, ci) in zip(axes, data):
     ax.axhspan(ci[0], ci[1], color="0.85", lw=0, zorder=1)                 # interval: behind, light
     ax.hlines(m, 0.55, 1.45, color="0.45", lw=1.0, zorder=2)              # mean: behind, mid-gray
-    ax.axhline(0, color="black", lw=0.7, zorder=3)                         # zero line
+    ax.axhline(0, color="black", lw=1.0, ls=(0, (4, 2)), zorder=3)           # zero line: dashed, so it cannot be read as the frame edge (P11 C.9)
     xs = [0.7 + 0.12 * i for i in range(6)]
     ax.scatter(xs, v, s=14, color="black", zorder=4)                        # the six seeds: foreground
     for x, y, s in zip(xs, v, SEEDS):
         ax.annotate(str(s), (x, y), xytext=(0, 3.5), textcoords="offset points", ha="center", fontsize=4, color="0.3")
     n = sum(x < 0 for x in v) if m < 0 else sum(x > 0 for x in v)
-    ax.text(0.5, 0.04 if m > 0 else 0.90, f"{n}/6 {'below' if m < 0 else 'above'} 0", transform=ax.transAxes, ha="center", fontsize=6, weight="bold")
+    ax.text(0.5, 0.03 if m > 0 else 0.92, f"{n}/6 {'below' if m < 0 else 'above'} 0", transform=ax.transAxes, ha="center", fontsize=6, weight="bold")
     lo, hi = min(min(v), 0), max(max(v), 0); pad = 0.18 * (hi - lo)
-    ax.set_ylim(lo - pad, hi + pad); ax.set_xlim(0.5, 1.5); ax.set_xticks([])
+    # zero sits well inside the frame: 30 % of the range beyond it on the side away from the points
+    ax.set_ylim(lo - (0.30 if lo == 0 else 0.18) * (hi - lo), hi + (0.30 if hi == 0 else 0.18) * (hi - lo)); ax.set_xlim(0.5, 1.5); ax.set_xticks([])
     ax.set_title(title, fontsize=6, pad=3); ax.tick_params(axis="y", labelsize=5.5)
     for sp in ("top", "right", "bottom"): ax.spines[sp].set_visible(False)
 axes[0].set_ylabel("seed-level contrast $\\Delta_s$, px", fontsize=6)

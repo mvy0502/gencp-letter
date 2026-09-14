@@ -505,7 +505,7 @@ Paths are relative to this directory, so the scripts appear as `../../scripts/..
 
 | file | sha256 | bytes |
 |---|---|---|
-| `../../scripts/figures/fig_design.py` | `b9be3aba564e9ae7754fe7057d6cf84e28222d600dacb3391ccb51da84c584b0` | 4,415 |
-| `../../scripts/figures/fig_sign_replication.py` | `b01cc1660b3577c19887ddbbe4ca605c23a9731d72b633543999bd3750e6aacc` | 4,400 |
-| `../../scripts/figures/fig1_invention.py` | `1360f37452d5be378e82eabb7be3646e03194ad43f44a79dcf45a4f264a2d903` | 4,527 |
-| `../../scripts/seed_eval/epoch_curve_analysis.py` | `e76f9892e8db9b5f93e967f02535facea4384dca9ae6a942c270918e1db8c94d` | 6,114 |
+| `../../scripts/figures/fig_design.py` | `33a48b309bb69f43270c650489da2b5021150caa0ac1cd21a67500f34cc80a95` | 4,415 |
+| `../../scripts/figures/fig_sign_replication.py` | `c1ef9c1da3c0a2fe2324e9289131a0653d384f0afd8e4f4be6c51ff7dacecb4e` | 4,721 |
+| `../../scripts/figures/fig1_invention.py` | `94b18f160cc7ba29e7445e01056a6ae834ccbf9c228ef4348c4d174db7aa610b` | 4,750 |
+| `../../scripts/seed_eval/epoch_curve_analysis.py` | `cd5ddea168e356efefa71937490380d8e7f6b2f2bc30d51f473ad610d5e3b8ad` | 6,128 |

@@ -85,8 +85,8 @@ def main():
     fig, ax = plt.subplots(figsize=(3.5, 2.4))
     # Grayscale-safe since 13 Sep 2026 (P9 C.4): the two families were blue and red, which print
     # to nearly the same gray (BT.601 luma 100 vs 92); now black solid circles vs mid-gray dashed squares.
-    for fam, color, ls, mk, lab in (("LPIPS", "black", "-", "o", "LPIPS family: (adv.+LPIPS) $-$ (LPIPS)"),
-                                    ("L1", "0.45", "--", "s", "L1 family: (adv.+L1) $-$ (L1)")):
+    for fam, color, ls, mk, lab in (("LPIPS", "black", "-", "o", "LPIPS family: (adv. + LPIPS) $-$ (LPIPS-only)"),
+                                    ("L1", "0.45", "--", "s", "L1 family: (adv. + L1) $-$ (L1-only)")):
         for s in SEEDS:
             ax.plot(EPOCHS, [D[fam][s][e] for e in EPOCHS], color=color, ls=ls, alpha=0.3, lw=0.6)
         m = [R[fam]["mean_by_epoch"][e] for e in EPOCHS]; sd = [R[fam]["sd_by_epoch"][e] for e in EPOCHS]

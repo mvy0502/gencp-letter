@@ -7,7 +7,7 @@ Two Ankara chips from the six-seed panel, chosen by rule and not by eye:
   (b) the chip whose input-silent fraction is the MEDIAN of the 130 -- the typical case.
 For each: the input render (BT.601 gray, as the mask sees it), the real Sentinel-2 chip,
 and the five arms at seed 45 (pretrained is seed-invariant), all BT.601 gray. The
-input-silent mask (Sobel <= 20 on the input) is outlined in the input panel. Each arm
+input-silent mask (Sobel <= 20 on the input) is outlined (dashed) in the input panel. Each arm
 panel is labelled with that chip's edge ratio from the committed per-chip CSV.
 
 Sources: tool_runs/C45_s45_modal/warp/{input,C1,C2,C4,C5}/<stem>.tif (per-seed warps,
@@ -54,9 +54,9 @@ ratio = {r["stem"]: r for r in rows}
 
 ARMS = [("pretrained", lambda s: GENCP / f"pkgA/gray/ank130/pretrained/bt601/{s}.tif", "pretrained"),
         ("C1", lambda s: GENCP / f"C45_s{SEED}_modal/warp/C1/{s}.tif", "adversarial + L1"),
-        ("C2", lambda s: GENCP / f"C45_s{SEED}_modal/warp/C2/{s}.tif", "L1 only"),
+        ("C2", lambda s: GENCP / f"C45_s{SEED}_modal/warp/C2/{s}.tif", "L1-only"),
         ("C4", lambda s: GENCP / f"C45_s{SEED}_modal/warp/C4/{s}.tif", "adversarial + LPIPS"),
-        ("C5", lambda s: GENCP / f"C45_s{SEED}_modal/warp/C5/{s}.tif", "LPIPS only")]
+        ("C5", lambda s: GENCP / f"C45_s{SEED}_modal/warp/C5/{s}.tif", "LPIPS-only")]
 
 fig, axes = plt.subplots(2, 7, figsize=(7.16, 2.35))
 for i, (stem, tag) in enumerate([(stem_max, "largest input-silent fraction"), (stem_med, "median input-silent fraction")]):
@@ -69,7 +69,9 @@ for i, (stem, tag) in enumerate([(stem_max, "largest input-silent fraction"), (s
     for j, (img, label) in enumerate(panels):
         ax = axes[i, j]; ax.imshow(img, cmap="gray", vmin=0, vmax=255, interpolation="nearest")
         if j == 0:
-            ax.contour(mask.astype(float), levels=[0.5], colors=["#d62728"], linewidths=0.5)
+            # grayscale-safe since 14 Sep 2026 (P11): white underlay + black dashed line instead of red
+            ax.contour(mask.astype(float), levels=[0.5], colors=["white"], linewidths=1.1)
+            ax.contour(mask.astype(float), levels=[0.5], colors=["black"], linewidths=0.5, linestyles="dashed")
         ax.set_xticks([]); ax.set_yticks([])
         if i == 0: ax.set_title(label, fontsize=6, pad=2)
         else: ax.set_xlabel(label, fontsize=6, labelpad=1)

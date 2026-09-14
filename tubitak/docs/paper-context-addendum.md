@@ -757,7 +757,7 @@ on it.
 error is present in the published paper's means: northing +5.0 to +6.9 m, easting −1.6 to
 −3.4 m across four HR measurements, signs and magnitude both consistent with the prediction.
 But predicted std is 2.89 m against an observed sigma of 14.5–17.3 m: **the scale error explains
-roughly 3.9% of the reported variance.** It does not explain their headline errors and does not
+roughly 3.9% of the reported variance.** *(Note, 14 September 2026: this 3.9 % is underived; the printed inputs give (2.89/14.5)² = 4.0 % to (2.89/17.3)² = 2.8 %, and the letter now states that range; corrections-log entry 51.)* It does not explain their headline errors and does not
 invalidate their conclusions. The paper's own explanation for the dispersion ("RMSE is mainly
 driven by residual dispersion") stands. Report the systematic component as a hypothesis
 consistent with the means, and nothing more.
