@@ -40,14 +40,14 @@
 %      as the L1 family. B1 is SUPPORT ONLY and must not be presented as the spine:
 %      it is post-hoc, the registered bands did not cover the observed shape.
 %   6. Mechanism, 140 + Fig. 1. The edge-ratio column: C2 0.28 vs C1 1.10 / C4 1.12
-%      / C5 1.16, pretrained ~1.02. With no discriminator anywhere, LPIPS alone
+%      / C5 1.16, pretrained ~1.02. With no discriminator anywhere, \LPIPSonly{}
 %      invents most -- the registered primary prediction for C5 and the single
 %      result that widens the claim from "adversarial" to "plausibility pressure".
 %      CARRY the section-22 non-monotonicity caveat (paper-context-addendum.md §22):
 %      the ratio separates the restrained arm from the unrestrained ones but does
 %      NOT order the errors within the unrestrained group. Invention is a necessary
 %      condition, not a complete explanation.
-%   7. Point-count argument, 160 (100 + 60). The objection: L1-only just produces
+%   7. Point-count argument, 160 (100 + 60). The objection: \Lone{} just produces
 %      fewer features, and fewer-but-better is a trivial trade-off. C5 refutes it ON
 %      THIS PANEL, and the panel is named in the sentence: C5 produces more
 %      surviving matches than C2 (median 88 vs 72) and still scores worse. DO NOT
@@ -83,20 +83,20 @@ input-silent edge ratios (Section II-E). Lower residual is better.}
 \toprule
 Arm (objective) & Mean (px) & Median (px) & Points & Edge ratio \\
 \midrule
-pretrained (adv.\ + LPIPS, European) & 2.563 & 2.588 & 51 & 1.02 \\
-adversarial + L1 & 2.070 (0.025) & 1.987 & 62 & 1.09 \\
-L1 only & \textbf{1.393} (0.037) & \textbf{0.975} & 75 & \textbf{0.28} \\
-adversarial + LPIPS & 2.065 (0.025) & 1.939 & 60 & 1.13 \\
-LPIPS only & 1.456 (0.013) & 1.110 & \textbf{87} & \textbf{1.15} \\
+pretrained (\advLPIPS{}, European) & 2.563 & 2.588 & 51 & 1.02 \\
+\advLone{} & 2.070 (0.025) & 1.987 & 62 & 1.09 \\
+\Lone{} & \textbf{1.393} (0.037) & \textbf{0.975} & 75 & \textbf{0.28} \\
+\advLPIPS{} & 2.065 (0.025) & 1.939 & 60 & 1.13 \\
+\LPIPSonly{} & 1.456 (0.013) & 1.110 & \textbf{87} & \textbf{1.15} \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
 Table~\ref{tab:panel} gives all five arms over 130 Ankara chips, averaged across six
-independent training seeds. The ordering is L1-only $<$ LPIPS-only $<$ the two
+independent training seeds. The ordering is \Lone{} $<$ \LPIPSonly{} $<$ the two
 adversarial arms $<$ pretrained, from 1.39~px to 2.56~px. Three of those positions hold
-in every seed; the two adversarial arms do not order: adversarial+LPIPS scores below
-adversarial+L1 in three seeds and above it in three, and their six-seed means differ by
+in every seed; the two adversarial arms do not order: \advLPIPS{} scores below
+\advLone{} in three seeds and above it in three, and their six-seed means differ by
 0.005~px. Both adversarial arms sit above both non-adversarial ones in every seed, and the
 two non-adversarial arms are separated by 0.063~px.
 
@@ -105,18 +105,20 @@ two non-adversarial arms are separated by 0.063~px.
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig_sign_replication}
-\caption{Sign replication across the six confirmatory seeds for the three seed-level
-contrasts of this section, in px; each point is one seed's $\Delta_s$ of
+\caption{Sign replication across the six confirmatory seeds for the primary and L1-family
+contrasts of this section and the secondary contrast of Section~III-D, in px; each point is one seed's $\Delta_s$ of
 (\ref{eq:seedstat}), labelled by seed. The registered reading is what the points show:
 all six on one side of zero, $P = 1/64$ with the direction fixed in advance. The seed-level
 mean (bar) and its 95\% interval of (\ref{eq:seedci}) (gray band) are reported, not
-required, and are drawn behind the points for that reason. The render of Section~III-L is
-absent by design: it is chip-level and seed-invariant, a different inference path.}
+required, and are drawn behind the points for that reason. The three panels are autoscaled to their
+own contrast under one shared axis label: the secondary panel's axis spans roughly a tenth
+of the primary's, so spreads are not comparable across panels; the dashed line is zero in
+every panel. The render of Section~III-L is absent by design: it is chip-level and seed-invariant, a different inference path.}
 \label{fig:signs}
 \end{figure}
 
 Removing the adversarial term improves positional accuracy under the perceptual
-reconstruction loss in all six seeds (Fig.~\ref{fig:signs}). Per seed, LPIPS-only minus adversarial+LPIPS is
+reconstruction loss in all six seeds (Fig.~\ref{fig:signs}). Per seed, \LPIPSonly{} minus \advLPIPS{} is
 $-0.615$, $-0.646$, $-0.616$, $-0.594$, $-0.605$ and $-0.578$~px. The direction was fixed
 in advance from an earlier seed and registered before these six were trained, so under a
 null of no effect the probability of six agreeing signs is 1/64.
@@ -125,7 +127,7 @@ The seed-level mean is $-0.609$~px, with a 95\% interval of $[-0.634, -0.585]$ a
 degrees of freedom. That interval is reported, not required: the registered
 reading is the sign replication, and no interval was a gate for it in either direction.
 
-The same holds under L1, on the same inference path: adversarial + L1 minus L1-only is
+The same holds under L1, on the same inference path: \advLone{} minus \Lone{} is
 positive in all six seeds, per seed $+0.675$, $+0.587$, $+0.701$, $+0.754$, $+0.702$ and
 $+0.644$~px, a reading registered at seed level beside the primary; its seed-level mean is
 $+0.677$~px with a 95\% interval of $[+0.617, +0.737]$, reported, not required.
@@ -160,7 +162,7 @@ mean.
 \subsection{Secondary result}
 
 The perceptual reconstruction loss carries its own positional penalty with no
-discriminator present: LPIPS-only minus L1-only is positive in all six seeds, again
+discriminator present: \LPIPSonly{} minus \Lone{} is positive in all six seeds, again
 $P = 1/64$, with a seed-level mean of $+0.063$~px and a 95\% interval of
 $[+0.027, +0.098]$ at five degrees of freedom, reported not required. The narrowest
 seed clears zero by 0.007~px. This is a consistent small positive effect, six times out
@@ -188,9 +190,8 @@ small effect, not a comfortable one.
 \centering
 \includegraphics[width=\columnwidth]{fig_epoch_curve}
 \caption{The adversarial penalty against training epoch, both reconstruction families,
-six confirmatory seeds. Penalty: per seed, the chip mean over 130 chips of the adversarial
-arm's per-chip median residual minus its non-adversarial counterpart's, positive when the
-adversarial arm is worse; thin lines are seeds, points are six-seed means with the
+six confirmatory seeds. Penalty: $\Delta_s$ of (\ref{eq:seedstat}) with the adversarial arm as $a$ and its
+non-adversarial counterpart as $b$, positive when the adversarial arm is worse; thin lines are seeds, points are six-seed means with the
 seed-to-seed s.d. Epoch 20 is the block of Table~\ref{tab:panel}; epochs 1, 2, 5 and 10
 were scored from the retained checkpoints through the same frozen pipeline. This is a
 training-time curve, confounded with convergence: the arms are trained longer, not dosed.}
@@ -222,15 +223,14 @@ with convergence; it is reported as a curve, not as a dose.
 \caption{What each arm renders where the input asserts nothing. Two chips from the
 130-chip Ankara panel, chosen by rule rather than by eye: (a) the chip with the largest
 input-silent fraction, where the entire input render falls below the Sobel threshold;
-(b) the chip at the median input-silent fraction. Columns: the input render as the mask sees it (BT.601 gray, the luminance-weighted
-conversion of the three-band render to one band; the input-silent region is everything
-outside the red outline),
+(b) the chip at the median input-silent fraction. Columns: the input render as the mask sees it (BT.601 gray, Section~II-D; the input-silent region is everything outside the dashed
+outline),
 the real Sentinel-2 chip, and the five arms at seed 45 (the pretrained arm is
 seed-invariant), each labelled with that chip's input-silent edge ratio $r$
-(Section~II-E; Table~\ref{tab:panel} gives the panel means). In (b) the L1-only arm
+(Section~II-E; Table~\ref{tab:panel} gives the panel means). In (b) the \Lone{} arm
 renders edges only along the input's own structure ($r = 0.36$) while every other arm
 fills the silent area at close to the real image's edge density. In (a), with no
-information in the input at all, every arm including L1-only renders structure at
+information in the input at all, every arm including \Lone{} renders structure at
 roughly the real density ($r = 0.94$ to $1.18$): information absent from the input
 cannot be recovered, and restraint is conditional on the input having something to say.}
 \label{fig:invention}
@@ -240,56 +240,57 @@ cannot be recovered, and restraint is conditional on the input having something 
 The edge-ratio column of Table~\ref{tab:panel} (illustrated in Fig.~\ref{fig:invention}) measures, per chip, how much structure an arm
 renders where the conditioning input asserts none, relative to the real image.
 With no discriminator anywhere, the perceptual loss alone invents the most:
-1.15 against 1.13 for adversarial+LPIPS, 1.09 for
-adversarial+L1 and 1.02 for the pretrained generator. L1-only is the outlier in
+1.15 against 1.13 for \advLPIPS{}, 1.09 for
+\advLone{} and 1.02 for the pretrained generator. \Lone{} is the outlier in
 the other direction at 0.28. Every value is a six-seed mean and the ordering holds
 in all six.
 
-This was the registered prediction for the LPIPS-only arm, and it is the single result
+This was the registered prediction for the \LPIPSonly{} arm, and it is the single result
 that widens the claim from ``the adversarial term degrades matchable content'' to ``any
 plausibility pressure does''. An arm with no discriminator invents more than either
 arm that has one.
 
 The suppression is conditional, and conditional means there is a condition.
 Fig.~\ref{fig:invention} shows both sides of it on chips chosen by rule. Where the input
-asserts structure somewhere in the chip, the L1-only arm confines its edges to that
+asserts structure somewhere in the chip, the \Lone{} arm confines its edges to that
 structure and leaves the silent region at a fraction of the real edge density (0.36 on
 the chip at the median input-silent fraction). Where the input asserts nothing
-anywhere---two of the 130 chips fall entirely below the threshold---every arm, L1-only
+anywhere---two of the 130 chips fall entirely below the threshold---every arm, \Lone{}
 included, renders structure at roughly the real density (0.94 to 1.18 on the chip with the
 largest input-silent fraction). Information absent from the input cannot be recovered,
 and an arm with nothing to copy fills the frame from its prior; restraint operates only
-where there is something to be restrained by. Those two chips do not move the panel mean
-of 0.28, and they are excluded by rule from the comparison on the informative mask, the complement of
-the input-silent mask, in Section~III-H, which needs an informative region to compare
-against.
+where there is something to be restrained by. Those two chips do not move the panel mean of 0.28. The comparison on the informative
+mask, the complement of the input-silent mask, in Section~III-H needs an informative
+region with a real edge on it to compare against; it excludes them by rule, together with
+a third chip whose seven informative pixels carry no real edge, and runs on the remaining
+127 chips.
 
 \subsection{The point-count argument, and the selection objection}
 
-The obvious objection to the L1-only result is that it simply produces fewer features, and
-fewer-but-better is a trivial trade. The LPIPS-only arm refutes it on the 130-chip Ankara panel of Table~\ref{tab:panel}: it
-produces more surviving matches than L1-only, 87 against 75 at the median, and still
+The obvious objection to the \Lone{} result is that it simply produces fewer features, and
+fewer-but-better is a trivial trade. The \LPIPSonly{} arm refutes it on the 130-chip Ankara panel of Table~\ref{tab:panel}: it
+produces more surviving matches than \Lone{}, 87 against 75 at the median, and still
 scores worse. The harm is not
 about feature count; it is about features with no grounding in the input.
 
 A second, sharper form of the objection is that each arm's residual is a median
 over the matches that arm itself produced. Equalising counts per chip---every arm
 truncated to the smallest count any arm achieved there, ranked by match score---the
-LPIPS-only arm surrenders 38\% of its points. Under equalised counts the primary
-contrast grows by 1.8\%, the LPIPS-only penalty shrinks by 11\%, and both hold in all six
+\LPIPSonly{} arm surrenders 38\% of its points. Under equalised counts the primary
+contrast grows by 1.8\%, the \LPIPSonly{} penalty shrinks by 11\%, and both hold in all six
 seeds. A minimum-match-count sweep moves the penalty upward, every seed at or
 above $+0.037$~px at a floor of 30 matches---the opposite of what a selection artefact
 predicts.
 
 \subsection{Restraint, not smoothing}
 
-A remaining explanation is that L1-only is simply blurrier, and that the matcher prefers
+A remaining explanation is that \Lone{} is simply blurrier, and that the matcher prefers
 smoother imagery. Computing the same edge ratio on the complementary mask---the informative mask, the
 pixels where the input does assert structure---separates the two, because blur suppresses
-edges uniformly while restraint suppresses them conditionally. L1-only reproduces the
+edges uniformly while restraint suppresses them conditionally. \Lone{} reproduces the
 real image's edge density to within 1.5\% there (0.986) while sitting at 0.277
-where the input says nothing: a factor of 3.6 between the two masks, in all six seeds,
-against thresholds fixed in advance. A smoothing explanation predicts suppression on both
+where the input says nothing: a factor of 3.6 between the two masks, in all six seeds on those 127 chips, against
+thresholds fixed in advance. A smoothing explanation predicts suppression on both
 masks. The suppression is conditional on what the input knows.
 
 \subsection{The single-run estimate outside the replicate range}
@@ -311,8 +312,8 @@ Registered before the training logs were read and scored at six seeds. What the
 data supports: in every seed, each adversarial arm reduces its reconstruction loss less
 than its non-adversarial counterpart---six of six in both families. What it does
 not support: that adversarial arms fail to reduce the reconstruction loss. That arm-level
-reading holds for adversarial+LPIPS in all six seeds, mean $+1.45$\%, but fails for
-adversarial+L1, which falls in one seed and is indistinguishable from flat in another.
+reading holds for \advLPIPS{} in all six seeds, mean $+1.45$\%, but fails for
+\advLone{}, which falls in one seed and is indistinguishable from flat in another.
 
 Adversarial+LPIPS is the arm whose registered training-stability rule fired, so the
 operative form of the argument is the one that replicates; that rule read the generator's
@@ -325,8 +326,8 @@ and on an attenuation inside the seed spread, and is not quoted as equivalent.
 
 The warm-up itself attenuates the sustained fall, and the size of the attenuation depends
 on where it is measured. Within platform and within seed (the A10G platform, seed 43), the
-L1-only arm's reconstruction loss $G_{\mathrm{L1}}$ falls 5.16\% over its main stage
-un-warmed against 2.98\% warmed, and the LPIPS-only arm's perceptual loss
+\Lone{} arm's reconstruction loss $G_{\mathrm{L1}}$ falls 5.16\% over its main stage
+un-warmed against 2.98\% warmed, and the \LPIPSonly{} arm's perceptual loss
 $G_{\mathrm{LPIPS}}$ falls 7.98\% against 5.32\%; the controlled gap between adversarial and non-adversarial arm shrinks by 35.3\% in the
 L1 family and 29.7\% in the LPIPS family. The gap is a different quantity from the fall:
 it is the adversarial arm's rise minus the non-adversarial arm's fall, 6.19 to 4.00 points
@@ -346,7 +347,7 @@ discriminator produces texture that is largely unmatchable, high ratio and low p
 count, while the perceptual loss produces structure that is matchable but misplaced, high
 ratio and the highest point count of any arm. Both hurt, by different routes. The account's boundary is stated
 as well as its limit: restraint is conditional on the input carrying information
-somewhere in the chip, and where it carries none the L1-only arm invents like the rest
+somewhere in the chip, and where it carries none the \Lone{} arm invents like the rest
 (Fig.~\ref{fig:invention}a).
 
 \subsection{The rasterised input as a reference}
@@ -358,11 +359,11 @@ bands fixed in advance, and with the Table~\ref{tab:panel} arms' matcher and set
 unchanged. The render is seed-invariant, so the measurement yields one number per chip; every
 comparison here is a paired chip-level difference over the 123 chips on which the render
 produced at least one match, and no seed-level statement is available or made. The answer is intermediate, and it is reported with every
-number. Where the render matches, it localises better than every generated arm: its
-per-chip median residual is 0.583~px (mean of medians 0.797~px), and the paired chip-level difference render minus arm over those 123 chips is
-$-1.715 \pm 0.091$~px against the pretrained generator, between $-1.15$ and $-1.22$~px against adversarial + L1, between $-1.13$ and $-1.22$~px
-against adversarial + LPIPS, between $-0.53$ and $-0.57$~px against LPIPS-only and between
-$-0.44$ and $-0.56$~px against L1-only across the six seeds' arms, every one at six standard errors or more; under the equal-count truncation of Section~II-D the six-seed mean of each fine-tuned
+number. Where the render matches, it localises better than every generated arm: the median over chips of its per-chip median residual is 0.583~px (the mean over chips,
+0.797~px), and the paired chip-level difference render minus arm over those 123 chips is
+$-1.715 \pm 0.091$~px against the pretrained generator, between $-1.15$ and $-1.22$~px against \advLone{}, between $-1.13$ and $-1.22$~px
+against \advLPIPS{}, between $-0.53$ and $-0.57$~px against \LPIPSonly{} and between
+$-0.44$ and $-0.56$~px against \Lone{} across the six seeds' arms, every one at six standard errors or more; under the equal-count truncation of Section~II-D the six-seed mean of each fine-tuned
 comparison moves by at most 0.019~px, while individual seed-arm comparisons move by up to
 0.082~px, against advantages of 0.44 to 1.22~px; the truncation gives
 $-1.778 \pm 0.109$~px against the pretrained generator, over the same 123 chips.
@@ -372,7 +373,7 @@ the minimum-match-count sweep of Section~III-G also moves, and two independent
 truncations moving the same way is evidence against a selection-artefact account of the
 render's advantage, to the extent those two numbers support it. It matches on far fewer points: a median of 29.5 surviving matches per chip, taken over
 all 130 chips with the 7 chips that yield no match at all counted as zero, against 75 for
-L1-only and 87 for LPIPS-only, each a median over the same 130 chips, on every one of which
+\Lone{} and 87 for \LPIPSonly{}, each a median over the same 130 chips, on every one of which
 that arm matched, averaged over the six seeds. The registered ``matches well'' reading required both the
 residual and the point count, and the point count fails it; the registered ``matches
 poorly'' reading is not met either. The comparison set bounds the residual half of this finding and is named as such: the

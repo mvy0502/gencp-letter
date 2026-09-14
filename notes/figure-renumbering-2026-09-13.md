@@ -11,7 +11,8 @@ afterwards, against this list.
 
 | # | where | text | kind | action | verified after |
 |---|---|---|---|---|---|
-| L1 | `manuscript/sections/02-methods.tex:110` | `Fig.~2` (the invention measurement) | hard-coded number | replace by `\ref{fig:invention}` (prints 4; a forward reference, as it already was) | `ef{fig:invention}`; prints Fig. 4 in II-D |
+| L1 | `manuscript/sections/02-methods.tex:110` | `Fig.~2` (the invention measurement) | hard-coded number | replace by `\ref{fig:invention}` (prints 4; a forward reference, as it already was) | `
+ef{fig:invention}`; prints Fig. 4 in II-D |
 | L2 | `03-results.tex:1` | `% ... Table I, Fig. 1.` | comment, skeleton-era plan | left; comment, not prose | left; comment |
 | L3 | `03-results.tex:38` | `% 5. Dose-response, 80 + Fig. 2.` | comment, skeleton-era plan | left | left; comment |
 | L4 | `03-results.tex:42` | `% 6. Mechanism, 140 + Fig. 1.` | comment, skeleton-era plan | left | left; comment |
@@ -23,7 +24,8 @@ afterwards, against this list.
 | L10 | `03-results.tex:337` | `Fig.~\ref{fig:invention}a` | `\ref` | no edit; prints 4a | prints 4a |
 | L11 | `04-alternatives.tex:122` | `Fig.~\ref{fig:invention}a` | `\ref` | no edit; prints 4a | prints 4a ("Section III-F, Fig. 4a") |
 | L12 | `04-alternatives.tex:153` | `Fig.~\ref{fig:epochs}` | `\ref` | no edit; prints 3 | prints 3 ("curve of Fig. 3") |
-| L13 | `06-data-availability.tex:38` | `the 96 epoch checkpoints behind Fig.~1` | hard-coded number | replace by `\ref{fig:epochs}` (prints 3) | `ef{fig:epochs}`; prints Fig. 3 ("checkpoints behind Fig. 3") |
+| L13 | `06-data-availability.tex:38` | `the 96 epoch checkpoints behind Fig.~1` | hard-coded number | replace by `\ref{fig:epochs}` (prints 3) | `
+ef{fig:epochs}`; prints Fig. 3 ("checkpoints behind Fig. 3") |
 | L14 | `figures/README.md:12` | `Fig. 2 (the panel comparison ...)` | record | Fig. 4 | Fig. 4, with the date |
 | L15 | `figures/README.md:19` | `Fig. 1 (the training-time curve ...)` | record | Fig. 3 | Fig. 3, with the date and the grayscale note |
 | L16 | `figures/README.md` last line | "the curve (III-E) precedes the panels (III-F)" | record | extended with the two new figures | extended |
@@ -47,3 +49,5 @@ afterwards, against this list.
 | V10 | `scripts/figures/fig1_invention.py:2` | docstring "Fig. 2 as compiled" | script | dated line added to the docstring; the figure is not regenerated and its README pin stays at the producing commit | docstring reads "Fig. 4 as compiled from 13 Sep 2026"; figure not regenerated; README pin 68b9f83 kept |
 
 **Verification, after the change.** Build at 11 pages, no errors, no overfull boxes. The compiled text was dumped and every printed reference counted: `Fig. 1` twice (caption, II-B), `Fig. 2` twice (caption, III-B), `Fig. 3` four times (caption, III-E, IV-B, data availability), `Fig. 4` four times (caption, II-D, III-F twice) plus `Fig. 4a` twice (III-J, IV-A); no `Fig.~N` hard-coded number remains in any section file. Every count matches the list above.
+
+*14 September 2026 (P11 C.1):* the II-D reference to Fig. 4 (item L1) was deleted, since the band-handling sentence needs no pointer; first references now run 1, 2, 3, 4 in document order.

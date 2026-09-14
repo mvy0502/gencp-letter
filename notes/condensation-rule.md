@@ -41,3 +41,8 @@ paragraph in IV-A; prose that restates a table.
 - At submission, the IEEE copyright notice goes on the arXiv record.
 - At acceptance, the DOI of the published version is added to the arXiv record.
 - A number that changes in revision changes through EVIDENCE.md's change log, as always.
+
+## Targets flagged 14 September 2026 (P11 C.12), not cut
+
+- IV-A "The result" restates III-H's 0.986 / 0.277 / 3.6 in near-identical words; Table II row 1 states them a third time. Section III reports and Section IV answers, so three statements are by design, but in the letter one of III-H and IV-A can become a pointer. The verbatim mechanism clause was already replaced by a pointer in IV-A.
+- The Fig. 3 caption now cites (1a) instead of restating it; the same can be done wherever a caption re-describes a defined quantity.

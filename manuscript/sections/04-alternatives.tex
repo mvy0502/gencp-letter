@@ -64,8 +64,8 @@ Candidate & Test & Result & Verdict \\
 \midrule
 It is blur, not restraint &
 The edge ratio recomputed on the complementary mask, where the input asserts structure;
-six seeds; bands 0.80 and 0.50 fixed in advance &
-L1-only 0.986 on the informative mask against 0.277 where the input is silent, a factor
+six seeds, 127 chips; bands 0.80 and 0.50 fixed in advance &
+\Lone{} 0.986 on the informative mask against 0.277 where the input is silent, a factor
 of 3.6, in every seed; the other arms 1.03--1.05 on the informative mask &
 Refuted: suppression is conditional on the input, which blur cannot produce \\
 \addlinespace
@@ -73,7 +73,7 @@ Cold-started discriminator damage &
 Checkpoint sweep at epochs 1, 2, 5, 10, 20 against the pretrained generator and the
 counterpart arm &
 Adversarial + L1 already better than pretrained at epoch 1, $-0.399 \pm 0.064$ (6.3
-s.e.); its deficit against L1-only $+0.546$ at epoch 1 and $+0.700$ at epoch 20, dipping
+s.e.); its deficit against \Lone{} $+0.546$ at epoch 1 and $+0.700$ at epoch 20, dipping
 to $+0.384$ at epoch 5 &
 Refuted: the wrong sign for startup damage; shape read off the curve, not a band \\
 \addlinespace
@@ -81,8 +81,8 @@ Optimising the evaluation metric &
 (a) Descriptor family: ORB, AKAZE, mutual information, paired on chip intersections;
 (b) matcher family: KLT, NCC template grid, phase correlation, two band conversions, an
 urban subset, 6,510 comparisons &
-(a) L1-only ahead in every family; ORB $-0.613 \pm 0.135$ ($n = 29$), MI a lower bound;
-(b) L1-only first, or tied within noise with an arm outside this factorial, in every cell
+(a) \Lone{} ahead in every family; ORB $-0.613 \pm 0.135$ ($n = 29$), MI a lower bound;
+(b) \Lone{} first, or tied within noise with an arm outside this factorial, in every cell
 but two, both far below threshold; the template matcher widened the margin in all eight
 combinations &
 Refuted by two registrations sharing no matcher and no scoring code, on the same chip sets \\
@@ -95,21 +95,21 @@ evidence that supports it and the caveat that qualifies it.
 
 \subsection{It is blur, not restraint}
 
-The objection. The L1-only arm produces smoother output, and feature matchers
+The objection. The \Lone{} arm produces smoother output, and feature matchers
 prefer smoother imagery. If so, its advantage is a mechanical consequence of blur rather
 than of any learned decision about what to render.
 
 The test. The invention measurement is defined on the input-silent pixels of
 Section~II-E. Computing the \emph{same} ratio on the
-complementary mask, where the input does assert structure, separates the two explanations
-exactly, because blur suppresses edges uniformly while restraint suppresses them
-conditionally. A smoothing explanation predicts the L1-only arm below unity on both
+complementary mask, where the input does assert structure, separates the two explanations exactly, for the reason Section~III-H gives. A smoothing
+explanation predicts the \Lone{} arm below unity on both
 masks. A restraint explanation predicts it near unity where the input is informative and
 far below where it is not. The thresholds separating ``near unity'' from ``suppressed''
 were fixed in advance at 0.80 and 0.50, reusing the bands already registered for the
 original measurement rather than choosing new ones.
 
-The result. Across six seeds the L1-only arm reproduces the real image's edge
+The result. Across six seeds, on the 127 chips with an informative region
+(Section~III-F), the \Lone{} arm reproduces the real image's edge
 density to within 1.5\% on the informative mask---0.986, range 0.980 to 0.989---while
 sitting at 0.277 on the input-silent mask. A factor of 3.6 between the two
 masks, in the same arm, on the same chips, with the same operator, in every seed. Both
@@ -117,16 +117,15 @@ conditions hold six times out of six. The other three arms sit between 1.03 and 
 the informative mask, slightly above reality, consistent with the 1.09 to 1.15
 they show where the input says nothing (Table~\ref{tab:panel}).
 
-The reading. Every arm except the L1-only one adds edges everywhere. Where the input
-asserts structure somewhere in the chip, the L1-only arm adds them only where the input
+The reading. Every arm except the \Lone{} one adds edges everywhere. Where the input
+asserts structure somewhere in the chip, the \Lone{} arm adds them only where the input
 warrants it; where the input asserts nothing anywhere, it fills the frame like the rest
 (Section~III-F, Fig.~\ref{fig:invention}a). That is conditional suppression,
 which blur cannot produce, and the objection is refuted by a positive test rather than by
 a negative control.
 
-What this row is not. It does not establish that the L1-only arm is optimal, nor
-that restraint is the only mechanism in play---Section III's honest-limit paragraph
-stands. It establishes that the smoothing explanation, specifically, does not fit the
+What this row is not. It does not establish that the \Lone{} arm is optimal, nor
+that restraint is the only mechanism in play---Section~III-K stands. It establishes that the smoothing explanation, specifically, does not fit the
 data.
 
 \subsection{Cold-started discriminator damage}
@@ -139,7 +138,7 @@ objective.
 The test. A checkpoint sweep at epochs 1, 2, 5, 10 and 20, comparing each arm to
 the pretrained generator and to its own counterpart.
 
-The result. At epoch 1 the adversarial+L1 arm is already better than
+The result. At epoch 1 the \advLone{} arm is already better than
 pretrained, by $-0.399 \pm 0.064$~px at 6.3 standard errors. That is the wrong
 sign for startup damage: an arm crippled by a cold discriminator would begin worse than
 the checkpoint it started from, not better. The adversarial deficit relative to the
@@ -160,27 +159,27 @@ The objection. The result might be an artefact of the KLT matcher used to
 produce it.
 
 The evidence, from two independent registrations. The first varied the
-\emph{descriptor family}: ORB, AKAZE and mutual information all rank L1-only ahead of
-adversarial+L1 on both the Ankara and European sets, with ORB at $-0.613 \pm 0.135$~px.
+\emph{descriptor family}: ORB, AKAZE and mutual information all rank \Lone{} ahead of
+\advLone{} on both the Ankara and European sets, with ORB at $-0.613 \pm 0.135$~px.
 Two caveats travel with these numbers and are stated rather than buried. The ORB
 figure is a paired difference over the 29 chips where both arms matched, not over
-the 53 chips where the L1-only arm matched at all; the AKAZE figure rests on 11 paired
+the 53 chips where the \Lone{} arm matched at all; the AKAZE figure rests on 11 paired
 chips. And the mutual-information margin of $-1.260 \pm 0.261$ is a lower bound,
 not an estimate: the registered subpixel refinement never ran, and the search grid censors
 70 of the 390 Ankara measurements, 17.9\%, at its bound---36 of 130 for the pretrained
-arm, 23 for adversarial + L1 and 11 for L1-only---censoring the worse arms harder and
+arm, 23 for \advLone{} and 11 for L1-only---censoring the worse arms harder and
 therefore compressing the margin toward zero.
 
 The second registration varied the \emph{matcher family} rather than the descriptor: KLT,
 an NCC template grid, and phase correlation, crossed with two band conversions and an
-urban subset over 6,510 scored comparisons. L1-only ranks first, or ties within noise with
+urban subset over 6,510 scored comparisons. \Lone{} ranks first, or ties within noise with
 an arm outside this factorial, in every condition cell except two, both at the European
-urban subset under phase correlation, one in each band conversion, where adversarial + L1
+urban subset under phase correlation, one in each band conversion, where \advLone{}
 leads it by $0.025 \pm 0.208$ and $0.009 \pm 0.217$~px, far below the threshold at which
 an ordering change would be claimed; the rank changes recorded in six further cells, all
-on the 30-chip Ankara subsets, are within noise and none displaces L1-only from that
+on the 30-chip Ankara subsets, are within noise and none displaces \Lone{} from that
 position. A registered prediction that the template matcher would favour the
-sharper arm failed in the direction that strengthens the result: the L1-only
+sharper arm failed in the direction that strengthens the result: the \Lone{}
 arm's margin grew rather than shrank, in all eight set-by-conversion combinations.
 
 The reading. The candidate is refuted by two registrations that share no matcher and no

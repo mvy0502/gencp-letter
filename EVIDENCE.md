@@ -209,6 +209,7 @@ availability) are not repeated. Commit for every row: `a3e1918`.
 | IV-C matcher-family ordering (P11 A.4) | eu150 urban, phase correlation: C1 ahead of C2 by 0.025 ± 0.208 (BT.601) and 0.009 ± 0.217 px (mean gray), n = 26; six further set-level cells rank-unstable within noise (ank30_prod ×5, ank30_ovp ×1), none displacing C2 from first or from its tie with C3; both registrations scored on sets ank130, eu150, ank30_prod, ank30_ovp | `evidence/pkgA/pkgA_summary.json` `urban`, `ordering`; `evidence/B3/B3_scores.csv` `set` | `aa0f82c` |
 | III-J cross-platform attenuation, artifact (P11 B.3) | 54.3 % and 22.1 % now rest on committed logs: `gates/loss_logs/s42-C1-loss_log.txt`, `s42-C2-loss_log.txt`, `s42-C4-kaggle-notebook.log`, `s42-C5-kaggle-notebook.log` (from the 26 Aug backup tarballs); recomputed C1 +1.16 %, C2 −7.90 %, C4 +2.50 %, C5 −7.54 %; 9.06 → 4.14 and 10.04 → 7.82 | `warmup-deconfound-results.md` §7 | `aa0f82c` |
 | Section I scope figures and II-D common-point count, form (P11 B.2) | tables in `positioning-results.md` (E1, E3) and `common-support-registration.md`; no per-chip artifact retained; named as such in the data-availability statement | those documents | `aa0f82c` |
+| Informative-mask denominator (P11 C.6) | 127 chips: the two all-silent chips (ank_3_34, ank_6_38) plus ank_8_31, whose 7 informative pixels carry no real edge (real edge fraction 0 on them) | `evidence/informative_mask/informative_mask.json` `skipped`; recomputed from `rasters/` | `aa0f82c` |
 
 ### Section III
 

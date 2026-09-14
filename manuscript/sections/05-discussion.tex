@@ -36,12 +36,10 @@
 If you generate a reference image for a geometric consumer, do not train it under
 plausibility pressure; and justify the generator by point yield and coverage, measured
 against the rasterised input itself as the baseline rather than assumed, because on
-positional accuracy alone the baseline wins (Section~III-L). The operational figure comes from the delivered reference generator's own render path,
-which we call the production path: the tool renders its inputs from downloaded
-OpenStreetMap extracts, whereas the research chips of Sections~II to IV were rendered
-from a live map API, and the headline was re-measured on the production path so that
-the number a practitioner gets is the number quoted. On that path, scored by KLT on the
-BT.601 gray band against the standard references, the L1-only generator reaches a
+positional accuracy alone the baseline wins (Section~III-L). The operational figure comes from the production path defined in Section~II-D, the
+delivered reference generator's own render route, and the headline was re-measured on it
+so that the number a practitioner gets is the number quoted. On that path, scored by KLT on the
+BT.601 gray band against the standard references, the \Lone{} generator reaches a
 positional error of $0.593 \pm 0.041$~px on 20 urban Ankara chips, each value the mean of
 eight stochastic draws per chip, better than the published generator on 20 of 20 chips.
 It is a single-seed, chip-level figure from a different corpus and estimator than every
