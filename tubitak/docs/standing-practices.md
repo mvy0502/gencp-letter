@@ -106,6 +106,12 @@ Rules of general force, collected where future work will see them. Each carries 
     practice-11 test is met: the class is the claim about existence, not the three instances
     that prompted it.
 
+    *Cross-reference, 2026-09-14 (P13 D).* The same two-directional form governs checks that
+    a text change preserved content: nothing protected removed and nothing unsupported
+    introduced. Written prospectively from one instance in the letter's P12 prose pass and
+    recorded where it binds, as step 5 of the condensation procedure in
+    `gencp-letter/notes/condensation-rule.md`; no practice is minted for it here.
+
     **Final clause, added 2026-09-13 by corrections-log entry 35.** After an evidence commit,
     **verify from a fresh clone that the files are actually there.** Not `git status`, which
     is silent about ignored paths, and not `git log`, which reports what was committed rather
