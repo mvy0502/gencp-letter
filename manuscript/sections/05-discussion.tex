@@ -75,8 +75,8 @@ proxy choice matters, and they do not remove it. The discriminator of the publis
 is not available, so every adversarial arm began from a seeded random discriminator, a deviation from the published set-up that Section~IV-B shows, on a single-seed
 chip-level sweep, is not what makes those arms lose. OpenStreetMap's own positional accuracy was never separated from the model's error;
 part of the residual attributed to the model is the map's, and the ceiling this implies is
-unmeasured. The perceptual loss was computed with torchmetrics 1.9.0 against the
-upstream's 0.11.0, and LPIPS implementations drift. Known-displacement recovery was not
+unmeasured. The perceptual loss was computed with torchmetrics 1.9.0 against the upstream's 0.11.0
+\cite{guasch2026gencp}, and LPIPS implementations drift. Known-displacement recovery was not
 run for the LPIPS arms. The training inputs under-represent forest relative to the
 production render path, at a cost of roughly 0.6~px on forest-heavy chips. The harness of
 the descriptor-family matcher test was not preserved, so four of its registered parameters
