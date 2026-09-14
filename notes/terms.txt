@@ -5,7 +5,7 @@ training-stability rule | III-J
 hardware gate | Data Availability
 match score | II-D
 BT.601 gray | II-D
-chip | II-D
+chip | I
 input-silent | II-E
 plausibility pressure | I
 minimum-match-count sweep | II-D
