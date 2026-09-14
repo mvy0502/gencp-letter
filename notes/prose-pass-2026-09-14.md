@@ -286,3 +286,13 @@ After the pass (f7ec4c4): sentence mean 27.1, sd 16.3, max 97, burstiness 0.601,
 ## Part F
 
 F.1 numeric tokens: 634 before, 632 after; every numeric token identical. The differences are three pronoun 'one's removed with the tic clauses ('we state it as one', 'not a comfortable one', 'two tests rather than one') and one 'two' added in 'the stronger of the two'. F.2 term first-use check: 11 of 11 pass. F.3 every protected phrase present at or above its minimum count. F.4 the sixteen binding sentences hold as at P10. F.5 build clean, 12 pages, no overfull boxes; figures on the pages of their first references as before.
+
+## Reconciliation of the two token bases (P13 C, 14 September 2026)
+
+P10 enumerated 597 numeric tokens at `09a7aa1`; P12's F.1 baseline counted 634 at `66fee6a`, with the same rule (`tools/prose_pass_checks.py tokens`). The difference is entirely P11's five commits (28efcb9, 97c8d2b, 46fbaf5, 2ae6846, 66fee6a): 7 tokens removed and 44 added, net +37.
+
+Removed (7): `1.4--2.0` and `3.9%` in II-D/II-F (replaced); `0.02` in III-L (replaced); `15.8%` in IV-C (replaced); `130` and `three` in III-F (the informative-mask sentence rewritten to name three excluded chips and 127); `0,` in V-C (a comma the tokenizer had attached to a 20-of-20 figure, now `0`).
+
+Added (44): II-F's range and its inline computation (`2.8%`, `4.0%`, and the fragments `2.89/17`, `2.89/14`, `3`, `5`, `2` ×2 that the tokenizer cuts from (2.89/17.3)² and (2.89/14.5)²); `1.4--2.1`; III-L's `0.019`, `0.082`, `0.44`, `1.22`; IV-C's `70`, `390`, `17.9%`, `36`, `23`, `11`, `130`, `$0.025`, `0.208`, `$0.009`, `0.217`, `30`, `six`, `four`, `two`; `127` four times (III-F, III-H, Table II, IV-A) with `seven` (the third chip's informative pixels); `42` twice (Table II caption and the DA statement's seed-42 logs); `24` (the DA statement's 24 extents); II-A's schedule sentence (`twenty`, `two` ×2, `one`, `three`); V-C's `0`; the DA statement's `two` (two-pixel).
+
+P12 then moved 634 to 632 by removing three pronoun `one`s and adding one `two` inside rewritten clauses; no numeral changed. Every number in the P10 table therefore still traces as classified, with the P11 replacements re-traced in P11's EVIDENCE rows.

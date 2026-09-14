@@ -33,6 +33,17 @@ paragraph in IV-A; prose that restates a table.
 3. A claim that narrows is narrowed in the long version in the same commit, so the two
    versions never say different things about one result.
 4. The condensed draft is diffed against the qualification list before it goes anywhere.
+5. **Both directions, always** (added 14 September 2026, P13, from one instance and written
+   prospectively because the condensation is the same risk at fifty times the scale). A check
+   that a text change preserved content runs in both directions: nothing protected removed
+   (the qualification list, the numeric tokens, the defined terms, the binding sentences) AND
+   nothing unsupported introduced (every sentence of the diff that states a fact, a time
+   order, an attribution or a comparison is traced to the record or to the sentence it
+   replaced). The P12 prose pass ran only the first direction; it caught a two-token change
+   and passed a new temporal claim, "predicted before we measured it", whose subject the
+   record did not support and which P13 had to disambiguate. Do not build the second-direction
+   check for a four-sentence diff; build it for the condensation, when the diff is large
+   enough to need one, and give it its failing case first.
 
 ## Version bookkeeping
 
