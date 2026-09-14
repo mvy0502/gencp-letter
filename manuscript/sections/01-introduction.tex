@@ -48,7 +48,8 @@ cross-entropy discriminator; the upstream text states that the perceptual loss r
 L1 to improve performance, and gives no comparison between the two and no ablation of the
 adversarial term.
 
-Two sentences of scope. At 10~m the premise for a generated reference does not bind: over
+Two facts fix the scope. At 10~m the premise for a generated reference does not
+bind: over
 24 stratified Turkish extents, none lacked a usable Sentinel-2 scene within a year, and the
 median extent had a cloud-free scene from two days before, the worst from seventeen.\footnote{Scene-per-year
 counts are lower bounds, since the archive query capped at 100 and every extent hit the
@@ -60,12 +61,11 @@ current OpenStreetMap was absent, $+0.008 \pm 0.031$~px.\footnote{This null is e
 consistent with ``currency does not help'' and ``OpenStreetMap had not yet recorded the
 change''; separating them needs edit-history analysis that was not done.}
 
-The claim of this letter: plausibility pressure degrades generated reference imagery for
+This letter claims that plausibility pressure degrades generated reference imagery for
 geometric matching. The adversarial term and a perceptual (LPIPS) reconstruction loss are
 each such a pressure, established separately. Where the conditioning input carries no
-information, a loss that rewards plausibility causes the generator to invent structure. An
-invented edge is a false control point, and for georeferencing a false control point is
-worse than no control point, because it displaces the solution silently.
+information, a loss that rewards plausibility causes the generator to invent structure. An invented edge becomes a false control point, and for georeferencing that is worse than
+having none, because it displaces the solution silently.
 
 The theory is the perception--distortion trade-off \cite{blau2018perception}, which we
 do not contradict: we identify a consumer that sits at the distortion end. Liu, Zhang and
@@ -83,7 +83,7 @@ loop; here it is a frozen deliverable and the matcher is exogenous. Cohen, Luck 
 Honari \cite{cohen2018distribution} showed in medical translation that distribution-matching
 losses hallucinate features, and Cohen, Kligvasser \emph{et al.}\ \cite{cohen2024looks}
 prove that pursuing perceptual quality converts uncertainty into confidently rendered
-false detail, which is our mechanism, predicted. Fuentes Reyes \emph{et al.}\
+false detail, which is the mechanism we propose, predicted before we measured it. Fuentes Reyes \emph{et al.}\
 \cite{fuentesreyes2019sar} named the phenomenon ``fiction'' in SAR-to-optical translation
 in 2019 and wrote that no suitable metric existed to evaluate it; Merkle \emph{et al.}\
 \cite{merkle2018exploring} established feeding translation output into a matching

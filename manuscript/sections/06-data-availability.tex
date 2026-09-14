@@ -7,25 +7,27 @@ The study repository (\url{https://github.com/mvy0502/gencp-validation}) holds, 
 per-chip artifacts the reported numbers derive from, each pinned by hash in
 \texttt{tubitak/docs/evidence/MANIFEST.md}, with the frozen analysis scripts under
 \texttt{tubitak/scripts/}.
-Every separately registered body of evidence is named here rather than covered
-generically, so that a reader looking for the evidence behind a specific claim finds it
-named: the six-seed block (per-chip residuals, surviving-point counts and input-silent
-edge ratios for all five arms at seeds 45--50, Section~III-A to III-D and III-F); the two-seed block at seeds 43--44 and the hardware gate, the registered poolability
-comparison of Section~II-A, with its re-run of seed 43 (Section~II-A and III-C); the informative-mask test (Section~III-H and Table~II); the equal-count truncation and the minimum-match-count sweep (Section~III-G); the warm-up and learning-rate probes at seed 43,
-one set of runs read under two registrations, with their training-loss logs
-(Section~II-A and III-J); the six-seed training-loss trend and the generating run's
-seed-42 loss logs behind the cross-platform comparison (Section~III-J); the epoch sweep
-behind the training-time curve, 24 cells at epochs 1, 2, 5 and 10 (Section~III-E), with
-the 96 generator checkpoints it read held outside the repository and listed by hash; the
-single-seed checkpoint sweep and the descriptor-family and matcher-family registrations
-behind Table~II; the 260 seed-independent rasters the edge-ratio measurement reads; the OSM-render premise
-check (Section~III-L), 130 chip-level residuals and counts with its registration; and, in
-the only form they were retained, the scope measurements of Section~I (scene availability
-over 24 extents and the currency test), recorded as tables in the positioning results
-document with no per-chip artifact, and the two-pixel common-point count of Section~II-D,
-recorded in the common-support registration's table only.
+Every separately registered body of evidence is named here, so that a reader looking for
+the evidence behind a specific claim finds it. Per-chip residuals, surviving-point counts and input-silent edge ratios for all five arms
+at seeds 45--50 form the six-seed block (Section~III-A to III-D and III-F). The two-seed block at seeds 43--44 sits beside the
+hardware gate, the registered poolability comparison of Section~II-A, with its re-run of
+seed 43 (Section~II-A and III-C). The informative-mask test is under Section~III-H and
+Table~II; the equal-count truncation and the minimum-match-count sweep under Section~III-G.
+At seed 43, the warm-up and learning-rate probes are one set of runs read under two
+registrations, kept with their training-loss logs (Section~II-A and III-J), as are the
+six-seed training-loss trend and the generating run's seed-42 loss logs behind the
+cross-platform comparison (Section~III-J). Behind the training-time curve, the epoch sweep has 24 cells at epochs 1, 2, 5 and 10
+(Section~III-E); the 96 generator checkpoints it read
+are held outside the repository and listed by hash. The single-seed checkpoint sweep and the
+descriptor-family and matcher-family registrations behind Table~II are there, as are the 260
+seed-independent rasters the edge-ratio measurement reads and the OSM-render premise check
+(Section~III-L), 130 chip-level residuals and counts with its registration. In the only form
+they were retained, the scope measurements of Section~I (scene availability over 24 extents
+and the currency test), recorded as tables in the positioning results document with no
+per-chip artifact, and the two-pixel common-point count of Section~II-D, recorded in the
+common-support registration's table only, are named here as well.
 
-Three things are not available, and are stated here rather than in a footnote. First, the
+Three things are not available. First, the
 alternative-explanations package that originally supported the blur-control and
 corrected-georeferencing rows of Table~II: six of its seven registered checks and its veto
 rule have no surviving per-chip artifact, the scripts that produced them were never
@@ -42,9 +44,7 @@ stochastic, because test-time dropout is active by the generator's design, so a 
 replication and not a reproduction. The generated images produced up to 26 August 2026, the training checkpoints of the
 generating and confirmatory runs, and the 96 epoch checkpoints behind Fig.~\ref{fig:epochs} are held in
 a private backup, verified by hash from the copy, and are available on request. The
-generated images of the 24 epoch cells scored on 13 September 2026 are not in that backup
-and exist on one machine; this is stated so that the backup is not read as covering
-them.
+generated images of the 24 epoch cells scored on 13 September 2026 are not in that backup and exist on one machine.
 The 130 Ankara evaluation inputs were rendered from live map-API queries that were not
 archived as a dated snapshot; whether they could be regenerated byte-identically has not
 been tested, but the renders themselves are in the same backup and, in their warped form,

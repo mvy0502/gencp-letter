@@ -129,8 +129,8 @@ reading is the sign replication, and no interval was a gate for it in either dir
 
 The same holds under L1, on the same inference path: \advLone{} minus \Lone{} is
 positive in all six seeds, per seed $+0.675$, $+0.587$, $+0.701$, $+0.754$, $+0.702$ and
-$+0.644$~px, a reading registered at seed level beside the primary; its seed-level mean is
-$+0.677$~px with a 95\% interval of $[+0.617, +0.737]$, reported, not required.
+$+0.644$~px, a reading registered at seed level beside the primary; its seed-level mean is $+0.677$~px with a 95\% interval of $[+0.617, +0.737]$; the
+interval is reported, and it was not a gate either.
 
 Inference is at the seed level throughout, by (\ref{eq:seed}): every contrast in this
 section is one number per seed, with variability taken across seeds.
@@ -181,8 +181,7 @@ seeds, each with its own draws, which a draw artefact would have to reproduce si
 in the same direction. The minimum-match-count sweep moves the effect upward, not toward
 zero (Section~III-G). And the tolerance was measured on the earlier arms and never
 re-measured for the two LPIPS arms, so it is not a bound on this contrast in either
-direction. What the comparison does license is the reading already given: a consistent
-small effect, not a comfortable one.
+direction. The comparison licenses the reading already given, and no more.
 
 \subsection{The training-time curve}
 
@@ -211,9 +210,9 @@ The dip-then-grow shape read off the single generating run (0.334, 0.254, 0.441,
 0.487~px under the perceptual loss) was registered as an exploratory reading with its
 band stated in advance, and it is not stable across seeds: an early dip followed by
 growth appears in three of six seeds under the perceptual loss and five of six under L1.
-The shape is therefore reported and not claimed. What the figure supports is the
-registered reading and nothing finer. This is a training-time curve and is confounded
-with convergence; it is reported as a curve, not as a dose.
+The shape is therefore reported, not claimed; the figure supports the registered reading
+and nothing finer. Because the arms were trained longer rather than dosed, the curve is confounded with
+convergence.
 
 \subsection{Mechanism}
 
@@ -250,16 +249,15 @@ that widens the claim from ``the adversarial term degrades matchable content'' t
 plausibility pressure does''. An arm with no discriminator invents more than either
 arm that has one.
 
-The suppression is conditional, and conditional means there is a condition.
+The suppression is conditional, and the condition can be shown.
 Fig.~\ref{fig:invention} shows both sides of it on chips chosen by rule. Where the input
 asserts structure somewhere in the chip, the \Lone{} arm confines its edges to that
 structure and leaves the silent region at a fraction of the real edge density (0.36 on
 the chip at the median input-silent fraction). Where the input asserts nothing
 anywhere---two of the 130 chips fall entirely below the threshold---every arm, \Lone{}
 included, renders structure at roughly the real density (0.94 to 1.18 on the chip with the
-largest input-silent fraction). Information absent from the input cannot be recovered,
-and an arm with nothing to copy fills the frame from its prior; restraint operates only
-where there is something to be restrained by. Those two chips do not move the panel mean of 0.28. The comparison on the informative
+largest input-silent fraction). Information absent from the input cannot be recovered; an arm with nothing to copy fills the
+frame from its prior. Those two chips do not move the panel mean of 0.28. The comparison on the informative
 mask, the complement of the input-silent mask, in Section~III-H needs an informative
 region with a real edge on it to compare against; it excludes them by rule, together with
 a third chip whose seven informative pixels carry no real edge, and runs on the remaining
@@ -270,8 +268,7 @@ a third chip whose seven informative pixels carry no real edge, and runs on the 
 The obvious objection to the \Lone{} result is that it simply produces fewer features, and
 fewer-but-better is a trivial trade. The \LPIPSonly{} arm refutes it on the 130-chip Ankara panel of Table~\ref{tab:panel}: it
 produces more surviving matches than \Lone{}, 87 against 75 at the median, and still
-scores worse. The harm is not
-about feature count; it is about features with no grounding in the input.
+scores worse. The harm comes from features with no grounding in the input rather than from their number.
 
 A second, sharper form of the objection is that each arm's residual is a median
 over the matches that arm itself produced. Equalising counts per chip---every arm
@@ -302,16 +299,15 @@ rank scale. The treatment was applied once per cell, so every error bar on that 
 chip-level. Six replicates do not contain it, and its sign flips in one of them.
 
 Falling outside a six-replicate range is not a significance test and no p-value attaches
-to it. What makes it reportable is that it happens on the quantity a mechanistic claim was
-built on, in the direction that favoured the claim, while the registered reading on that
+to it. It is reportable because it happens on the quantity a mechanistic claim was built on, in the direction that favoured the claim, while the registered reading on that
 same quantity independently fails.
 
 \subsection{The sustained training trend}
 
-Registered before the training logs were read and scored at six seeds. What the
-data supports: in every seed, each adversarial arm reduces its reconstruction loss less
-than its non-adversarial counterpart---six of six in both families. What it does
-not support: that adversarial arms fail to reduce the reconstruction loss. That arm-level
+This trend was registered before the training logs were read and scored at six seeds. The
+data supports this much: in every seed, each adversarial arm reduces its reconstruction loss
+less than its non-adversarial counterpart, six of six in both families. It does not support
+the stronger claim that adversarial arms fail to reduce the reconstruction loss at all. That arm-level
 reading holds for \advLPIPS{} in all six seeds, mean $+1.45$\%, but fails for
 \advLone{}, which falls in one seed and is indistinguishable from flat in another.
 
@@ -359,11 +355,13 @@ bands fixed in advance, and with the Table~\ref{tab:panel} arms' matcher and set
 unchanged. The render is seed-invariant, so the measurement yields one number per chip; every
 comparison here is a paired chip-level difference over the 123 chips on which the render
 produced at least one match, and no seed-level statement is available or made. The answer is intermediate, and it is reported with every
-number. Where the render matches, it localises better than every generated arm: the median over chips of its per-chip median residual is 0.583~px (the mean over chips,
-0.797~px), and the paired chip-level difference render minus arm over those 123 chips is
-$-1.715 \pm 0.091$~px against the pretrained generator, between $-1.15$ and $-1.22$~px against \advLone{}, between $-1.13$ and $-1.22$~px
-against \advLPIPS{}, between $-0.53$ and $-0.57$~px against \LPIPSonly{} and between
-$-0.44$ and $-0.56$~px against \Lone{} across the six seeds' arms, every one at six standard errors or more; under the equal-count truncation of Section~II-D the six-seed mean of each fine-tuned
+number. Where the render matches, it localises better than every generated arm. Its per-chip median residual, taken as the median over chips, is 0.583~px (the mean over
+chips, 0.797~px). Paired over those 123 chips, render minus arm is $-1.715 \pm 0.091$~px
+against the pretrained generator; across the six seeds' arms it lies
+between $-1.15$ and $-1.22$~px against \advLone{}, between $-1.13$ and $-1.22$~px against
+\advLPIPS{}, between $-0.53$ and $-0.57$~px against \LPIPSonly{} and between $-0.44$ and
+$-0.56$~px against \Lone{}, every one at six standard errors or more. Under the equal-count
+truncation of Section~II-D the six-seed mean of each fine-tuned
 comparison moves by at most 0.019~px, while individual seed-arm comparisons move by up to
 0.082~px, against advantages of 0.44 to 1.22~px; the truncation gives
 $-1.778 \pm 0.109$~px against the pretrained generator, over the same 123 chips.
@@ -376,8 +374,7 @@ all 130 chips with the 7 chips that yield no match at all counted as zero, again
 \Lone{} and 87 for \LPIPSonly{}, each a median over the same 130 chips, on every one of which
 that arm matched, averaged over the six seeds. The registered ``matches well'' reading required both the
 residual and the point count, and the point count fails it; the registered ``matches
-poorly'' reading is not met either. The comparison set bounds the residual half of this finding and is named as such: the
-123 chips are the ones on which the render matched, and they are not a random subset of
+poorly'' reading is not met either. The comparison set bounds the residual half of this finding: the 123 chips are the ones on which the render matched, and they are not a random subset of
 the panel but the chips whose vector content is rich enough to match, so the render's
 residual advantage is established conditional on its own success, on those chips and not
 on all 130. This is the selection objection Section~III-G raises for the arms, and it

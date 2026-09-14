@@ -1,0 +1,44 @@
+# Qualifications that a prose pass must leave in substance (P4 rulings, the condensation rule's list, the binding sentences). phrase | minimum count
+not pooled | 1
+not-pooled | 1
+reported, not required | 3
+reported not required | 1
+necessary condition, not a complete explanation | 1
+single-seed, chip-level | 2
+lower bound | 3
+read off the curve | 1
+conditional on the input | 2
+one city | 1
+not re-measured for the LPIPS arms | 1
+to our knowledge | 4
+learning-rate warm-up | 1
+not sign-stable | 1
+cannot be pooled | 1
+chip-level bound | 1
+confounded with convergence | 1
+we make no interaction claim | 1
+does not establish that the adversarial arms would be unaffected | 1
+reported for consistency only | 1
+five of six on each of the three registered scales | 1
+Experiments were pre-registered where stated; deviations from the registered protocol are documented in a public corrections log | 1
+repository's executable definition | 1
+not significant at the registered threshold | 0
+censor | 1
+paired on chip intersections | 1
+29 chips where both arms matched | 1
+not as a code bug | 1
+35.3 | 1
+29.7 | 1
+54.3 | 1
+22.1 | 1
+where it matches | 2
+including at equal counts | 1
+except a disclosed learning-rate warm-up | 1
+no per-chip artifact | 1
+not in that backup | 1
+a replication and not a reproduction | 1
+has not been tested | 1
+is not comparable to them | 1
+one seed, chip-level bound | 1
+127 chips | 2
+counted as zero | 1

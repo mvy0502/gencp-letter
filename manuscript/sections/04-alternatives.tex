@@ -145,11 +145,9 @@ the checkpoint it started from, not better. The adversarial deficit relative to 
 non-adversarial arm is present from epoch 1 at $+0.546 \pm 0.048$ and reaches $+0.700$ by
 epoch 20.
 
-The caveat, and it is ours rather than a reviewer's. The path from epoch 1 to
-epoch 20 is not monotone: it dips to $+0.384$ at epoch 5 before growing. The
-registered bands for this sweep did not anticipate that shape, and the conclusion is read
-off the curve rather than matched to a band. We state it that way because presenting it
-as a clean band hit would misrepresent how it was obtained. The refutation does not depend
+The caveat, which we raise ourselves. The path from epoch 1 to
+epoch 20 is not monotone: it dips to $+0.384$ at epoch 5 before growing. The registered bands for this sweep did not anticipate that shape, and the conclusion is
+read off the curve rather than matched to a band. The refutation does not depend
 on the shape---it depends on the epoch-1 magnitude, which is large and correctly signed. The six-seed curve of Fig.~\ref{fig:epochs} confirms the penalty at every scored epoch
 in every seed in both families, and does not confirm the shape.
 
@@ -185,9 +183,8 @@ arm's margin grew rather than shrank, in all eight set-by-conversion combination
 The reading. The candidate is refuted by two registrations that share no matcher and no
 scoring code. They were scored on the same four chip sets and the same seed-42 generated
 images, which does not weaken the refutation: the factor under suspicion is the matcher,
-and the matcher is what varied. Two matcher families agreeing on the same chips is
-stronger evidence than either alone, and it is the reason this row is reported as two
-tests rather than one.
+and the matcher is what varied. Two matcher families agreeing on the same chips is stronger evidence than either alone,
+which is why this row reports two tests.
 
 \subsection{Corrected georeferencing in the fine-tuning pairs}
 
@@ -206,14 +203,13 @@ Why this replaces a measurement we previously reported. An earlier decomposition
 recorded in the study repository's Phase D results, attributed roughly 86\% of the European gain to scatter reduction rather than to a
 systematic shift, and was reported as refuting this candidate. That measurement's
 per-chip artifacts did not survive and it cannot be reproduced, which is disclosed in the
-data-availability statement. The design argument is not a fallback: it is
-stronger, because it depends on the structure of the experiment rather than on a
-computation, and nothing can be lost that would make it unverifiable.
+data-availability statement. The design argument is the stronger of the two: it depends on the structure of the
+experiment, not on a computation, and nothing can be lost that would make it unverifiable.
 
 \subsection{Why the result is matcher-independent, mechanically}
 
-A blurred template gives a broad correlation peak; invented structure gives a sharp peak
-in the wrong place. A broad peak in the right place localises better than a sharp
-peak in the wrong one, and that is true of any matcher that localises by correlation.
+A blurred template gives a broad correlation peak in the right place; invented structure
+gives a sharp peak in the wrong one, and any matcher that localises by correlation prefers
+the first.
 This is offered as the mechanical reason the previous row's result is unsurprising, not
 as further evidence for it.

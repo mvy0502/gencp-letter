@@ -67,10 +67,9 @@ before eighteen main epochs at $10^{-4}$; the arms without one run twenty main e
 $10^{-4}$. Integrated over training this gives the adversarial arms 13.40 against
 15.00 in units of $10^{-4}$ epochs, a 10.67\% deficit, borne by the arms that score
 worse. The warm-up exists because joint training from a randomly initialised
-discriminator at full learning rate is unstable, so the asymmetry is a property of the
-design rather than an accident of it.
+discriminator at full learning rate is unstable, so the asymmetry is built into the design.
 
-Its consequence is measured rather than assumed negligible. Giving a
+We measured its consequence instead of assuming it negligible. Giving a
 non-adversarial arm that exact schedule moves its positional residual by
 $+0.007 \pm 0.034$~px, roughly 1\% of the 0.647~px gap the schedule would have to explain
 (one seed, chip-level bound). The \LPIPSonly{} versus \Lone{} contrast is immune to
@@ -100,7 +99,7 @@ A $2\times2$ factorial (Fig.~\ref{fig:design}) crosses an adversarial term with 
 all four cells within each replicate: training data, seed, initialisation, evaluation
 chips, matcher, and matcher configuration; the seed varies across the six replicates and
 never within one. The learning-rate schedule is an explicit exception to that
-list, quantified in II-A, not an omission from it.
+list, quantified in II-A.
 
 The published pretrained weights already occupy the \advLPIPS{} cell, trained
 on European data rather than fine-tuned on ours; they are reported as a fifth arm rather
@@ -115,8 +114,7 @@ code uses VGG.
 The discriminator is not published; only the generator is deposited. Every arm with an
 adversarial term therefore begins from a randomly initialised, seeded discriminator,
 recorded in a provenance file per run. Section~IV-B shows, on a single-seed, chip-level checkpoint sweep, that this is not
-what causes the adversarial arms to lose, but it is a deviation from the published
-training setup and we state it as one.
+what causes the adversarial arms to lose, but it remains a deviation from the published training setup.
 
 \subsection{Evaluation}
 
@@ -137,23 +135,21 @@ measurement is outside this factorial); the bound was not re-measured for the LP
 Each arm's chip residual is a median over the matches that arm itself produced,
 and the arms do not produce equally many: median surviving points per chip, averaged over the six seeds, are 51 for the
 pretrained generator, 62 for \advLone{}, 60 for \advLPIPS{}, 75 for \Lone{}
-and 87 for \LPIPSonly{} (Table~I). This is selection
-on a post-treatment variable and we name it as such.
+and 87 for \LPIPSonly{} (Table~I). This is selection on a post-treatment variable.
 
 We test it by equalising counts. On each chip every arm is truncated to the best $K$ of its own matches, ranked by match score (the matcher's own
 per-match quality value, descending), where $K$ is the smallest count any arm achieved on
 that chip; the \LPIPSonly{} arm surrenders 38\% of its points and the \advLPIPS{}
-arm 7\%. A minimum-match-count sweep over all four arms jointly is reported alongside it.
-Both are reported in Section III.
+arm 7\%. A minimum-match-count sweep over all four arms jointly accompanies it; both appear in
+Section III.
 
-Point-level common support is not constructible here, and we report that rather
-than approximating it. KLT keypoints are detected independently per arm on that arm's own
+Point-level common support is not constructible here, and we did not approximate it. KLT keypoints are detected independently per arm on that arm's own
 generated image, so the arms share no point identity: at a two-pixel tolerance, 69 of 130
 chips have no common points at all (counted at one seed before any contrast was computed), and a tolerance wide enough to yield a usable set would
 exceed the 1.4--2.1~px residuals under test and absorb the signal. Equal-count truncation
-is therefore the only available substitute. It is ranked by match score and never by
-residual, which would be circular; match score is itself post-treatment, so this
-removes the count asymmetry rather than all conditioning, and no result here is unbiased.
+is therefore the only available substitute. It is ranked by match score and never by residual, which would be circular. Match score is
+itself post-treatment, so the truncation removes the count asymmetry and leaves the rest of
+the conditioning in place; no result here is unbiased.
 
 Inference is at the seed level. Let $m_{a,s,i}$ be arm $a$'s per-chip residual, the
 median over its own matches, on chip $i$ in seed $s$, with $N = 130$ chips and $S = 6$
@@ -188,7 +184,7 @@ r_a = \frac{\sum_{p\in\Omega}\,[\,G(\hat{Y}_a)(p) > \tau\,]}{\sum_{p\in\Omega}\,
 the arm's edge fraction on $\Omega$ over the real chip's edge fraction on the same
 $\Omega$; a chip with an empty $\Omega$ or no real edge on it is excluded, which happens
 on none of the 130. Table~\ref{tab:panel} reports the mean of $r_a$ over chips, then over
-seeds. The set $\Omega$ is defined by the input, not by the ground truth, deliberately: it separates
+seeds. We define $\Omega$ by the input and not by the ground truth because that is what separates
 \emph{invented where nothing was known} from \emph{wrong where something was known}---a distinction that, to our knowledge, existing hallucination measures do not draw; the
 nearest, which decouples a restored image's learned-prior component from its data-fidelity
 component \cite{elhelou2022bigprior}, conditions on the prior rather than on the input's
@@ -200,8 +196,7 @@ Resampling $257\times257$ rasters at 10~m to $256\times256$ while copying the tr
 unchanged gives a true ground sampling distance of 10.0390625~m against a declared 10.0~m,
 an error of exactly $1/256$, zero at the north-west corner and reaching 14.1~m at the
 south-east corner of a chip. Our path corrects it, and the correction is applied to every
-chip scored here, so our geometry is not identical to the published pipeline's. The
-qualifier travels with the claim: the systematic component is consistent with the signs
+chip scored here, so our geometry is not identical to the published pipeline's. The claim needs its qualifier: the systematic component is consistent with the signs
 and magnitudes of the published means, but the predicted standard deviation is 2.89~m against the 14.5 to 17.3~m reported
 upstream \cite{guasch2026gencp}, so it accounts for between $(2.89/17.3)^2 = 2.8\%$
 and $(2.89/14.5)^2 = 4.0\%$ of the reported variance and does not invalidate the
