@@ -57,3 +57,7 @@ paragraph in IV-A; prose that restates a table.
 
 - IV-A "The result" restates III-H's 0.986 / 0.277 / 3.6 in near-identical words; Table II row 1 states them a third time. Section III reports and Section IV answers, so three statements are by design, but in the letter one of III-H and IV-A can become a pointer. The verbatim mechanism clause was already replaced by a pointer in IV-A.
 - The Fig. 3 caption now cites (1a) instead of restating it; the same can be done wherever a caption re-describes a defined quantity.
+
+## For the GRSL version (added 14 September 2026, P14 B)
+
+- The first-page note reads "Preprint, September 2026." on the arXiv version because nothing has been submitted. When the GRSL version is made, it reverts to a submission note with the actual date, and the arXiv record's copyright line follows the version bookkeeping above.

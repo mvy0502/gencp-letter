@@ -16,6 +16,7 @@
 ## Before IEEE GRSL
 
 - [ ] GRSL page limit respected (5 pages) and the template used unmodified
+- [ ] First-page note changed from "Preprint, September 2026." to the submission note with the real date (P14 B)
 - [ ] GRSL's current preprint and supplementary-material policy verified
 - [ ] arXiv identifier cited in the submission where the venue allows it
 - [ ] E3 absent from every results table (exploratory only)
