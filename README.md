@@ -1,106 +1,95 @@
-# GenCP letter — manuscript workspace
+# Plausibility Pressure Degrades Generated Reference Imagery for Geometric Matching
 
-Manuscript workspace for the IEEE GRSL letter (plus the arXiv long version) coming out
-of the GenCP validation study. Code, data and experiment records stay in the study
-repository; this repository holds only the manuscript, its figures and its evidence
-trail.
+This repository holds the letter, its LaTeX source, and the complete research record
+behind every number in it: registrations written before the runs, results documents, the
+corrections log, the standing practices, the per-chip evidence files with their hashes, and
+the frozen analysis scripts.
 
-- **Study repository (evidence):** https://github.com/mvy0502/gencp-validation
-- **Venue plan:** arXiv preprint first (citable ID), then IEEE GRSL (5-page letter,
-  submission target end of October 2026); IGARSS 2027 for the second slice.
-- **Authors:** Mustafa Vedat Yıldırım; co-authorship with the TÜBİTAK UZAY advisor as
-  agreed.
+**The claim.** A conditional GAN that renders a Sentinel-2-like image from OpenStreetMap
+and land cover was proposed as a reference for satellite georeferencing. A 2 × 2 factorial
+crosses an adversarial term with the reconstruction loss (L1 against LPIPS) and scores each
+arm by the positional error of feature matches against real Sentinel-2. Removing the
+adversarial term improves positional accuracy in all six confirmatory seeds, and the
+perceptual loss alone, with no discriminator anywhere, carries its own penalty in all six.
+The common factor is plausibility pressure: where the conditioning input asserts no
+structure, a loss that rewards plausibility makes the generator invent edges, and an
+invented edge is a false control point. Matched directly, the rasterised map itself
+localises better than every generated arm where it matches, on far fewer points. The design
+rule: if you generate a reference image for a geometric consumer, do not train it under
+plausibility pressure.
 
-## Scope of this letter
-
-*Amended 2026-08-26 from the study's `paper-roadmap.md` (amendment at :150-:187). The
-earlier three-leg description in this file is superseded: leg 1 was demoted to
-introduction scope, the old leg 2 moved to the second paper, and the old leg 3's first
-independent measurement changed hands.*
-
-1. **Scope, two sentences in the introduction** — at 10 m the premise for synthetic
-   references fails: no availability gap (E1) and no currency advantage (E2). Not a
-   section and not a result.
-2. **The design rule** — if you generate a reference for a geometric consumer, do not
-   train it under plausibility pressure. The 2x2 factorial is the primary measurement,
-   stated at seed level as a six-seed sign replication; B2 is the production-path row;
-   B3 parts 1 and 3 are mechanism support carrying the section-22 non-monotonicity
-   caveat; B1 follows as dose-response support and must not be the spine.
-
-**The claim is plausibility pressure, not adversarial training.** C5 carries no
-discriminator anywhere in its objective and hallucinates hardest of the five arms. The
-title changed on 2026-08-26 to match.
-
-**Out of scope for this letter**, and it is a longer list than it was:
-
-- **The ODTU/Cappadocia contamination pair** — moved to the second paper. It is no
-  longer "one independent methods contribution" of this letter; there is no
-  contamination section, table or row.
-- **T1**, including its C1 row, and **E3 and its follow-ups** — second paper.
-- **The registered interaction** — tested, failed 5/6 on all three pre-specified
-  scales, and by a consequence committed in advance no interaction claim is made. The
-  disclosure is mandatory; the words are already budgeted.
-- **B3 part 2 (mediation)** — void as stated (corrections-log entry 20); does not
-  appear at all.
-- **The full four-alternative-explanations protocol** — arXiv long version only. The
-  letter's Table II is three rows.
+**arXiv:** placeholder until the identifier exists. The manuscript is
+[`manuscript/letter.tex`](manuscript/letter.tex); build it with `tectonic letter.tex` in
+`manuscript/`.
 
 ## Layout
 
-```
-gencp-letter/
-├── README.md
-├── EVIDENCE.md          # every claim -> study repo commit + document + number
-├── manuscript/          # LaTeX sources (letter; arXiv variant shares sections/)
-│   ├── letter.tex
-│   ├── sections/        # 00-abstract, 01-introduction, 02-methods,
-│   │                    # 03-results, 04-alternatives, 05-discussion
-│   ├── drafts/          # the Markdown drafts of II, III, IV (moved here 2026-09-13)
-│   └── refs.bib
-├── figures/             # figures used in the manuscript, plus how each is produced
-│   └── README.md
-└── notes/               # drafting notes, reviewer replies, submission checklists
-```
+| path | what it holds |
+|---|---|
+| `manuscript/`, `manuscript/sections/` | the LaTeX source, one file per section; `refs.bib`; the Markdown drafts under `manuscript/drafts/` |
+| `EVIDENCE.md` | every number in the letter, the document and commit it was read from, and its inference path |
+| `figures/` | the four figures and, in `figures/README.md`, the script and commit that produced each |
+| `notes/` | the audits of this repository's own record: number audit, presence and absence audits, the prose pass, the submission checklist |
+| `tubitak/docs/` | the research record: registrations (`*-registration.md`), results (`*-results.md`), `corrections-log.md`, `standing-practices.md` |
+| `tubitak/docs/evidence/` and `tubitak/docs/evidence/MANIFEST.md` | the per-chip artifacts the numbers derive from, every file pinned by sha256 and size in the manifest |
+| `tubitak/docs/gates/` | training-loss logs and run logs |
+| `tubitak/scripts/` | the frozen analysis scripts, the figure scripts, the self-test gate and the pre-commit hook |
+| `tools/` | this repository's own checks: number enumeration, term first-use, protected-phrase and prose measures |
+| `models/`, `data/`, `options/`, `util/`, `scripts/`, `test.py`, `train.py`, `GenCP_HR_demo/`, `GenCP_VHR_demo/`, `imgs/`, `gencp_imgs/`, the notebooks | **upstream GenCP code** (a pix2pix fork by Telespazio), redistributed under its BSD 3-Clause [`LICENSE`](LICENSE); read and imported by the evidence scripts, never edited here |
+| `docs/`, `tubitak/sr/`, `tubitak/qgis_plugin/`, `tubitak/gencp_core/` | the internship delivery's plugin documentation and code, carried with the history; see the last section |
 
-## Where the manuscript lives — decision of 13 September 2026
+## How to verify a number
 
-From 13 September 2026 the manuscript, including its Markdown drafts, lives in this
-repository and nowhere else. The three drafted sections (`draft-section-II.md`,
-`draft-section-III.md`, `draft-section-IV.md`) were **moved** here from
-`gencp-validation/tubitak/docs/` into `manuscript/drafts/`. Their git history stays in
-gencp-validation, where they were written on 26 August 2026 (commits `cadad66`,
-`9b4804d`, `b69f19f`); moving them forward does not erase that.
+Take the L1-only arm's mean residual in Table I, 1.393 px.
 
-Why the manuscript does not stay in gencp-validation:
+1. The table caption gives the inference path: per chip, the median KLT positional error
+   over the arm's own matches; per seed, the mean of the 130 per-chip medians; the entry is
+   the mean over seeds 45–50.
+2. The data-availability statement names the evidence: the six-seed block, per-chip
+   residuals for all five arms at seeds 45–50. Those are
+   `tubitak/docs/evidence/C45_s45_modal/C45_per_chip.csv` through `C45_s50_modal/`.
+3. Check each file against its manifest row:
 
-1. **gencp-validation is a delivered artifact.** Someone at the institution has received it.
-   Manuscript churn in a delivered repository blurs what was delivered.
-2. **The paper cites gencp-validation at pinned commits.** A citation target should be
-   stable, not actively changing.
-3. **This repository exists for the manuscript and is private**, which is right for
-   unpublished work. It stays private until the preprint has an arXiv identifier.
+   ```bash
+   shasum -a 256 tubitak/docs/evidence/C45_s45_modal/C45_per_chip.csv
+   grep 'C45_s45_modal/C45_per_chip.csv' tubitak/docs/evidence/MANIFEST.md
+   ```
 
-gencp-validation keeps what the paper cites and what was delivered: registrations,
-results, audits, the corrections log, evidence, and the standing practices. Nothing in it
-reads the moved drafts (checked by grep across all three repositories before the move; the
-only reference was a path comment in `manuscript/sections/04-alternatives.tex`, updated).
+4. Recompute the table from the six files with the frozen script (standard library only):
 
-## Working rules
+   ```bash
+   python3 tubitak/scripts/seed_eval/table1_six_seed.py
+   ```
 
-1. **No numbers without provenance.** Every figure, table and quoted value in the
-   manuscript must have a row in [EVIDENCE.md](EVIDENCE.md) naming the study-repo
-   commit SHA, the document it comes from, and the exact value. If a number changes in
-   the study repo, it changes here through that row.
-2. **Do not copy analysis code here.** Figures are regenerated from the study
-   repository's scripts; `figures/README.md` records the command and the commit.
-3. **The manuscript wording rule of the study repo applies here too** — see
-   `paper-roadmap.md` in the study repository before drafting claim sentences.
-4. **Retracted or superseded numbers never re-enter.** Check the study repo's
-   `corrections-log.md` before quoting a value; some figures are explicitly marked as
-   not quotable.
-5. No emoji in any file in this repository.
-6. **No citation without its record.** Every `refs.bib` entry is verified against its DOI,
-   DataCite, arXiv or proceedings record before it is cited, and the verification is a row
-   in `notes/citations-verified-<date>.md` naming that record. Author lists in the study
-   repository's related-work notes are leads, not records: one of six was wrong
-   (corrections-log entry 39).
+   The `C2` row prints 1.393. `EVIDENCE.md` records the same number with the commit it
+   was read at, and `notes/number-audit-2026-09-14.md` does this for every number in the
+   letter.
+
+The whole manifest can be checked at once: `python3 tubitak/scripts/manifest_paths_check.py`
+confirms every row's path resolves in the index, and the presence audit in
+`tubitak/docs/presence-claims-audit-2026-09-13.md` records the hash check of every row.
+
+## What is not here, and why
+
+- **The generated images of the fine-tuned arms, the training checkpoints and the 96 epoch
+  checkpoints** are held in a private backup, verified by hash, and are available on
+  request; the data-availability statement says so and says what the backup does not cover.
+  Re-inference is possible from the retained checkpoints but is a replication, not a
+  reproduction, because test-time dropout is active by the generator's design.
+- **Three things are unavailable**, as the data-availability statement details: the
+  alternative-explanations package that originally supported two rows of Table II (its
+  per-chip artifacts did not survive and its scripts were never committed), the harness of
+  the descriptor-family matcher test (four registered parameters are reported as configured,
+  not verified), and the generated images of the fine-tuned arms at each seed. Each is an
+  entry in the corrections log.
+- **The QGIS plugins and the internship delivery** live at
+  [`mvy0502/gencp-validation`](https://github.com/mvy0502/gencp-validation), which also
+  hosts their releases.
+
+## Relationship to gencp-validation
+
+`gencp-validation` is the internship delivery as handed over to the institution, and it is
+frozen from 14 September 2026. This repository carries its full history (merged without a
+prefix, so every path and every commit cited in the letter resolves here), and the research
+record continues here. The delivered README and agent-instruction file are preserved as
+`README-gencp-validation.md` and `CLAUDE-gencp-validation.md`.
