@@ -66,3 +66,5 @@ Two files were genuinely dropped, both unreferenced: `docs/corrections-entry-35-
 the state it reflects cannot be checked against anything.
 
 *Amendment, 18 September 2026 (P17 C.2).* This file is kept unedited because the absence-claims audit cites it at lines 21 and 66. Two files it names are no longer in the tree: `CLAUDE.md` (removed at `fff6c4e`, last at `ac634e9`) and the handover guide `tubitak/DEVIR.md` (removed in the P17 commit, last at `fff6c4e`); both remain at [`mvy0502/gencp-validation`](https://github.com/mvy0502/gencp-validation) and in history.
+
+*Correction, 18 September 2026, same day.* This amendment was committed at `20534bd` before the removals it describes had landed, because the removal command in that step failed silently; the removals landed in the next commit, and the files it names last exist at `20534bd`, not `fff6c4e`.

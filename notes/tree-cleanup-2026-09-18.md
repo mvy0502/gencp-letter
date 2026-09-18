@@ -202,3 +202,5 @@ Candidates: 171. Classes: (1) 109, (2) 5, (3) 1, (4) 56.
 | `tubitak/sr/SOURCE.md`, `tubitak/sr/docs/evidence/*`, `docs/Dockerfile`, `docs/kapak.png`, `docs/plugin/*.png` | not in scope | code provenance, Project 2 evidence, upstream Dockerfile and images: not documentation files of the enumeration; left for a later ruling if one is wanted |
 
 Consequential edits (C): `tubitak/README.md` replaced by a short English README (not record); dated amendments appended, and nothing else changed, to `notes/move-2026-09-14.md`, `SNAPSHOT.md` and `tubitak/docs/presence-claims-audit-2026-09-13.md`, the three record documents whose sentences named a removed file.
+
+*Correction, 18 September 2026, same day.* The rulings above were committed at `20534bd` with the README rewrite and the amendments, but the 44 removals they describe did not land in that commit: the shell passed the file list as one argument and `git rm` refused it, which the `&&` chain hid. The removals landed in the following commit; every removed file last exists at `20534bd`. The class-(1) diff and the stranger check were re-run after that commit.
