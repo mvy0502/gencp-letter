@@ -177,3 +177,28 @@ Candidates: 171. Classes: (1) 109, (2) 5, (3) 1, (4) 56.
 | `tubitak/sr/docs/20-komut-satiri.md` | (4) | the delivery's own documentation at its original path (plugin, Project 2, reports); not a preserved copy, not tooling, not cited by the record; the P15 README says these are carried with the history, so removing them is a separate decision |
 | `tubitak/sr/docs/gate-s-registration.md` | (4) | the delivery's own documentation at its original path (plugin, Project 2, reports); not a preserved copy, not tooling, not cited by the record; the P15 README says these are carried with the history, so removing them is a separate decision |
 | `tubitak/sr/docs/sozluk.md` | (4) | the delivery's own documentation at its original path (plugin, Project 2, reports); not a preserved copy, not tooling, not cited by the record; the P15 README says these are carried with the history, so removing them is a separate decision |
+
+## Refined test and rulings, 18 September 2026 (P17)
+
+**The test, refined so the classification is reproducible.** A citation makes a file RECORD when the record depends on the file's content: it is the source of a claim, the evidence for a check, or the target of a line-number reference. A scope line that says "this file was searched" does not. Primary experimental logs in `tubitak/docs/` (launch records, gate tokens, run logs) are record by kind even when nothing cites them; notes and audits are record only by citation.
+
+**Rulings on the 56 boundary files.**
+
+| file(s) | ruling | basis |
+|---|---|---|
+| `SNAPSHOT.md` | keep, unedited (appended amendment only) | cited by the absence-claims audit at lines 21 and 66 as the source of claims it checked |
+| `tubitak/docs/gates/seed-block-wave-launch.md` | keep | launch record of the six-seed block: record by kind |
+| `notes/number-audit-2026-09-14.md` | keep | cited by the README; source of corrections entries 51–53 |
+| `tubitak/DEVIR.md` | deleted | cited only by the delivery's `tubitak/README.md` (rewritten) and the absence audit's scope line |
+| `tubitak/makale-context.md` | deleted | agent instruction file by content; its only mention is the absence audit's scope line |
+| `tubitak/docs/terimler.md`, `tubitak/demo/DEMO.md` | deleted | delivery glossary and demo, cited only by each other |
+| `notes/prose-pass-2026-09-14.md`, `notes/style-corpus-2026-09-14.md` | deleted | cited by nothing in the record; process scaffolding; last at `fff6c4e` |
+| `docs/dogrulama-calismasi.md`, `docs/proje1-eklenti.md`, `docs/proje2-eklenti.md` | deleted | the delivery's front-page documents |
+| `docs/README_es.md`, `docs/datasets.md`, `docs/docker.md`, `docs/overview.md`, `docs/qa.md`, `docs/tips.md` | **not deleted** | these six are the upstream pix2pix fork's own documentation, not delivery documentation; the P15 A.6 rule against pruning upstream directories applies, and `train.py`/`test.py` point readers at them |
+| `docs/plugin/QUICKSTART.md`, `tubitak/qgis_plugin/QUICKSTART.md` | **not deleted** | `tubitak/docs/plugin-field-test.md` (a results document) says at lines 92 and 290 that user-facing behaviour "is recorded in QUICKSTART.md": a content dependency the P16 enumeration missed |
+| `tubitak/qgis_plugin/README.md` | deleted | plugin README; every apparent citation was the substring `README.md` |
+| `tubitak/sr/docs/*.md` (32) | deleted | Project 2's delivery documentation; four of them are Project 2 registrations, which belong to the delivery and not to the letter's record; all at `gencp-validation` and in history |
+| `tubitak/rapor2/GenCP_Ilerleme_Raporu_2.md`, `tubitak/rapor3/GenCP_Rapor_Sonuc.md` | deleted | the two Turkish reports |
+| `tubitak/sr/SOURCE.md`, `tubitak/sr/docs/evidence/*`, `docs/Dockerfile`, `docs/kapak.png`, `docs/plugin/*.png` | not in scope | code provenance, Project 2 evidence, upstream Dockerfile and images: not documentation files of the enumeration; left for a later ruling if one is wanted |
+
+Consequential edits (C): `tubitak/README.md` replaced by a short English README (not record); dated amendments appended, and nothing else changed, to `notes/move-2026-09-14.md`, `SNAPSHOT.md` and `tubitak/docs/presence-claims-audit-2026-09-13.md`, the three record documents whose sentences named a removed file.
