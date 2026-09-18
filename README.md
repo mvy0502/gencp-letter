@@ -91,5 +91,4 @@ confirms every row's path resolves in the index, and the presence audit in
 `gencp-validation` is the internship delivery as handed over to the institution, and it is
 frozen from 14 September 2026. This repository carries its full history (merged without a
 prefix, so every path and every commit cited in the letter resolves here), and the research
-record continues here. The delivered README and agent-instruction file are preserved as
-`README-gencp-validation.md` and `CLAUDE-gencp-validation.md`.
+record continues here.
